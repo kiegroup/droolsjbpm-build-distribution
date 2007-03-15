@@ -1,0 +1,19 @@
+<assembly>
+  <id>bin</id>
+  <formats>
+    <format>zip</format>
+  </formats>
+
+  <moduleSets>
+    <moduleSet>
+    	<includes/>
+    				    	
+      <binaries>
+        <outputDirectory>modules</outputDirectory>
+        <includeDependencies>true</includeDependencies>
+        <unpack>false</unpack>
+      </binaries>   
+    </moduleSet>
+  </moduleSets>  
+
+</assembly>
