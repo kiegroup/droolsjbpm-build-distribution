@@ -13,6 +13,8 @@
          <include>drools-decisiontables/**</include>
          <include>drools-jsr94/**</include>
          <include>drools-ide/**</include>
+         <include>drools-repository/**</include>
+         <include>drools-jbrms/**</include>
          <include>documentation/**</include>
          <include>repository/**</include>
          <include>*.xml</include>
