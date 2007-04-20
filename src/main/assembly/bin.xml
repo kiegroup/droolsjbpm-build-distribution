@@ -24,12 +24,6 @@
     </moduleSet>
   </moduleSets>  
 
-  <!-- We include the BRMS specifically, as its a single atomic war -->
-  <files>
-	<file>
-		<source>drools-jbrms/target/drools-jbrms.war</source>
-		<outputDirectory>brms</outputDirectory>
-	</file>
-  </files>
+
 
 </assembly>
