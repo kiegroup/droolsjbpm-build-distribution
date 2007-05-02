@@ -1,0 +1,23 @@
+<assembly>
+  <id>examples</id>
+  <formats>
+    <format>zip</format>
+  </formats>
+  
+  <includeBaseDirectory>false</includeBaseDirectory>
+  
+  <fileSets>
+    <fileSet>
+      <directory>drools-examples</directory>
+      <outputDirectory>drools-examples</outputDirectory>
+      <includes>
+         <include>**/**</include>
+      </includes>
+      <excludes>
+        <exclude>**/target/**</exclude>
+        <exclude>**/.svn/**</exclude>
+        <exclude>**/.metadata/**</exclude>
+      </excludes>
+    </fileSet>
+  </fileSets>
+</assembly>

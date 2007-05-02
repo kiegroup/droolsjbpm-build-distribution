@@ -16,11 +16,14 @@
          <include>drools-repository/**</include>
          <include>drools-jbrms/**</include>
          <include>documentation/**</include>
-         <include>repository/**</include>
+         <include>m2_repo/**</include>
          <include>*.xml</include>
          <include>*.txt</include>
       </includes>
       <excludes>
+        <exclude>documentation/src/**</exclude>
+        <exclude>drools-jbrms/repository/**</exclude>
+        <exclude>**/*.log/**</exclude>
         <exclude>**/target/**</exclude>
         <exclude>**/.svn/**</exclude>
         <exclude>**/.metadata/**</exclude>
