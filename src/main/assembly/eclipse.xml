@@ -1,16 +1,18 @@
-
 <assembly>
   <id>eclipse</id>
   <formats>
     <format>zip</format>
   </formats>
   
-  <!-- We include the BRMS specifically, as its a single atomic war -->
-  <files>
-	<file>
-		<source>drools-eclipse/target/*.war</source>
-		<outputDirectory>brms</outputDirectory>
-	</file>
-  </files>
-   
+  <includeBaseDirectory>false</includeBaseDirectory>
+  
+  <fileSets>
+    <fileSet>
+      <directory>target/eclipse</directory>
+      <outputDirectory></outputDirectory>
+      <includes>
+         <include>**/**</include>
+      </includes>      
+    </fileSet>
+  </fileSets>
 </assembly>

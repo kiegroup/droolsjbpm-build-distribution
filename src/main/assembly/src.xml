@@ -3,6 +3,9 @@
   <formats>
     <format>zip</format>
   </formats>
+  
+  <includeBaseDirectory>false</includeBaseDirectory>
+  
   <fileSets>
     <fileSet>
       <directory>.</directory>
@@ -12,7 +15,7 @@
          <include>drools-compiler/**</include>
          <include>drools-decisiontables/**</include>
          <include>drools-jsr94/**</include>
-         <include>drools-ide/**</include>
+         <include>drools-eclipse/**</include>
          <include>drools-repository/**</include>
          <include>drools-jbrms/**</include>
          <include>documentation/**</include>
