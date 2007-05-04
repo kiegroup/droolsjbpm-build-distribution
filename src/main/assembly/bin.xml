@@ -11,6 +11,7 @@
     <fileSet>
       <includes>
         <include>LICENSE*</include>
+        <include>JBossORG-EULA.txt</include>
       </includes>
     </fileSet>
     

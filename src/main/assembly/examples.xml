@@ -7,6 +7,14 @@
   <includeBaseDirectory>false</includeBaseDirectory>
   
   <fileSets>
+
+    <fileSet>
+      <includes>
+        <include>LICENSE*</include>
+        <include>JBossORG-EULA.txt</include>
+      </includes>
+    </fileSet>
+  
     <fileSet>
       <directory>drools-examples</directory>
       <outputDirectory>drools-examples</outputDirectory>

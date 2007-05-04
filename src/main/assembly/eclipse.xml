@@ -8,6 +8,13 @@
   
   <fileSets>
     <fileSet>
+      <includes>
+        <include>LICENSE*</include>
+        <include>JBossORG-EULA.txt</include>
+      </includes>
+    </fileSet>
+      
+    <fileSet>
       <directory>target/eclipse</directory>
       <outputDirectory></outputDirectory>
       <includes>
