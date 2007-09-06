@@ -10,8 +10,9 @@
   
     <fileSet>
       <includes>
-        <include>LICENSE*</include>
+        <include>LICENSE-ASL-2.0.txt</include>
         <include>JBossORG-EULA.txt</include>
+        <include>README_DEPENDENCIES.txt</include>
       </includes>
     </fileSet>
     
