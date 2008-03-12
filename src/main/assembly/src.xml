@@ -18,7 +18,8 @@
          <include>drools-eclipse/**</include>
          <include>drools-repository/**</include>
          <include>drools-jbrms/**</include>
-         <include>drools-ant</include>
+         <include>drools-ant/**</include>
+		 <include>drools-analytics/**</include>
          <include>documentation/**</include>
          <include>m2_repo/**</include>
          <include>*.xml</include>
