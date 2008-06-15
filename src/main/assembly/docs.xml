@@ -1,0 +1,109 @@
+<assembly>
+  <id>docs</id>
+  <formats>
+    <format>zip</format>
+  </formats>
+  
+  <includeBaseDirectory>false</includeBaseDirectory>
+  
+  <fileSets>
+    <fileSet>
+      <directory>drools-docs/drools-docs-introduction/target/docbook/</directory>
+      <outputDirectory>drools-introduction</outputDirectory>
+      <includes>
+         <!--include>drools-docs/**</include-->
+         <include>html/**</include>
+         <include>html_single/**</include>
+      </includes>
+      <excludes>
+        <exclude>**/*.log/**</exclude>
+        <exclude>**/*.db/**</exclude>
+        <exclude>**/.svn/**</exclude>
+        <exclude>**/.metadata/**</exclude>
+      </excludes>
+    </fileSet>
+    
+    <fileSet>
+      <directory>drools-docs/drools-docs-expert/target/docbook/</directory>
+      <outputDirectory>drools-expert</outputDirectory>
+      <includes>
+         <!--include>drools-docs/**</include-->
+         <include>html/**</include>
+         <include>html_single/**</include>
+      </includes>
+      <excludes>
+        <exclude>**/*.log/**</exclude>
+        <exclude>**/*.db/**</exclude>
+        <exclude>**/.svn/**</exclude>
+        <exclude>**/.metadata/**</exclude>
+      </excludes>
+    </fileSet> 
+    
+    <fileSet>
+      <directory>drools-docs/drools-docs-fusion/target/docbook/</directory>
+      <outputDirectory>drools-fusion</outputDirectory>
+      <includes>
+         <!--include>drools-docs/**</include-->
+         <include>html/**</include>
+         <include>html_single/**</include>
+      </includes>
+      <excludes>
+        <exclude>**/*.log/**</exclude>
+        <exclude>**/*.db/**</exclude>
+        <exclude>**/.svn/**</exclude>
+        <exclude>**/.metadata/**</exclude>
+      </excludes>
+    </fileSet>  
+    
+    <fileSet>
+      <directory>drools-docs/drools-docs-flow/target/docbook/</directory>
+      <outputDirectory>drools-flow</outputDirectory>
+      <includes>
+         <!--include>drools-docs/**</include-->
+         <include>html/**</include>
+         <include>html_single/**</include>
+      </includes>
+      <excludes>
+        <exclude>**/*.log/**</exclude>
+        <exclude>**/*.db/**</exclude>
+        <exclude>**/.svn/**</exclude>
+        <exclude>**/.metadata/**</exclude>
+      </excludes>
+    </fileSet>   
+    
+    <fileSet>
+      <directory>drools-docs/drools-docs-guvnor/target/docbook/</directory>
+      <outputDirectory>drools-guvnor</outputDirectory>
+      <includes>
+         <!--include>drools-docs/**</include-->
+         <include>html/**</include>
+         <include>html_single/**</include>
+      </includes>
+      <excludes>
+        <exclude>**/*.log/**</exclude>
+        <exclude>**/*.db/**</exclude>
+        <exclude>**/.svn/**</exclude>
+        <exclude>**/.metadata/**</exclude>
+      </excludes>
+    </fileSet>      
+    
+    <fileSet>
+      <directory>drools-docs/drools-docs-solver/target/docbook/</directory>
+      <outputDirectory>drools-solver</outputDirectory>
+      <includes>
+         <!--include>drools-docs/**</include-->
+         <include>html/**</include>
+         <include>html_single/**</include>
+      </includes>
+      <excludes>
+        <exclude>**/*.log/**</exclude>
+        <exclude>**/*.db/**</exclude>
+        <exclude>**/.svn/**</exclude>
+        <exclude>**/.metadata/**</exclude>
+      </excludes>
+    </fileSet>               
+          
+  </fileSets>  
+  
+  
+</assembly>
