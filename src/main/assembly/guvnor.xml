@@ -10,7 +10,7 @@
   <!-- We include the BRMS specifically, as its a single atomic war -->
   <files>
 	<file>
-		<source>drools-jbrms/target/drools-jbrms.war</source>
+		<source>drools-guvnor/target/drools-guvnor.war</source>
 	</file>
   </files>
    

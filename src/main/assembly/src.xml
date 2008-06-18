@@ -17,7 +17,7 @@
          <include>drools-jsr94/**</include>
          <include>drools-eclipse/**</include>
          <include>drools-repository/**</include>
-         <include>drools-jbrms/**</include>
+         <include>drools-guvnor/**</include>
          <include>drools-ant/**</include>
 		 <include>drools-verifier/**</include>
          <include>drools-docs/**</include>
@@ -26,7 +26,7 @@
          <include>*.txt</include>
       </includes>
       <excludes>
-        <exclude>drools-jbrms/repository/**</exclude>
+        <exclude>drools-guvnor/repository/**</exclude>
         <exclude>drools-repository/repository/**</exclude>
         <exclude>drools-eclipse/local-eclipse-drop-mirror/**</exclude>
         <exclude>drools-eclipse/drools-eclipse-plugin/lib/**</exclude>
