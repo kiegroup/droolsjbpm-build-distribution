@@ -1,6 +1,6 @@
 
 <assembly>
-  <id>brms</id>
+  <id>guvnor</id>
   <formats>
     <format>zip</format>
   </formats>
