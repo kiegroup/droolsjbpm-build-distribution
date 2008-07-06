@@ -22,6 +22,7 @@
          <include>drools-ant/**</include>
 		 <include>drools-verifier/**</include>
          <include>drools-docs/**</include>
+         <include>drools-dataloaders/**</include>
          <include>m2_repo/**</include>
          <include>*.xml</include>
          <include>*.txt</include>
