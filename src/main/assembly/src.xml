@@ -15,6 +15,7 @@
          <include>drools-core/**</include>
          <include>drools-compiler/**</include>
          <include>drools-decisiontables/**</include>
+         <include>drools-clips/**</include>
          <include>drools-templates/**</include>
          <include>drools-jsr94/**</include>
          <include>drools-eclipse/**</include>

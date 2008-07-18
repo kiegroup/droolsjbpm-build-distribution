@@ -32,10 +32,10 @@
     		<include>org.drools:drools-jsr94</include>
     		<include>org.drools:drools-decisiontables</include>
     		<include>org.drools:drools-templates</include>
+    		<include>org.drools:drools-clips</include>
     		<include>org.drools:drools-dataloaders</include>
     		<include>org.drools:drools-verifier</include>
      		<include>org.drools:drools-ant</include>
-    		<!--include>org.drools:drools-clips</include-->
     		<include>org.drools:drools-examples</include>
     	</includes>
     	
