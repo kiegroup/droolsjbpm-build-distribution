@@ -25,6 +25,7 @@
 		 <include>drools-verifier/**</include>
          <include>drools-docs/**</include>
          <include>drools-dataloaders/**</include>
+         <include>drools-solver/**</include>
          <include>m2_repo/**</include>
          <include>*.xml</include>
          <include>*.txt</include>
