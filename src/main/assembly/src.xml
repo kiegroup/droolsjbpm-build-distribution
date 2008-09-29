@@ -29,6 +29,7 @@
          <include>m2_repo/**</include>
          <include>*.xml</include>
          <include>*.txt</include>
+	 <include>drools-server/**</include>
       </includes>
       <excludes>
         <exclude>drools-guvnor/repository/**</exclude>

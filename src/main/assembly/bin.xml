@@ -37,6 +37,7 @@
     		<include>org.drools:drools-verifier</include>
      		<include>org.drools:drools-ant</include>
     		<include>org.drools:drools-examples</include>
+		<include>org.drools:drools-server</include>
     	</includes>
     	
       <binaries>
