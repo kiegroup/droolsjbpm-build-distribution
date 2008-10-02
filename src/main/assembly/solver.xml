@@ -17,8 +17,22 @@
         </fileSet>
         <fileSet>
             <directory>drools-solver/src/main/assembly/scripts</directory>
+            <lineEnding>unix</lineEnding>
             <filtered>true</filtered>
             <outputDirectory/>
+            <includes>
+                <include>**/*.sh</include>
+            </includes>
+            <fileMode>755</fileMode>
+        </fileSet>
+        <fileSet>
+            <directory>drools-solver/src/main/assembly/scripts</directory>
+            <lineEnding>dos</lineEnding>
+            <filtered>true</filtered>
+            <outputDirectory/>
+            <includes>
+                <include>**/*.bat</include>
+            </includes>
         </fileSet>
         <fileSet>
             <directory>drools-solver/src/main/assembly/docs</directory>
