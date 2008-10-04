@@ -8,82 +8,12 @@
   <includeBaseDirectory>false</includeBaseDirectory>
   
   <fileSets>
-  
+
     <fileSet>
-      <includes>
-        <include>LICENSE-ASL-2.0.txt</include>
-        <include>JBossORG-EULA.txt</include>
-        <include>README_DEPENDENCIES.txt</include>
-      </includes>
-    </fileSet>
-    
-    <fileSet>
-       <directory>target/site/apidocs</directory>
-       <outputDirectory>documentation/apidocs</outputDirectory>
+       <directory>target/drools-${project.version}-pre-bin.dir</directory>      
+        <outputDirectory></outputDirectory>
     </fileSet>      
   </fileSets>  
-
-  <moduleSets>
-    <moduleSet>
-    	<includes>
-    		<!-- note: we do not include BRMS here, as it is distributed as a single war, and a war includes all already -->
-    		<include>org.drools:drools-core</include>
-    		<include>org.drools:drools-compiler</include>
-    		<include>org.drools:drools-jsr94</include>
-    		<include>org.drools:drools-decisiontables</include>
-    		<include>org.drools:drools-templates</include>
-    		<include>org.drools:drools-clips</include>
-    		<include>org.drools:drools-dataloaders-jaxb</include>
-    		<include>org.drools:drools-dataloaders-smooks</include>
-    		<include>org.drools:drools-verifier</include>
-     		<include>org.drools:drools-ant</include>
-		<include>org.drools:drools-server</include>
-		<include>org.drools:drools-workitems</include>
-		<include>org.drools:drools-process-task</include>
-    	</includes>
-    	
-      <binaries>
-        <outputDirectory></outputDirectory>
-        <unpack>false</unpack> 
-        
-    	  <dependencySets>	
-    	    <dependencySet>
-    	      <outputDirectory>lib</outputDirectory>
-    	      <unpack>false</unpack>
-    	      <excludes> 
-    	         <exclude>org.drools:drools-*</exclude>
-    	      </excludes>
-              <useTransitiveDependencies>false</useTransitiveDependencies>
-    	    </dependencySet>  	         
-    	  </dependencySets>  	
-      </binaries>   
-	    
-    </moduleSet>
-    
-    <!--moduleSet>
-    	<includes>
-    		<include>org.drools:drools-documentation</include>
-    	</includes>
-    	
-      <binaries>
-        <outputDirectory>documentation</outputDirectory>
-        <outputFileNameMapping>manual</outputFileNameMapping>
-	      <unpack>true</unpack> 
-	      <unpackOptions>
-	          <includes>
-	            <include>shared/**</include>
-	            <include>html/**</include>
-	            <include>manual/html_single/**</include>
-	          </includes>    	              	      
-	          <excludes>
-	            <exclude>eclipse/**</exclude>
-	            <exclude>META-INF/**</exclude>
-	          </excludes>
-	      </unpackOptions>  	          
-      </binaries>   
-	    
-    </moduleSet-->    
-  </moduleSets>  
 
 
 
