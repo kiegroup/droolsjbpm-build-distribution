@@ -15,6 +15,7 @@
          <!--include>drools-docs/**</include-->
          <include>html/**</include>
          <include>html_single/**</include>
+         <include>pdf/**</include>
       </includes>
       <excludes>
         <exclude>**/*.log/**</exclude>
@@ -31,6 +32,7 @@
          <!--include>drools-docs/**</include-->
          <include>html/**</include>
          <include>html_single/**</include>
+          <include>pdf/**</include>
       </includes>
       <excludes>
         <exclude>**/*.log/**</exclude>
@@ -47,6 +49,7 @@
          <!--include>drools-docs/**</include-->
          <include>html/**</include>
          <include>html_single/**</include>
+          <include>pdf/**</include>
       </includes>
       <excludes>
         <exclude>**/*.log/**</exclude>
@@ -63,6 +66,7 @@
          <!--include>drools-docs/**</include-->
          <include>html/**</include>
          <include>html_single/**</include>
+          <include>pdf/**</include>
       </includes>
       <excludes>
         <exclude>**/*.log/**</exclude>
@@ -79,6 +83,7 @@
          <!--include>drools-docs/**</include-->
          <include>html/**</include>
          <include>html_single/**</include>
+          <include>pdf/**</include>
       </includes>
       <excludes>
         <exclude>**/*.log/**</exclude>
@@ -95,6 +100,7 @@
          <!--include>drools-docs/**</include-->
          <include>html/**</include>
          <include>html_single/**</include>
+          <include>pdf/**</include>
       </includes>
       <excludes>
         <exclude>**/*.log/**</exclude>
