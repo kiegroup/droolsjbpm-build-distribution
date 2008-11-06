@@ -9,7 +9,7 @@
   
   <fileSets>
     <fileSet>
-      <directory>drools-docs/drools-docs-introduction/target/docbook/</directory>
+      <directory>drools-docs/drools-docs-introduction/target/docbook/publish/en-US/</directory>
       <outputDirectory>drools-introduction</outputDirectory>
       <includes>
          <!--include>drools-docs/**</include-->
@@ -26,7 +26,7 @@
     </fileSet>
     
     <fileSet>
-      <directory>drools-docs/drools-docs-expert/target/docbook/</directory>
+      <directory>drools-docs/drools-docs-expert/target/docbook/publish/en-US/</directory>
       <outputDirectory>drools-expert</outputDirectory>
       <includes>
          <!--include>drools-docs/**</include-->
@@ -43,7 +43,7 @@
     </fileSet> 
     
     <fileSet>
-      <directory>drools-docs/drools-docs-fusion/target/docbook/</directory>
+      <directory>drools-docs/drools-docs-fusion/target/docbook/publish/en-US/</directory>
       <outputDirectory>drools-fusion</outputDirectory>
       <includes>
          <!--include>drools-docs/**</include-->
@@ -60,7 +60,7 @@
     </fileSet>  
     
     <fileSet>
-      <directory>drools-docs/drools-docs-flow/target/docbook/</directory>
+      <directory>drools-docs/drools-docs-flow/target/docbook/publish/en-US/</directory>
       <outputDirectory>drools-flow</outputDirectory>
       <includes>
          <!--include>drools-docs/**</include-->
@@ -77,7 +77,7 @@
     </fileSet>   
     
     <fileSet>
-      <directory>drools-docs/drools-docs-guvnor/target/docbook/</directory>
+      <directory>drools-docs/drools-docs-guvnor/target/docbook/publish/en-US/</directory>
       <outputDirectory>drools-guvnor</outputDirectory>
       <includes>
          <!--include>drools-docs/**</include-->
@@ -94,7 +94,7 @@
     </fileSet>      
     
     <fileSet>
-      <directory>drools-docs/drools-docs-solver/target/docbook/</directory>
+      <directory>drools-docs/drools-docs-solver/target/docbook/publish/en-US/</directory>
       <outputDirectory>drools-solver</outputDirectory>
       <includes>
          <!--include>drools-docs/**</include-->
