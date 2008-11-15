@@ -37,9 +37,9 @@
     		<include>org.drools:drools-dataloaders-smooks</include>
     		<include>org.drools:drools-verifier</include>
      		<include>org.drools:drools-ant</include>
-		<include>org.drools:drools-server</include>
-		<include>org.drools:drools-workitems</include>
-		<include>org.drools:drools-process-task</include>
+            <include>org.drools:drools-server</include>
+            <include>org.drools:drools-workitems</include>
+            <include>org.drools:drools-process-task</include>
     	</includes>
     	
       <binaries>
