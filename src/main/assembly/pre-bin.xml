@@ -23,6 +23,7 @@
     <moduleSet>
     	<includes>
     		<!-- note: we do not include BRMS here, as it is distributed as a single war, and a war includes all already -->
+            <include>org.drools:drools-api</include>
     		<include>org.drools:drools-core</include>
     		<include>org.drools:drools-compiler</include>
     		<include>org.drools:drools-jsr94</include>
@@ -36,6 +37,7 @@
             <include>org.drools:drools-server</include>
             <include>org.drools:drools-workitems</include>
             <include>org.drools:drools-process-task</include>
+            <include>org.drools:drools-process-enterprise</include>
     	</includes>
     	
       <binaries>
