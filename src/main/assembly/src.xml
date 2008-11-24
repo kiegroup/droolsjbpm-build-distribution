@@ -29,7 +29,6 @@
          <include>drools-solver/**</include>
          <include>drools-process/**</include>
          <include>drools-dataloaders/**</include>
-         <include>m2_repo/**</include>
          <include>*.xml</include>
          <include>*.txt</include>
 	 <include>drools-server/**</include>
@@ -37,9 +36,9 @@
       <excludes>
         <exclude>drools-guvnor/repository/**</exclude>
         <exclude>drools-repository/repository/**</exclude>
-        <exclude>drools-eclipse/local-eclipse-drop-mirror/**</exclude>
-        <exclude>drools-eclipse/drools-eclipse-plugin/lib/**</exclude>
-        <exclude>drools-eclipse/drools-eclipse-plugin/help/**</exclude>
+        <exclude>drools-eclipse/drools-eclipse-build/local-eclipse-drop-mirror/**</exclude>
+        <exclude>drools-eclipse/org.drools.eclipse/lib/**</exclude>
+        <exclude>drools-eclipse/org.drools.eclipse/help/**</exclude>
         <exclude>**/*.log/**</exclude>
         <exclude>**/target/**</exclude>
         <exclude>**/.svn/**</exclude>
