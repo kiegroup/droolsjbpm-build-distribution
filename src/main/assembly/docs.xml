@@ -7,14 +7,22 @@
   
   <includeBaseDirectory>false</includeBaseDirectory>
   
-  <files>
+  <!-- files>
       <file>
        <source>src/documentation/index.html</source>
        <outputDirectory></outputDirectory>
     </file>  
-  </files>  
+  </files -->  
   
   <fileSets>
+    <fileSet>
+    <directory>src/documentation/</directory>
+      <outputDirectory></outputDirectory>
+      <includes>
+        <include>**</include>
+      </includes>    
+    </fileSet>
+  
     <fileSet>
       <directory>drools-docs/drools-docs-introduction/target/docbook/publish/en-US/</directory>
       <outputDirectory>drools-introduction</outputDirectory>
