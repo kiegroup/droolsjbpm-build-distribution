@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly>
+  <id>src</id>
+  <formats>
+    <format>zip</format>
+  </formats>
+  
+  <includeBaseDirectory>false</includeBaseDirectory>
+  
+  <fileSets>
+    <fileSet>
+      <directory>.</directory>
+      <outputDirectory></outputDirectory>
+      <includes>
+         <include>drools-api/**</include>
+         <include>drools-core/**</include>
+         <include>drools-compiler/**</include>
+         <include>drools-decisiontables/**</include>
+         <!--include>drools-clips/**</include-->
+         <include>drools-templates/**</include>
+         <include>drools-jsr94/**</include>
+         <include>drools-eclipse/**</include>
+         <include>drools-repository/**</include>
+         <include>drools-guvnor/**</include>
+         <include>drools-ant/**</include>
+	     <include>drools-verifier/**</include>
+         <include>drools-docs/**</include>
+         <!--include>drools-dataloaders/**</include-->
+         <include>drools-solver/**</include>
+         <include>drools-process/**</include>
+         <include>drools-dataloaders/**</include>
+         <include>*.xml</include>
+         <include>*.txt</include>
+	 <!--include>drools-server/**</include-->
+      </includes>
+      <excludes>
+        <exclude>drools-guvnor/repository/**</exclude>
+        <exclude>drools-repository/repository/**</exclude>
+        <exclude>drools-eclipse/drools-eclipse-build/local-eclipse-drop-mirror/**</exclude>
+        <exclude>drools-eclipse/org.drools.eclipse/lib/**</exclude>
+        <exclude>drools-eclipse/org.drools.eclipse/help/**</exclude>
+        <exclude>**/*.log/**</exclude>
+        <exclude>**/target/**</exclude>
+        <exclude>**/.svn/**</exclude>
+        <exclude>**/.metadata/**</exclude>
+      </excludes>
+    </fileSet>
+  </fileSets>
+</assembly>

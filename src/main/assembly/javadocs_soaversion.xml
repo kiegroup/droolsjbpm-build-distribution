@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly>
+  <id>javadocs</id>
+  <formats>
+    <format>zip</format>
+  </formats>
+  
+  <includeBaseDirectory>false</includeBaseDirectory>
+  
+  <files>
+      <file>
+       <source>src/javadocs/index_soaversion.html</source>
+       <outputDirectory></outputDirectory>
+       <destName>index.html</destName>
+    </file>  
+  </files>    
+  
+  <fileSets>
+  
+    <fileSet>
+      <includes>
+        <include>LICENSE-ASL-2.0.txt</include>
+        <include>JBossORG-EULA.txt</include>
+      </includes>
+    </fileSet>         
+
+    <fileSet>
+       <directory>drools-api/target/site/apidocs</directory>
+       <outputDirectory>stable/drools-api</outputDirectory>
+    </fileSet>  
+    
+    <fileSet>
+       <directory>drools-core/target/site/apidocs</directory>
+       <outputDirectory>unstable/drools-core</outputDirectory>
+    </fileSet>  
+
+    <fileSet>
+       <directory>drools-compiler/target/site/apidocs</directory>
+       <outputDirectory>unstable/drools-compiler</outputDirectory>
+    </fileSet> 
+    
+    <fileSet>
+       <directory>drools-decisiontables/target/site/apidocs</directory>
+       <outputDirectory>unstable/drools-decisiontables</outputDirectory>
+    </fileSet>   
+
+    <fileSet>
+       <directory>drools-clips/target/site/apidocs</directory>
+       <outputDirectory>unstable/drools-clips</outputDirectory>
+    </fileSet>     
+   
+    <fileSet>
+       <directory>drools-dataloaders/drools-dataloaders-smooks/target/site/apidocs</directory>
+       <outputDirectory>unstable/drools-dataloaders-smooks</outputDirectory>
+    </fileSet> 
+    
+    <fileSet>
+       <directory>drools-dataloaders/drools-dataloaders-jaxb/target/site/apidocs</directory>
+       <outputDirectory>unstable/drools-dataloaders-jaxb</outputDirectory>
+    </fileSet>   
+
+    <fileSet>
+       <directory>drools-process/drools-process-task/target/site/apidocs</directory>
+       <outputDirectory>unstable/drools-process-task</outputDirectory>
+    </fileSet>   
+    
+    <fileSet>
+       <directory>drools-process/drools-workitems/target/site/apidocs</directory>
+       <outputDirectory>unstable/drools-workitems</outputDirectory>
+    </fileSet>     
+    
+    <fileSet>
+       <directory>drools-process/drools-process-enterprise/target/site/apidocs</directory>
+       <outputDirectory>unstable/drools-process-enterprise</outputDirectory>
+    </fileSet> 
+
+    <fileSet>
+       <directory>drools-templates/target/site/apidocs</directory>
+       <outputDirectory>unstable/drools-templates</outputDirectory>
+    </fileSet>   
+    
+    <fileSet>
+       <directory>drools-verifier/target/site/apidocs</directory>
+       <outputDirectory>unstable/drools-verifier</outputDirectory>
+    </fileSet>   
+    
+    <fileSet>
+       <directory>drools-server/target/site/apidocs</directory>
+       <outputDirectory>unstable/drools-server</outputDirectory>
+    </fileSet>     
+    
+  </fileSets>  
+
+</assembly>
