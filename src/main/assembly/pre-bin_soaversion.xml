@@ -31,7 +31,7 @@
     		<include>org.drools:drools-templates</include>
     		<!--include>org.drools:drools-clips</include-->
     		<include>org.drools:drools-dataloaders-jaxb</include>
-    		<1--include>org.drools:drools-dataloaders-smooks</include-->
+    		<!--include>org.drools:drools-dataloaders-smooks</include-->
     		<include>org.drools:drools-verifier</include>
      		<include>org.drools:drools-ant</include>
             <!--include>org.drools:drools-server</include>
