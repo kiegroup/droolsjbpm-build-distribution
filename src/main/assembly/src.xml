@@ -19,11 +19,15 @@
          <include>drools-clips/**</include>
          <include>drools-templates/**</include>
          <include>drools-jsr94/**</include>
+         <include>drools-container/drools-mc/**</include>
+         <include>drools-persistence-jpa/**</include>
+         <include>drools-pipeline/**</include>
+         <include>drools-examples/**</include>
          <include>drools-eclipse/**</include>
          <include>drools-repository/**</include>
          <include>drools-guvnor/**</include>
          <include>drools-ant/**</include>
-	     <include>drools-verifier/**</include>
+	 <include>drools-verifier/**</include>
          <include>drools-docs/**</include>
          <include>drools-dataloaders/**</include>
          <include>drools-solver/**</include>
