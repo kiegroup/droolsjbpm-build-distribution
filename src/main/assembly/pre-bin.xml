@@ -23,33 +23,31 @@
     <moduleSet>
     	<includes>
     		<!-- note: we do not include BRMS here, as it is distributed as a single war, and a war includes all already -->
-                <include>org.drools:drools-api</include>
+            <include>org.drools:drools-api</include>
     		<include>org.drools:drools-core</include>
     		<include>org.drools:drools-compiler</include>
     		<include>org.drools:drools-jsr94</include>
     		<include>org.drools:drools-decisiontables</include>
     		<include>org.drools:drools-templates</include>
     		<include>org.drools:drools-clips</include>
-    		<include>org.drools:drools-dataloaders-jaxb</include>
-    		<include>org.drools:drools-dataloaders-smooks</include>
+            
+            
     		<include>org.drools:drools-verifier</include>
      		<include>org.drools:drools-ant</include>
-                <include>org.drools:drools-server</include>
-                <include>org.drools:drools-workitems</include>
-                <include>org.drools:drools-process-task</include>
-                <include>org.drools:drools-process-enterprise</include>
-
-                <include>org.drools:drools-server</include>
-                <include>org.drools:drools-repository</include>
-                <include>org.drools:drools-pipeline</include>
-                <include>org.drools:drools-transformer-jaxb</include>
-                <include>org.drools:drools-transformer-jxls</include>
-                <include>org.drools:drools-transformer-smooks</include>
-                <include>org.drools:drools-transformer-xstream</include>
-                <include>org.drools:drools-messenger-jms</include>
-                <include>org.drools:drools-solver-core</include>
-                <include>org.drools:drools-solver-examples</include>
-                <include>org.drools:drools-solver-examples</include>
+            <include>org.drools:drools-server</include>            
+            
+            
+            <include>org.drools:drools-messenger-jms</include>
+    		<include>org.drools:drools-transformer-jaxb</include>
+    		<include>org.drools:drools-transformer-smooks</include>
+    		<include>org.drools:drools-transformer-jxls</include>
+    		<include>org.drools:drools-transformer-xstream</include>            
+                                           
+            
+            <include>org.drools:drools-workitems</include>
+            <include>org.drools:drools-process-task</include>            
+            
+            <include>org.drools:drools-persistence-jpa</include>
     	</includes>
     	
       <binaries>
