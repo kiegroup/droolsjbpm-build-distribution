@@ -13,6 +13,7 @@
       <outputDirectory></outputDirectory>
       <includes>
          <include>drools-api/**</include>
+         <include>drools-atom/**</include>
          <include>drools-core/**</include>
          <include>drools-compiler/**</include>
          <include>drools-decisiontables/**</include>
