@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly>
+  <id>jboss-brms.ea</id>
+  <formats>
+    <format>zip</format>
+  </formats>
+  
+  <includeBaseDirectory>false</includeBaseDirectory>
+  
+  <!-- We include the BRMS specifically, as its a single atomic war -->
+  <files>
+	<file>
+		<source>./target/drools-5.0.0.SNAPSHOT-guvnor.zip</source>
+                <destName>jboss-brms-manager.zip</destName>
+	</file>
+	<file>
+		<source>./target/drools-5.0.0.SNAPSHOT-bin.zip</source>
+                <destName>jboss-brms-engine.zip</destName>
+	</file>
+  </files>
+   
+</assembly>
