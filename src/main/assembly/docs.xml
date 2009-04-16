@@ -21,6 +21,9 @@
       <includes>
         <include>**</include>
       </includes>    
+      <excludes>
+        <exclude>index_soaversion.html</exclude>
+      </excludes>
     </fileSet>
   
     <fileSet>

@@ -7,13 +7,13 @@
   
   <includeBaseDirectory>false</includeBaseDirectory>
   
-  <!-- files>
-      <file>
+  <files>
+     <file>
        <source>src/documentation/index_soaversion.html</source>
        <outputDirectory></outputDirectory>
-       <destName>index.html</destName>       
-    </file>  
-  </files -->  
+       <destName>index.html</destName>
+     </file>
+  </files>  
   
   <fileSets>
     <fileSet>
@@ -21,7 +21,11 @@
       <outputDirectory></outputDirectory>
       <includes>
         <include>**</include>
-      </includes>    
+      </includes>
+      <excludes>
+        <exclude>index.html</exclude>
+        <exclude>index_soaversion.html</exclude>
+      </excludes>
     </fileSet>
   
     <fileSet>
