@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- NOTE: SOA-P version excludes org.drools:drools-clips, org.drools:drools-transformer-*, org.drools:drools-server, 
+org.drools:drools-workitems, org.drools:drools-process-task-->
+
 <assembly>
   <id>pre-bin</id>
   <formats>
@@ -30,14 +33,24 @@
     		<include>org.drools:drools-decisiontables</include>
     		<include>org.drools:drools-templates</include>
     		<!--include>org.drools:drools-clips</include-->
-    		<include>org.drools:drools-dataloaders-jaxb</include>
-    		<!--include>org.drools:drools-dataloaders-smooks</include-->
+            
+            
     		<include>org.drools:drools-verifier</include>
      		<include>org.drools:drools-ant</include>
-            <!--include>org.drools:drools-server</include>
+            <!--include>org.drools:drools-server</include-->            
+            
+            
+            <include>org.drools:drools-messenger-jms</include>
+    		<!--include>org.drools:drools-transformer-jaxb</include>
+    		<include>org.drools:drools-transformer-smooks</include>
+    		<include>org.drools:drools-transformer-jxls</include>
+    		<include>org.drools:drools-transformer-xstream</include>            
+                                           
+            
             <include>org.drools:drools-workitems</include>
-            <include>org.drools:drools-process-task</include>
-            <include>org.drools:drools-process-enterprise</include-->
+            <include>org.drools:drools-process-task</include-->            
+            
+            <include>org.drools:drools-persistence-jpa</include>
     	</includes>
     	
       <binaries>
