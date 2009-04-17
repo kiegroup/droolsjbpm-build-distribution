@@ -31,6 +31,12 @@
     		<include>org.drools:drools-templates</include>
     		<include>org.drools:drools-clips</include>
             
+    		<include>org.drools:drools-atom</include>
+    		<include>org.drools:drools-mc</include>
+    		<include>org.drools:drools-bam</include>
+    		<include>org.drools:drools-bpel</include>
+    		<include>org.drools:drools-jpdl</include>
+    		<include>org.drools:drools-osworkflow</include>
             
     		<include>org.drools:drools-verifier</include>
      		<include>org.drools:drools-ant</include>
