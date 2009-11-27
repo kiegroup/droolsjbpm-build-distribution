@@ -112,8 +112,8 @@
     </fileSet>      
     
     <fileSet>
-      <directory>drools-docs/drools-docs-solver/target/docbook/publish/en-US/</directory>
-      <outputDirectory>drools-solver</outputDirectory>
+      <directory>drools-docs/drools-docs-planner/target/docbook/publish/en-US/</directory>
+      <outputDirectory>drools-planner</outputDirectory>
       <includes>
          <!--include>drools-docs/**</include-->
          <include>html/**</include>
