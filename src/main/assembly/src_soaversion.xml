@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- NOTE: SOA-P version excludes drools-clips/**, drools-solver/**, drools-process/** and drools-server/**-->
+<!-- NOTE: SOA-P version excludes drools-clips/**, drools-planner/**, drools-process/** and drools-server/**-->
 
 <assembly>
   <id>src</id>
@@ -31,9 +31,9 @@
          <include>drools-repository/**</include>
          <include>drools-guvnor/**</include>
          <include>drools-ant/**</include>
-	     <include>drools-verifier/**</include>
+         <include>drools-verifier/**</include>
          <include>drools-docs/**</include>
-         <!--include>drools-solver/**</include>
+         <!--include>drools-planner/**</include>
          <include>drools-process/**</include>
          <include>drools-server/**</include-->
          <include>*.xml</include>
