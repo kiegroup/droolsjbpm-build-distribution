@@ -1,7 +1,13 @@
 <projectDescription>
   <name>org.drools.osgi.test</name>
   <comment>A rule production system</comment>
-  <projects/>
+  <projects>
+    <project>drools-api</project>
+    <project>drools-compiler</project>
+    <project>drools-core</project>
+    <project>drools-decisiontables</project>
+    <project>drools-templates</project>
+  </projects>
   <buildSpec>
     <buildCommand>
       <name>org.eclipse.jdt.core.javabuilder</name>
