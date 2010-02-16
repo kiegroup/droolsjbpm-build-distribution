@@ -7,6 +7,7 @@ import java.util.List;
 import javax.naming.InitialContext;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.spi.PersistenceProvider;
 import javax.transaction.UserTransaction;
 
 import org.drools.KnowledgeBase;
@@ -24,6 +25,7 @@ import org.drools.runtime.Environment;
 import org.drools.runtime.EnvironmentName;
 import org.drools.runtime.StatefulKnowledgeSession;
 import org.drools.util.ServiceRegistry;
+import org.hibernate.ejb.HibernatePersistence;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.Constants;
 import org.osgi.framework.ServiceReference;
@@ -67,13 +69,17 @@ public class JpaOsgiTest extends AbstractDroolsSpringDMTest {
         URL url = getClass().getClassLoader().getResource( "META-INF/persistence.xml" );
         System.out.println( url );
 
-        ClassLoader cl = Thread.currentThread().getContextClassLoader();
-        try {
-            Thread.currentThread().setContextClassLoader( getClass().getClassLoader() );
-            emf = Persistence.createEntityManagerFactory( "org.drools.persistence.jpa" );
-        } finally {
-            Thread.currentThread().setContextClassLoader( cl );
-        }
+//        ClassLoader cl = Thread.currentThread().getContextClassLoader();
+//        try {
+//            Thread.currentThread().setContextClassLoader( HibernatePersistence.class.getClassLoader() );
+//            emf = Persistence.createEntityManagerFactory( "org.drools.persistence.jpa" );
+//        } finally {
+//            Thread.currentThread().setContextClassLoader( cl );
+//        }
+        //System.out.println( Persistence.getPersistenceUtil().isLoaded(  "org.drools.persistence.jpa" ) );
+//        for ( PersistenceProvider prov : Persistence.getProviderResolver().findAllProviders() ) {
+//            System.out.println( prov );
+//        }
         emf = Persistence.createEntityManagerFactory( "org.drools.persistence.jpa" );
 
     }

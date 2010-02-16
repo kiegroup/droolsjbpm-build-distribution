@@ -17,7 +17,7 @@ Import-Package: bitronix.tm;version="1.3",bitronix.tm.gui;version="1.3
  javax.swing.event;resolution:=optional,javax.swing.table;resolution:=
  optional,javax.swing.tree;resolution:=optional,javax.transaction,java
  x.transaction.xa;resolution:=optional,org.slf4j;version="1.5"
-Bnd-LastModified: 1266280253029
+Bnd-LastModified: 1266282021261
 Export-Package: bitronix.tm;uses:="bitronix.tm.resource.common,bitroni
  x.tm.twopc,bitronix.tm.resource,javax.transaction.xa,bitronix.tm.util
  s,bitronix.tm.twopc.executor,org.slf4j,bitronix.tm.journal,bitronix.t
