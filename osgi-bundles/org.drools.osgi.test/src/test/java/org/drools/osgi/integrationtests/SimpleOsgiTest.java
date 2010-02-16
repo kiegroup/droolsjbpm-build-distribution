@@ -10,7 +10,6 @@ import org.drools.builder.KnowledgeBuilder;
 import org.drools.builder.KnowledgeBuilderConfiguration;
 import org.drools.builder.KnowledgeBuilderFactoryService;
 import org.drools.builder.ResourceType;
-import org.test.decisiontable.Dummy;
 import org.drools.io.ResourceFactoryService;
 import org.drools.osgi.test.AbstractDroolsSpringDMTest;
 import org.drools.runtime.StatefulKnowledgeSession;
@@ -21,8 +20,17 @@ import org.osgi.framework.ServiceReference;
 import org.springframework.osgi.util.OsgiStringUtils;
 import org.test.Cheese;
 import org.test.Person;
+import org.test.decisiontable.Dummy;
 
 public class SimpleOsgiTest extends AbstractDroolsSpringDMTest {
+
+    protected void onSetUp() throws Exception {
+        super.onSetUp();
+    }
+
+    protected void onTearDown() throws Exception {
+        super.onTearDown();
+    }
 
     public void testOsgiPlatformStarts() throws Exception {
         System.out.println( bundleContext.getProperty( Constants.FRAMEWORK_VENDOR ) );

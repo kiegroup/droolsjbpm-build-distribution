@@ -30,6 +30,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
 	</properties>
 	
    <modules>
+      <module>btm/org.drools.osgi.wrapper.btm</module>
       <module>jxls/org.drools.osgi.wrapper.jxls-reader</module>
       <module>org.milyn/org.drools.osgi.wrapper.milyn-smooks-javabean</module>
       <module>org.mvel/org.drools.osgi.wrapper.mvel2</module>
@@ -112,27 +113,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
       </plugins>
    </build>
    <dependencies>
-      <!-- wrapped -->
-      <dependency>
-         <groupId>org.drools</groupId>
-         <artifactId>drools-api</artifactId>
-      </dependency>	
-      <dependency>
-         <groupId>org.drools</groupId>
-         <artifactId>drools-core</artifactId>
-      </dependency>	
-	  <dependency>
-         <groupId>org.drools</groupId>
-         <artifactId>drools-compiler</artifactId>
-      </dependency>	   
-	  <dependency>
-         <groupId>org.drools</groupId>
-         <artifactId>drools-templates</artifactId>
-      </dependency>	 
-	  <dependency>
-         <groupId>org.drools</groupId>
-         <artifactId>drools-decisiontables</artifactId>
-      </dependency>	    
+  
       <!-- wrapped -->
       <dependency>
          <groupId>org.drools</groupId>
@@ -167,6 +148,12 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
                <artifactId>mvel2</artifactId>
             </exclusion>
          </exclusions>
+      </dependency>	  
+	  
+      <dependency>
+         <groupId>org.drools</groupId>
+         <artifactId>org.drools.osgi.wrapper.btm</artifactId>
+         <version>1.3.3</version>
       </dependency>	  
 	  
 	  
@@ -299,6 +286,31 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
          <artifactId>com.springsource.com.sun.xml.bind</artifactId>
          <version>2.1.7</version>
       </dependency>
+     <dependency>  
+	    <groupId>javax.xml.bind</groupId>  
+		<artifactId>com.springsource.javax.xml.bind</artifactId>  
+		<version>2.1.7</version> 
+	 </dependency>	  
+      <dependency>  
+	     <groupId>com.sun.xml</groupId>  
+	 	 <artifactId>com.springsource.com.sun.xml.bind.jaxb1</artifactId>  
+ 		 <version>2.1.7</version> 
+	  </dependency>	
+      <dependency>  
+	     <groupId>com.sun.msv</groupId>  
+		 <artifactId>com.springsource.com.sun.msv.datatype</artifactId>  
+		 <version>0.0.0.20060615</version> 
+	  </dependency>	 
+      <dependency>  
+	     <groupId>org.relaxng</groupId>  
+	     <artifactId>com.springsource.org.relaxng.datatype</artifactId>  
+	     <version>1.0.0</version> 
+	  </dependency>	
+      <dependency>  
+	     <groupId>net.sourceforge.iso-relax</groupId>  
+		 <artifactId>com.springsource.org.iso_relax.verifier</artifactId>  
+		 <version>0.0.0.20041111</version> 
+	  </dependency>	
       <dependency>
          <groupId>com.sun.xml</groupId>
          <artifactId>com.springsource.com.sun.tools.xjc</artifactId>
@@ -319,13 +331,17 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
 		 <artifactId>com.springsource.com.sun.xml.fastinfoset</artifactId> 
 		 <version>1.2.2</version> 
 	  </dependency>
+      <dependency>  
+	     <groupId>org.jvnet.staxex</groupId> 
+		 <artifactId>com.springsource.org.jvnet.staxex</artifactId>  
+		 <version>1.0.0</version> 
+      </dependency>	  
 	  
 	  <!-- Logging -->
 	 <dependency>
 		  <groupId>org.slf4j</groupId>
 		  <artifactId>com.springsource.slf4j.org.apache.commons.logging</artifactId>
 		  <version>${slf4j.version}</version>
-		  <scope>provided</scope>
 	 </dependency>	  
       <dependency>
          <groupId>org.slf4j</groupId>
@@ -415,7 +431,6 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
 			<groupId>org.aopalliance</groupId>
 			<artifactId>com.springsource.org.aopalliance</artifactId>
 			<version>1.0.0</version>
-			<scope>provided</scope>
 		</dependency>		     		
 		<dependency>
            <groupId>org.aspectj</groupId>  
@@ -438,12 +453,40 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
 			<version>1.0.0-200905031323</version>
 		</dependency>	  
 		
+	  <dependency>  <groupId>org.jgroups</groupId>  <artifactId>com.springsource.org.jgroups</artifactId>  <version>2.5.1</version> </dependency>
+<dependency>  <groupId>edu.oswego.cs.concurrent</groupId>  <artifactId>com.springsource.edu.oswego.cs.dl.util.concurrent</artifactId>  <version>1.3.4</version> </dependency>	  
+	  <dependency>  <groupId>org.jboss.cache</groupId>  <artifactId>com.springsource.org.jboss.cache</artifactId>  <version>3.2.0.GA</version> </dependency>
+	  <dependency>  <groupId>org.apache.ant</groupId>  <artifactId>com.springsource.org.apache.tools.ant</artifactId>  <version>1.7.1</version> </dependency>
+	  <!--dependency>  <groupId>com.opensymphony.oscache</groupId>  <artifactId>com.springsource.com.opensymphony.oscache</artifactId>  <version>2.4.1</version> </dependency-->
+<dependency>  <groupId>com.mchange.c3p0</groupId>  <artifactId>com.springsource.com.mchange.v2.c3p0</artifactId>  <version>0.9.1.2</version> </dependency>	  
+	  <dependency>  <groupId>org.logicalcobwebs</groupId>  <artifactId>com.springsource.org.logicalcobwebs.proxool</artifactId>  <version>0.9.1</version> </dependency>
+<dependency>  <groupId>org.logicalcobwebs</groupId>  <artifactId>com.springsource.org.logicalcobwebs.cglib.core</artifactId>  <version>0.9.1</version> </dependency>	  
+<dependency>  <groupId>net.sourceforge.cglib</groupId>  <artifactId>com.springsource.net.sf.cglib</artifactId>  <version>2.2.0</version> </dependency>
+<dependency>  <groupId>org.beanshell</groupId>  <artifactId>com.springsource.bsh</artifactId>  <version>2.0.0.b4</version> </dependency>
+<dependency>  <groupId>org.bouncycastle</groupId>  <artifactId>com.springsource.org.bouncycastle.jce</artifactId>  <version>1.39.0</version> </dependency>
+<dependency>  <groupId>net.sourceforge.jdbm</groupId>  <artifactId>com.springsource.jdbm</artifactId>  <version>1.0.0</version> </dependency>
+	  <dependency>  <groupId>com.sleepycat.je</groupId>  <artifactId>com.springsource.com.sleepycat.je</artifactId>  <version>3.3.87</version> </dependency>
+<dependency>  <groupId>org.apache.bsf</groupId>  <artifactId>com.springsource.org.apache.bsf</artifactId>  <version>2.4.0</version> </dependency>		
+<dependency> <groupId>javax.servlet</groupId> <artifactId>com.springsource.javax.servlet</artifactId> <version>2.5.0</version> </dependency>		
+<dependency>  <groupId>net.sourceforge.ehcache</groupId>  <artifactId>com.springsource.net.sf.ehcache</artifactId>  <version>1.6.2</version> </dependency>
+		
+		
 		<!-- Persistence -->
         <dependency>  
 		   <groupId>javax.persistence</groupId>  
 		   <artifactId>com.springsource.javax.persistence</artifactId>  
-		   <version>2.0.0</version> 
-		</dependency>			
+		   <version>1.99.0</version> 
+		</dependency>	
+        <dependency>  
+		   <groupId>javax.transaction</groupId>  
+		   <artifactId>com.springsource.javax.transaction</artifactId>  
+		   <version>1.1.0</version> 
+		</dependency>		
+       <dependency>  
+	      <groupId>org.hibernate</groupId>  
+		  <artifactId>com.springsource.org.hibernate</artifactId>  
+		  <version>3.3.2.GA</version> 
+	   </dependency>	
 		<dependency>  
 		   <groupId>org.hibernate</groupId>  
 		   <artifactId>com.springsource.org.hibernate.ejb</artifactId>  
@@ -459,6 +502,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
 	  	  <artifactId>com.springsource.org.hibernate.annotations.common</artifactId>  
 	   	  <version>3.3.0.ga</version> 
        </dependency>	   
+<dependency>  <groupId>org.hibernate</groupId>  <artifactId>com.springsource.org.hibernate.cache</artifactId>  <version>3.3.2.GA</version> </dependency>	  	   
 	   <dependency>  
 	      <groupId>org.jboss.util</groupId>  
 		  <artifactId>com.springsource.org.jboss.util</artifactId>  
@@ -470,6 +514,11 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
 		  <version>2.0.5.GA</version> 
 	   </dependency>	  
 	  
+       <dependency>  
+		   <groupId>com.h2database</groupId>  
+		   <artifactId>com.springsource.org.h2</artifactId>  
+		   <version>1.0.71</version> 
+		</dependency>	  
 	  
 	  <!-- Test Scoped -->
 		<!-- Equinox OSGi platform -->

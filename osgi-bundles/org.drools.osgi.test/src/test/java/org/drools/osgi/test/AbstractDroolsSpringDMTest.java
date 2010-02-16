@@ -1,6 +1,8 @@
 package org.drools.osgi.test;
 
 import org.drools.osgi.test.utils.EclipseWorkspaceArtifactLocator;
+import org.osgi.framework.Bundle;
+import org.osgi.framework.BundleContext;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.Resource;
 import org.springframework.osgi.test.AbstractConfigurableBundleCreatorTests;
@@ -25,6 +27,25 @@ public abstract class AbstractDroolsSpringDMTest extends AbstractConfigurableBun
 
     }
     
+    @Override
+    protected void preProcessBundleContext(BundleContext platformBundleContext) throws Exception {
+        super.preProcessBundleContext( platformBundleContext );
+    }
+    
+    @Override
+    protected void postProcessBundleContext(BundleContext context) throws Exception {
+        try { 
+            super.postProcessBundleContext( context );
+        } catch( Exception e ) {
+            e.printStackTrace();
+            
+            for ( Bundle bundle : context.getBundles() ) {
+                System.out.println( bundle );
+            }
+
+            throw e;
+        }
+    }
 
     @Override
     /*

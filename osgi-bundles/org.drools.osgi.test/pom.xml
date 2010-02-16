@@ -13,6 +13,40 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
    <name>Spring OSGi Test</name>
    <version>5.1.0.SNAPSHOT</version>
    <url>http://drools.org</url>
+   
+   <dependencies>
+      <dependency>
+         <groupId>org.drools</groupId>
+         <artifactId>drools-api</artifactId>
+      </dependency>	
+      <dependency>
+         <groupId>org.drools</groupId>
+         <artifactId>drools-core</artifactId>
+      </dependency>	
+	  <dependency>
+         <groupId>org.drools</groupId>
+         <artifactId>drools-compiler</artifactId>
+      </dependency>	   
+	  <dependency>
+         <groupId>org.drools</groupId>
+         <artifactId>drools-templates</artifactId>
+      </dependency>	 
+	  <dependency>
+         <groupId>org.drools</groupId>
+         <artifactId>drools-decisiontables</artifactId>
+      </dependency>	   
+	  	  <dependency>
+         <groupId>org.drools</groupId>
+         <artifactId>drools-persistence-jpa</artifactId>
+      </dependency>
+	  
+	  <dependency>
+	      <groupId>org.codehaus.btm</groupId>
+		  <artifactId>btm</artifactId>
+      </dependency>		  
+
+   </dependencies>
+   
    <build>
       <plugins>
          <plugin>
@@ -44,6 +78,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
 	            <exclude>org.drools:org.drools.osgi.wrapper.mvel2</exclude>
 	            <exclude>org.drools:org.drools.osgi.wrapper.milyn-smooks-javabean</exclude>
 	            <exclude>org.drools:org.drools.osgi.wrapper.jxls-reader</exclude>
+				<exclude>org.drools:org.drools.osgi.wrapper.btm</exclude>
 				<exclude>org.mvel:mvel2</exclude>
 	          </excludes>
 	        </configuration>
