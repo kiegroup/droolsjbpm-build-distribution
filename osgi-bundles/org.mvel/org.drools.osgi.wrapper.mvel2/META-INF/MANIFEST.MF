@@ -56,7 +56,7 @@ Bundle-Name: mvel2
 Bnd-LastModified: 1265663885274
 Created-By: 1.6.0_18 (Sun Microsystems Inc.)
 Bundle-ManifestVersion: 2
-Bundle-SymbolicName: org.mvel2
+Bundle-SymbolicName: org.drools.osgi.wrapper.mvel2
 Import-Package: org.mvel2;version="2.0",org.mvel2.asm;version="2.0",or
  g.mvel2.asm.signature;version="2.0",org.mvel2.asm.util;version="2.0",
  org.mvel2.ast;version="2.0",org.mvel2.compiler;version="2.0",org.mvel

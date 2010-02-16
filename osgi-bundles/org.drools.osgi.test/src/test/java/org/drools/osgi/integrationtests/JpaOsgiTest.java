@@ -68,6 +68,8 @@ public class JpaOsgiTest extends AbstractDroolsSpringDMTest {
 
         URL url = getClass().getClassLoader().getResource( "META-INF/persistence.xml" );
         System.out.println( url );
+        
+        System.out.println( HibernatePersistence.class );
 
 //        ClassLoader cl = Thread.currentThread().getContextClassLoader();
 //        try {
