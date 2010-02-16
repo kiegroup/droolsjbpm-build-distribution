@@ -81,9 +81,9 @@
   <classpathentry kind="src" path="/drools-api"/>
   <classpathentry kind="src" path="/drools-compiler"/>
   <classpathentry kind="src" path="/drools-core"/>
-  <classpathentry kind="var" path="M2_REPO/org/drools/drools-decisiontables/5.1.0.SNAPSHOT/drools-decisiontables-5.1.0.SNAPSHOT.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/drools/drools-persistence-jpa/5.1.0.SNAPSHOT/drools-persistence-jpa-5.1.0.SNAPSHOT.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/drools/drools-templates/5.1.0.SNAPSHOT/drools-templates-5.1.0.SNAPSHOT.jar"/>
+  <classpathentry kind="src" path="/drools-decisiontables"/>
+  <classpathentry kind="src" path="/drools-persistence-jpa"/>
+  <classpathentry kind="src" path="/drools-templates"/>
   <classpathentry kind="var" path="M2_REPO/org/hibernate/ejb3-persistence/1.0.2.GA/ejb3-persistence-1.0.2.GA.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/apache/geronimo/specs/geronimo-jms_1.1_spec/1.0.1/geronimo-jms_1.1_spec-1.0.1.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/apache/geronimo/specs/geronimo-jta_1.0.1B_spec/1.0.1/geronimo-jta_1.0.1B_spec-1.0.1.jar"/>
