@@ -42,7 +42,8 @@ public class SimpleOsgiTest extends AbstractDroolsSpringDMTest {
         Bundle[] bundles = bundleContext.getBundles();
         System.out.println( "bundles: " );
         for ( int i = 0; i < bundles.length; i++ ) {
-            System.out.print( OsgiStringUtils.nullSafeName( bundles[i] ) );
+            
+            System.out.print( bundles[i].getSymbolicName() );
             System.out.print( ", " );
         }
         System.out.println();
