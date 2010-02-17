@@ -150,11 +150,11 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
          </exclusions>
       </dependency>	  
 	  
-      <dependency>
+      <!--dependency>
          <groupId>org.drools</groupId>
          <artifactId>org.drools.osgi.wrapper.btm</artifactId>
          <version>1.3.3</version>
-      </dependency>	  
+      </dependency-->	  
 	  
 	  
 	  <!-- spring -->
