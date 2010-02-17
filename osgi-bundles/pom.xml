@@ -30,7 +30,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
 	</properties>
 	
    <modules>
-      <module>btm/org.drools.osgi.wrapper.btm</module>
+      <!--module>btm/org.drools.osgi.wrapper.btm</module-->
       <module>jxls/org.drools.osgi.wrapper.jxls-reader</module>
       <module>org.milyn/org.drools.osgi.wrapper.milyn-smooks-javabean</module>
       <module>org.mvel/org.drools.osgi.wrapper.mvel2</module>
