@@ -35,15 +35,15 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
          <groupId>org.drools</groupId>
          <artifactId>drools-decisiontables</artifactId>
       </dependency>	   
-	  	  <dependency>
+	  <!--dependency>
          <groupId>org.drools</groupId>
          <artifactId>drools-persistence-jpa</artifactId>
-      </dependency>
-	  
+      </dependency-->
 	  <dependency>
-	      <groupId>org.codehaus.btm</groupId>
-		  <artifactId>btm</artifactId>
-      </dependency>		  
+         <groupId>org.drools</groupId>
+         <artifactId>drools-bpmn2</artifactId>
+      </dependency>
+      	  	  
 
    </dependencies>
    

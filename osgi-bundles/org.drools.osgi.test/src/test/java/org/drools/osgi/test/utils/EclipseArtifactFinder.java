@@ -6,6 +6,7 @@ import java.io.FilenameFilter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
@@ -200,13 +201,27 @@ public class EclipseArtifactFinder {
         Set<Resource> eclipseProjects = new HashSet<Resource>();
         
         // Scan plugins exploded as unpacked JAR directories
-        for (File projectFolder : folder.listFiles(m_DirectoryFilter))
+        for (File projectFolder : folder.listFiles(m_DirectoryFilter)) {
             eclipseProjects.add(new FileSystemResource(projectFolder));
+        }
 
         for (Resource resource : eclipseProjects) {
             Manifest man = getManifestFromProject(resource);
-            if (man != null)
+            if (man != null) {
                 addPlugin(plugins, resource, man, true);
+            } else {
+            	// this is not a project folder, so descend to find potential nested modules
+            	List<String> list = Arrays.asList( ((FileSystemResource)resource).getFile().list() );
+        		for ( String str : list ) {
+        			// do not process eclipse proejcts at the moment
+        			if ( str.contains( "drools-eclipse" ) ||  str.contains( "osgi-bundles" ) ) {
+        				list = null;
+        			}
+        		}            	
+            	if ( list != null && list.contains("pom.xml")) {
+            		importPluginFromFolder(((FileSystemResource)resource).getFile(), plugins);
+            	}
+            }
         }
 
         Set<Resource> packagedBundles = new HashSet<Resource>();

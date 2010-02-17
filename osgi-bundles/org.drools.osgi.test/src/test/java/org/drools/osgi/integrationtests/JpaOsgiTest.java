@@ -20,7 +20,6 @@ import org.drools.builder.KnowledgeBuilderFactoryService;
 import org.drools.builder.ResourceType;
 import org.drools.io.ResourceFactoryService;
 import org.drools.osgi.test.AbstractDroolsSpringDMTest;
-import org.drools.persistence.jpa.impl.JPAKnowledgeServiceProviderImpl;
 import org.drools.runtime.Environment;
 import org.drools.runtime.EnvironmentName;
 import org.drools.runtime.StatefulKnowledgeSession;

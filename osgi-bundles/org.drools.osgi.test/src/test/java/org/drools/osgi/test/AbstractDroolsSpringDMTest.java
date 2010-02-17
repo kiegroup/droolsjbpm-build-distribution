@@ -70,13 +70,13 @@ public abstract class AbstractDroolsSpringDMTest extends AbstractConfigurableBun
      */
     protected Resource locateBundle(String bundleId) {
         Assert.hasText( bundleId,
-                        "bundleId should not be empty" );
-
+                        "bundleId should not be empty" );        
+        
         Resource result = null;
 
         // parse the String
         String[] artifactId = StringUtils.commaDelimitedListToStringArray( bundleId );
-
+        
         Assert.isTrue( artifactId.length >= 3,
                        "the CSV string " + bundleId + " contains too few values" );
         // TODO: add a smarter mechanism which can handle 1 or 2 values CSVs
