@@ -15,23 +15,23 @@ import org.drools.builder.KnowledgeBuilderError;
 import org.drools.builder.KnowledgeBuilderFactoryService;
 import org.drools.builder.ResourceType;
 import org.drools.compiler.PackageBuilderConfiguration;
+import org.drools.compiler.xml.XmlProcessReader;
 import org.drools.io.ResourceFactoryService;
 import org.drools.osgi.test.AbstractDroolsSpringDMTest;
 import org.drools.ruleflow.core.RuleFlowProcess;
 import org.drools.runtime.StatefulKnowledgeSession;
 import org.drools.runtime.process.ProcessInstance;
 import org.drools.util.ServiceRegistry;
-import org.drools.xml.XmlProcessReader;
 import org.osgi.framework.ServiceReference;
 
 public class BPMN2OsgiTest extends AbstractDroolsSpringDMTest {
 
     protected void onSetUp() throws Exception {
-        super.onSetUp();
+        
     }
 
     protected void onTearDown() throws Exception {
-        super.onTearDown();
+        
     }
 
 	public void testMinimalProcess() throws Exception {		

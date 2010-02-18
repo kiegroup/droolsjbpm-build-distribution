@@ -22,6 +22,18 @@ public abstract class AbstractDroolsSpringDMTest extends AbstractConfigurableBun
     private static final String TEST_FRAMEWORK_BUNDLES_CONF_FILE = "/boot-bundles.properties";
     private ArtifactLocator     m_MavenArtifactLocator, m_EclipseArtifactLocator;
     
+    @Override
+    protected boolean createManifestOnlyFromTestClass() {
+        return false;
+    }
+    
+    @Override
+    protected void setDirty() {
+        System.out.println( "This is dirty" );
+    }
+    
+    
+    
     protected void onSetUp() throws Exception
     {
 

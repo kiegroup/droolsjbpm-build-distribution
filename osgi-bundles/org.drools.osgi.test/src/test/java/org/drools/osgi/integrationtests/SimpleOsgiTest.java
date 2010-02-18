@@ -25,14 +25,14 @@ import org.test.decisiontable.Dummy;
 public class SimpleOsgiTest extends AbstractDroolsSpringDMTest {
 
     protected void onSetUp() throws Exception {
-        super.onSetUp();
+        
     }
 
     protected void onTearDown() throws Exception {
-        super.onTearDown();
+        
     }
 
-    public void testOsgiPlatformStarts() throws Exception {
+    public void testOsgiPlatformStarts() throws Exception {      
         System.out.println( bundleContext.getProperty( Constants.FRAMEWORK_VENDOR ) );
         System.out.println( bundleContext.getProperty( Constants.FRAMEWORK_VERSION ) );
         System.out.println( bundleContext.getProperty( Constants.FRAMEWORK_EXECUTIONENVIRONMENT ) );
@@ -49,11 +49,12 @@ public class SimpleOsgiTest extends AbstractDroolsSpringDMTest {
         System.out.println();
     }
 
-    public void testCompiler() {
+    public void testCompiler() {        
         ServiceReference serviceRef = bundleContext.getServiceReference( ServiceRegistry.class.getName() );
         ServiceRegistry registry = (ServiceRegistry) bundleContext.getService( serviceRef );
 
         KnowledgeBuilderFactoryService knowledgeBuilderFactoryService = registry.get( KnowledgeBuilderFactoryService.class );
+        System.out.println( KnowledgeBaseFactoryService.class );
         KnowledgeBaseFactoryService knowledgeBaseFactoryService = registry.get( KnowledgeBaseFactoryService.class );
         ResourceFactoryService resourceFactoryService = registry.get( ResourceFactoryService.class );
 

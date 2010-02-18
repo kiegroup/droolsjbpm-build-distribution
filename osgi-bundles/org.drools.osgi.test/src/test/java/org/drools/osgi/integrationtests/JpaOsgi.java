@@ -36,10 +36,9 @@ import org.test.decisiontable.Dummy;
 //import bitronix.tm.TransactionManagerServices;
 //import bitronix.tm.resource.jdbc.PoolingDataSource;
 
-public class JpaOsgiTest extends AbstractDroolsSpringDMTest {
+public class JpaOsgi {
 
 	public void testDummyMethod() {
-		
 	}
 //    PoolingDataSource            ds1;
 //    private EntityManagerFactory emf;
