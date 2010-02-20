@@ -42,8 +42,7 @@ public class SimpleOsgiTest extends AbstractDroolsSpringDMTest {
         Bundle[] bundles = bundleContext.getBundles();
         System.out.println( "bundles: " );
         for ( int i = 0; i < bundles.length; i++ ) {
-            
-            System.out.print( bundles[i].getSymbolicName() );
+            System.out.print( bundles[i].getSymbolicName() + ":" + bundles[i].getState() );
             System.out.print( ", " );
         }
         System.out.println();
@@ -54,7 +53,7 @@ public class SimpleOsgiTest extends AbstractDroolsSpringDMTest {
         ServiceRegistry registry = (ServiceRegistry) bundleContext.getService( serviceRef );
 
         KnowledgeBuilderFactoryService knowledgeBuilderFactoryService = registry.get( KnowledgeBuilderFactoryService.class );
-        System.out.println( KnowledgeBaseFactoryService.class );
+        
         KnowledgeBaseFactoryService knowledgeBaseFactoryService = registry.get( KnowledgeBaseFactoryService.class );
         ResourceFactoryService resourceFactoryService = registry.get( ResourceFactoryService.class );
 

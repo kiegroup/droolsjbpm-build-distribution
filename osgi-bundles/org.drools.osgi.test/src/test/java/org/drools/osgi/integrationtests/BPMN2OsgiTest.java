@@ -1,5 +1,7 @@
 package org.drools.osgi.integrationtests;
 
+import javax.xml.parsers.DocumentBuilderFactory;
+
 import org.drools.KnowledgeBase;
 import org.drools.KnowledgeBaseFactoryService;
 import org.drools.builder.KnowledgeBuilder;
@@ -11,6 +13,7 @@ import org.drools.osgi.test.AbstractDroolsSpringDMTest;
 import org.drools.runtime.StatefulKnowledgeSession;
 import org.drools.runtime.process.ProcessInstance;
 import org.drools.util.ServiceRegistry;
+import org.osgi.framework.Bundle;
 import org.osgi.framework.ServiceReference;
 
 public class BPMN2OsgiTest extends AbstractDroolsSpringDMTest {

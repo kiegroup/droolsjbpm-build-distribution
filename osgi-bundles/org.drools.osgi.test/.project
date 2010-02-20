@@ -3,10 +3,10 @@
   <comment>A rule production system</comment>
   <projects>
     <project>drools-api</project>
+    <project>drools-bpmn2</project>
     <project>drools-compiler</project>
     <project>drools-core</project>
     <project>drools-decisiontables</project>
-    <project>drools-persistence-jpa</project>
     <project>drools-templates</project>
   </projects>
   <buildSpec>

@@ -27,13 +27,6 @@ public abstract class AbstractDroolsSpringDMTest extends AbstractConfigurableBun
         return false;
     }
     
-    @Override
-    protected void setDirty() {
-        System.out.println( "This is dirty" );
-    }
-    
-    
-    
     protected void onSetUp() throws Exception
     {
 
@@ -41,7 +34,11 @@ public abstract class AbstractDroolsSpringDMTest extends AbstractConfigurableBun
     
     @Override
     protected void preProcessBundleContext(BundleContext platformBundleContext) throws Exception {
-        super.preProcessBundleContext( platformBundleContext );
+        try { 
+            super.preProcessBundleContext( platformBundleContext );
+        } catch( Exception e ) {
+            throw e;
+        }
     }
     
     @Override
@@ -49,12 +46,6 @@ public abstract class AbstractDroolsSpringDMTest extends AbstractConfigurableBun
         try { 
             super.postProcessBundleContext( context );
         } catch( Exception e ) {
-            e.printStackTrace();
-            
-            for ( Bundle bundle : context.getBundles() ) {
-                System.out.println( bundle );
-            }
-
             throw e;
         }
     }
