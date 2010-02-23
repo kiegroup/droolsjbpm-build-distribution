@@ -80,8 +80,9 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
                   </configuration>
                </execution>
 			   
-          <execution>
-            <id>copy earlier version of asm</id>
+          <!-- This copy won't work in hudson, so committing jars for now
+		  execution>
+             <id>copy earlier version of asm</id>
              <phase>generate-resources</phase>
             <goals>
                <goal>copy</goal>
@@ -107,7 +108,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
                      <outputDirectory>plugins</outputDirectory>
                      <overWriteReleases>true</overWriteReleases>
             </configuration>
-          </execution>			   
+          </execution-->			   
             </executions>
          </plugin>
       </plugins>
