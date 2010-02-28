@@ -50,22 +50,26 @@ public class BPMN2OsgiTest extends AbstractDroolsSpringDMTest {
         KnowledgeBaseFactoryService knowledgeBaseFactoryService = registry.get( KnowledgeBaseFactoryService.class );
         ResourceFactoryService resourceFactoryService = registry.get( ResourceFactoryService.class );
         
-        KnowledgeBuilderConfiguration conf = knowledgeBuilderFactoryService.newKnowledgeBuilderConfiguration();
-        ((PackageBuilderConfiguration) conf).initSemanticModules();
-        ((PackageBuilderConfiguration) conf).addSemanticModule(new BPMNSemanticModule());
-        ((PackageBuilderConfiguration) conf).addSemanticModule(new BPMN2SemanticModule());
-        ((PackageBuilderConfiguration) conf).addSemanticModule(new BPMNDISemanticModule());
-        ((PackageBuilderConfiguration) conf).addDialect("XPath", new XPathDialectConfiguration());        
+        KnowledgeBuilder kbuilder = knowledgeBuilderFactoryService.newKnowledgeBuilder();
+        kbuilder.add(resourceFactoryService.newClassPathResource(process, BPMN2OsgiTest.class), ResourceType.BPMN2);
         
-        XmlProcessReader processReader = new XmlProcessReader(
-            ((PackageBuilderConfiguration) conf).getSemanticModules());
-        RuleFlowProcess p = (RuleFlowProcess)
-            processReader.read(BPMN2OsgiTest.class.getResourceAsStream(process));               
+//        KnowledgeBuilderConfiguration conf = knowledgeBuilderFactoryService.newKnowledgeBuilderConfiguration();
+//        ((PackageBuilderConfiguration) conf).initSemanticModules();
+//        ((PackageBuilderConfiguration) conf).addSemanticModule(new BPMNSemanticModule());
+//        ((PackageBuilderConfiguration) conf).addSemanticModule(new BPMN2SemanticModule());
+//        ((PackageBuilderConfiguration) conf).addSemanticModule(new BPMNDISemanticModule());
+//        ((PackageBuilderConfiguration) conf).addDialect("XPath", new XPathDialectConfiguration());        
+//        
+//        XmlProcessReader processReader = new XmlProcessReader(
+//            ((PackageBuilderConfiguration) conf).getSemanticModules());
+//        RuleFlowProcess p = (RuleFlowProcess)
+//            processReader.read(BPMN2OsgiTest.class.getResourceAsStream(process));               
+//        
+//        KnowledgeBuilder kbuilder = knowledgeBuilderFactoryService.newKnowledgeBuilder(conf);
+//        
+//        kbuilder.add(resourceFactoryService.newReaderResource(
+//            new StringReader(XmlBPMNProcessDumper.INSTANCE.dump(p))), ResourceType.DRF);
         
-        KnowledgeBuilder kbuilder = knowledgeBuilderFactoryService.newKnowledgeBuilder(conf);
-        
-        kbuilder.add(resourceFactoryService.newReaderResource(
-            new StringReader(XmlBPMNProcessDumper.INSTANCE.dump(p))), ResourceType.DRF);
         if (!kbuilder.getErrors().isEmpty()) {
             for (KnowledgeBuilderError error: kbuilder.getErrors()) {
                 System.err.println(error);
