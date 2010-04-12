@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="drools.install">
+
+  <property name="drools.version" value="5.1.0.SNAPSHOT" />
+  <property name="drools.home" value="../" />
+
+  <property name="jboss.home" value="/NotBackedUp/jboss-4.2.3.GA" />
+  <property name="jboss.server.configuration" value="default" />
+  <property name="jboss.server.conf.dir" value="${jboss.home}/server/${jboss.server.configuration}/conf" />
+  <property name="jboss.server.data.dir" value="${jboss.home}/server/${jboss.server.configuration}/data" />
+  <property name="jboss.server.deploy.dir" value="${jboss.home}/server/${jboss.server.configuration}/deploy" />
+  <property name="jboss.server.lib.dir" value="${jboss.home}/server/${jboss.server.configuration}/lib" />
+  <property name="jboss.server.birt.dir" value="${jboss.server.data.dir}/birt"/>
+
+  <property name="eclipse.home" value="/NotBackedUp/eclipse" />
+
+  <target name="install.guvnor.into.jboss" 
+          description="Installs Drools Guvnor into JBoss">
+    <copy file="${drools.home}/drools-guvnor/target/drools-guvnor.war"
+          tofile="${jboss.server.deploy.dir}/drools-guvnor.war"
+          overwrite="true" />
+  </target>
+
+  <target name="install.drools-gwt-console.into.jboss" 
+          description="Installs Drools gwt-console into JBoss">
+    <!-- gwt-console -->
+    <mkdir dir="${drools.home}/install/target"/>
+    <mkdir dir="${drools.home}/install/target/drools-gwt-server-war"/>
+    <unzip src="${drools.home}/drools-process/drools-gwt-server-war/target/gwt-console-server-drools-${drools.version}.war"
+           dest="${drools.home}/install/target/drools-gwt-server-war"/>
+    <copy file="${drools.home}/install/db/hibernate.cfg.xml"
+          tofile="${drools.home}/install/target/drools-gwt-server-war/WEB-INF/classes/hibernate.cfg.xml"
+          overwrite="true" />
+    <copy file="${drools.home}/install/db/persistence.xml"
+          tofile="${drools.home}/install/target/drools-gwt-server-war/WEB-INF/classes/META-INF/persistence.xml"
+          overwrite="true" />
+    <!-- Fix for conflicting javassist jar -->
+    <delete file="${drools.home}/install/target/drools-gwt-server-war/WEB-INF/lib/javassist-3.6.0.GA.jar"/>
+    <!-- Other configuration like work item handlers -->
+    <copy todir="${drools.home}/install/target/drools-gwt-server-war/WEB-INF/classes" overwrite="true">
+      <fileset dir="${drools.home}/install/conf"/>
+    </copy>
+    <zip basedir="${drools.home}/install/target/drools-gwt-server-war"
+         destfile="${drools.home}/install/target/gwt-console-server-drools-${drools.version}.war"/>
+    <copy file="${drools.home}/install/target/gwt-console-server-drools-${drools.version}.war"
+          tofile="${jboss.server.deploy.dir}/gwt-console-server-drools.war"
+          overwrite="true" />
+    <delete dir="${drools.home}/install/target"/>
+    <copy file="${drools.home}/drools-process/drools-gwt-war/target/gwt-console-drools-${drools.version}.war"
+          tofile="${jboss.server.deploy.dir}/gwt-console-drools.war"
+          overwrite="true" />
+    <!-- db configuration -->
+    <copy file="${drools.home}/install/db/testDS1-ds.xml"
+          tofile="${jboss.server.deploy.dir}/testDS1-ds.xml"
+          overwrite="true" />
+    <copy todir="${jboss.server.lib.dir}" overwrite="true">
+      <fileset dir="${drools.home}/install/db/driver"/>
+    </copy>
+    <!-- authentication configuration -->
+    <copy file="${drools.home}/install/auth/users.properties"
+          tofile="${jboss.server.conf.dir}/users.properties"
+          overwrite="true" />
+    <copy file="${drools.home}/install/auth/roles.properties"
+          tofile="${jboss.server.conf.dir}/roles.properties"
+          overwrite="true" />
+    <!-- reporting -->
+    <mkdir dir="${drools.home}/install/target"/>
+    <unzip src="${drools.home}/install/lib/birt-runtime-2_3_2_2.zip"
+           dest="${drools.home}/install/target"/>
+    <mkdir dir="${jboss.server.birt.dir}"/>
+    <mkdir dir="${jboss.server.birt.dir}/ReportEngine"/>
+    <copy todir="${jboss.server.birt.dir}/ReportEngine" overwrite="true">
+      <fileset dir="${drools.home}/install/target/birt-runtime-2_3_2/ReportEngine"/>
+    </copy>
+    <delete dir="${drools.home}/install/target"/>
+    <copy file="${drools.home}/drools-process/drools-bam/src/test/resources/overall_activity.rptdesign"
+          tofile="${jboss.server.birt.dir}/overall_activity.rptdesign"
+          overwrite="true" />
+    <copy file="${drools.home}/drools-process/drools-bam/src/test/resources/process_summary.rptdesign"
+          tofile="${jboss.server.birt.dir}/process_summary.rptdesign"
+          overwrite="true" />
+    <copy todir="${jboss.server.birt.dir}/ReportEngine/plugins/org.eclipse.birt.report.data.oda.jdbc_2.3.2.r232_v20090212/drivers" overwrite="true">
+      <fileset dir="${drools.home}/install/db/driver"/>
+    </copy>
+  </target>
+
+  <target name="install.drools-eclipse.into.eclipse" 
+          description="Installs Drools Eclipse plugins into Eclipse">
+    <!-- install plugins -->
+    <unzip src="${drools.home}/drools-eclipse/drools-eclipse-build/target/org.drools.eclipse-${drools.version}.zip" dest="${eclipse.home}"/>
+    <unzip src="${drools.home}/drools-eclipse/drools-eclipse-build/target/org.drools.eclipse.task-${drools.version}.zip" dest="${eclipse.home}"/>
+    <unzip src="${drools.home}/drools-eclipse/drools-eclipse-build/target/org.guvnor.tools-${drools.version}.zip" dest="${eclipse.home}"/>
+    <!-- create runtime -->
+    <mkdir dir="${drools.home}/install/runtime"/>
+    <copy todir="${drools.home}/install/runtime" overwrite="true">
+      <fileset dir="${drools.home}/drools-eclipse/org.drools.eclipse/lib">
+        <include name="*.jar" />
+      </fileset>
+    </copy>
+    <copy todir="${drools.home}/install/runtime" overwrite="true">
+      <fileset dir="${eclipse.home}/plugins">
+        <include name="org.eclipse.jdt.core_*.jar" />
+      </fileset>
+    </copy>
+  </target>
+
+</project>
