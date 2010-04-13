@@ -6,8 +6,15 @@ Run Drools build: in Drools root folder run "mvn -Dmaven.test.skip -Declipse ins
 Download and install JBoss AS version 4.2.3.GA
 In install/build.xml, change <property name="jboss.home" value="C:/jboss-4.2.3.GA" /> to the location of your JBoss AS installation
 
-Increase the memory that can be used by the application server (especially the PermGen space). To do so, edit the run.conf or run.bat (depending on your OS, Linux/Mac or Windows respectively) in the bin dir of your JBoss AS root folder and add the following line at the end of the file:
-JAVA_OPTS="$JAVA_OPTS -XX:MaxPermSize=256m"
+Increase the memory that can be used by the application server (especially the PermGen space). To do so,
+On linux: 
+  edit the run.conf in your JBoss AS bin folder and add the following line at the end of the file:
+  JAVA_OPTS="$JAVA_OPTS -XX:MaxPermSize=256m"
+On windows: 
+  edit the run.bat in your JBoss AS bin folder and change the following line:
+  set JAVA_OPTS=%JAVA_OPTS% -Xms128m -Xmx512m
+  to
+  set JAVA_OPTS=%JAVA_OPTS% -Xms128m -Xmx512m -XX:MaxPermSize=256m
 
 Download Eclipse 3.5.1
 In build.xml, change <property name="eclipse.home" value="C:/Progra~1/eclipse-3.5.1" /> to the location of your Eclipse installation
