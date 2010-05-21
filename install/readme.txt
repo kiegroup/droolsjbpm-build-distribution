@@ -4,7 +4,7 @@ Run Drools build: in Drools root folder run "mvn -Dmaven.test.skip -Declipse ins
 (if it is the first time you do this, this could take a while as it will be downloading eclipse as part of the installation, you can remove the -Declipse part if you're not interested in the Eclipse plugin)
 
 Download and install JBoss AS version 4.2.3.GA
-In install/build.xml, change <property name="jboss.home" value="C:/jboss-4.2.3.GA" /> to the location of your JBoss AS installation
+In install/build.properties, change the jboss.home property to the location of your JBoss AS installation
 
 Increase the memory that can be used by the application server (especially the PermGen space). To do so,
 On linux: 
@@ -17,7 +17,7 @@ On windows:
   set JAVA_OPTS=%JAVA_OPTS% -Xms128m -Xmx512m -XX:MaxPermSize=256m
 
 Download Eclipse 3.5.1
-In build.xml, change <property name="eclipse.home" value="C:/Progra~1/eclipse-3.5.1" /> to the location of your Eclipse installation
+In install/build.properties, change the eclipse.home property to the location of your Eclipse installation
 
 Update datasource configuration if necessary (uses h2 in memory database by default).
 [You don't need to change anything to these files if you just want to use this default configuration]
@@ -26,10 +26,7 @@ install/db/persistence.xml
 install/db/hibernate.cfg.xml
 
 Put database driver jar in install/db/driver directory (e.g. h2-1.1.117.jar, create the driver dir if necessary)
-
-Down BIRT report engine
-http://www.eclipse.org/downloads/download.php?file=/birt/downloads/drops/R-R1-2_3_2_2-200906011507/birt-runtime-2_3_2_2.zip
-and put it in install/lib dir (create the lib dir if necessary)
+By default, it will download the h2.jar.
 
 in the install dir, run installation script:
 ant install.guvnor.into.jboss
