@@ -6,54 +6,147 @@
 
   <property name="drools.version" value="5.1.0.SNAPSHOT" />
   <property name="drools.home" value="../" />
+
   <property name="jboss.server.conf.dir" value="${jboss.home}/server/${jboss.server.configuration}/conf" />
   <property name="jboss.server.data.dir" value="${jboss.home}/server/${jboss.server.configuration}/data" />
   <property name="jboss.server.deploy.dir" value="${jboss.home}/server/${jboss.server.configuration}/deploy" />
   <property name="jboss.server.lib.dir" value="${jboss.home}/server/${jboss.server.configuration}/lib" />
   <property name="jboss.server.birt.dir" value="${jboss.server.data.dir}/birt"/>
+  <property name="jboss.bind.address" value="localhost" />
+
   <property name="eclipse.workspace.dir" value="${drools.home}/install/sample/workspace"/>
+
+  <property name="jboss.download.url" value="http://downloads.sourceforge.net/jboss/jboss-4.2.3.GA.zip"/>
   <property name="h2.download.url" value="http://repository.jboss.org/maven2/com/h2database/h2/1.2.124/h2-1.2.124.jar"/>
   <property name="birt.download.url" value="http://www.eclipse.org/downloads/download.php?file=/birt/downloads/drops/R-R1-2_3_2_2-200906011507/birt-runtime-2_3_2_2.zip&amp;url=http://download.eclipse.org/birt/downloads/drops/R-R1-2_3_2_2-200906011507/birt-runtime-2_3_2_2.zip&amp;mirror_id=1"/>
 
-  <target name="install.guvnor.into.jboss" 
-          description="Installs Drools Guvnor into JBoss">
+  <!-- ############ DOWNLOAD ############ -->
+
+  <!-- Download H2 -->
+  <target name="download.h2.check">
+    <echo message="Checking h2 download ..." />
+    <condition property="h2.not.available">
+      <not>
+        <available file="${drools.home}/install/db/driver/h2.jar" />
+      </not>
+    </condition>
+  </target>
+  <target name="download.h2" depends="download.h2.check" if="h2.not.available">
+    <echo message="Getting h2 ..." />
+    <mkdir dir="${drools.home}/install/db/driver"/>
+    <get src="${h2.download.url}" dest="${drools.home}/install/db/driver/h2.jar" />
+  </target>
+
+  <!-- Download BIRT engine (gwt-console) -->
+  <target name="download.birt.check">
+    <echo message="Checking birt reporting engine download ..." />
+    <condition property="birt.not.available">
+      <not>
+        <available file="${drools.home}/install/lib/birt-runtime-2_3_2_2.zip" />
+      </not>
+    </condition>
+  </target> 
+  <target name="download.birt" depends="download.birt.check" if="birt.not.available">
+    <echo message="Getting birt reporting engine ..." />
+    <mkdir dir="${drools.home}/install/lib"/>
+    <get src="${birt.download.url}" dest="${drools.home}/install/lib/birt-runtime-2_3_2_2.zip" />
+  </target>
+
+  <!-- Download JBoss AS -->
+  <target name="download.jboss.check">
+    <echo message="Checking JBoss AS download ..." />
+    <condition property="jboss.not.available">
+      <not>
+        <available file="${drools.home}/install/lib/jboss-4.2.3.GA.zip" />
+      </not>
+    </condition>
+  </target>
+  <target name="download.jboss" depends="download.jboss.check" if="jboss.not.available">
+    <echo message="Getting JBoss AS ..." />
+    <mkdir dir="${drools.home}/install/lib"/>
+    <get src="${jboss.download.url}" dest="${drools.home}/install/lib/jboss-4.2.3.GA.zip" />
+  </target>
+
+  <!-- Download Eclipse -->
+  <condition property="download.type" value="win32">
+    <os family="windows" />
+  </condition>	
+  <condition property="download.type" value="macosx-carbon">
+    <and>
+      <os family="mac" />
+      <os family="unix" />
+    </and>
+  </condition>
+  <condition property="download.type" value="linux-gtk">
+    <and>
+      <not>
+        <os family="mac" />
+      </not>
+      <os family="unix" />
+    </and>
+  </condition>		
+  <condition property="download.extension" value="zip">
+    <os family="windows" />
+  </condition>		
+  <condition property="download.extension" value="tar.gz">
+    <or>
+      <os family="mac" />
+      <os family="unix" />
+    </or>
+  </condition>	
+  <condition property="expandTypeZip" value="true">
+    <equals arg1="${download.extension}" arg2="zip" />
+  </condition>   
+  <condition property="expandTypeTarGz" value="true">
+    <equals arg1="${download.extension}" arg2="tar.gz" />
+  </condition>   
+  <target name="download.eclipse.check">
+    <echo message="Checking Eclipse download ..." />
+    <condition property="eclipse.not.available">
+      <not>
+        <available file="${drools.home}/install/lib/eclipse-SDK-3.5.1-${download.type}.${download.extension}" />
+      </not>
+    </condition>
+  </target>
+  <target name="download.eclipse" depends="download.eclipse.check" if="eclipse.not.available">
+    <echo message="Getting Eclipse ..." />
+    <mkdir dir="${drools.home}/install/lib"/>
+    <get src="http://download.eclipse.org/eclipse/downloads/drops/R-3.5.1-200909170800/eclipse-SDK-3.5.1-${download.type}.${download.extension}"
+         dest="${drools.home}/install/lib/eclipse-SDK-3.5.1-${download.type}.${download.extension}" />
+  </target>
+  <target name="download.eclipse.gef.check">
+    <echo message="Checking Eclipse GEF download ..." />
+    <condition property="eclipse.gef.not.available">
+      <not>
+        <available file="${drools.home}/install/lib/GEF-runtime-3.5.1.zip" />
+      </not>
+    </condition>
+  </target>
+  <target name="download.eclipse.gef" depends="download.eclipse.gef.check" if="eclipse.gef.not.available">
+    <echo message="Getting Eclipse GEF ..." />
+    <mkdir dir="${drools.home}/install/lib"/>
+    <get src="http://download.eclipse.org/tools/gef/downloads/drops/3.5.1/R200909151220/GEF-runtime-3.5.1.zip" 
+         dest="${drools.home}/install/lib/GEF-runtime-3.5.1.zip" />
+  </target>
+
+  <!-- ############ INSTALL ############ -->
+
+  <!-- Install JBoss AS -->
+  <target name="install.jboss" depends="download.jboss">
+    <unzip src="${drools.home}/install/lib/jboss-4.2.3.GA.zip" dest="${drools.home}/install" />
+    <chmod perm="a+x" file="${drools.home}/install/jboss-4.2.3.GA/bin/run.sh" />
+    <chmod perm="a+x" file="${drools.home}/install/jboss-4.2.3.GA/bin/shutdown.sh" />
+  </target>
+
+  <!-- Install guvnor -->
+  <target name="install.guvnor.into.jboss">
     <copy file="${drools.home}/drools-guvnor/target/drools-guvnor.war"
           tofile="${jboss.server.deploy.dir}/drools-guvnor.war"
           overwrite="true" />
   </target>
 
-  <target name="download.h2.check">
-     <echo message="Checking h2 ..." />
-     <condition property="h2.not.available">
-       <not>
-         <available file="${drools.home}/install/db/driver/h2.jar" />
-       </not>
-     </condition>
-  </target> 
-
-  <target name="download.h2" depends="download.h2.check" if="h2.not.available">
-     <echo message="Getting h2 ..." />
-     <mkdir dir="${drools.home}/install/db/driver"/>
-     <get src="${h2.download.url}" dest="${drools.home}/install/db/driver/h2.jar" />
-  </target>
-
-  <target name="download.birt.check">
-     <echo message="Checking birt reporting engine ..." />
-     <condition property="birt.not.available">
-       <not>
-         <available file="${drools.home}/install/lib/birt-runtime-2_3_2_2.zip" />
-       </not>
-     </condition>
-  </target> 
-
-  <target name="download.birt" depends="download.birt.check" if="birt.not.available">
-     <echo message="Getting birt reporting engine ..." />
-     <mkdir dir="${drools.home}/install/lib"/>
-     <get src="${birt.download.url}" dest="${drools.home}/install/lib/birt-runtime-2_3_2_2.zip" />
-  </target>
-
-  <target name="install.drools-gwt-console.into.jboss" depends="download.h2,download.birt"
-          description="Installs Drools gwt-console into JBoss">
+  <!-- Install gwt-console -->
+  <target name="install.drools-gwt-console.into.jboss" depends="download.h2,download.birt">
     <!-- gwt-console -->
     <mkdir dir="${drools.home}/install/target"/>
     <mkdir dir="${drools.home}/install/target/drools-gwt-server-war"/>
@@ -115,8 +208,26 @@
     </copy>
   </target>
 
-  <target name="install.drools-eclipse.into.eclipse" 
-          description="Installs Drools Eclipse plugins into Eclipse">
+  <!-- Install Eclipse -->
+  <target name="install.eclipse" depends="download.eclipse,download.eclipse.gef">   
+    <antcall target="unzipEclipse" />	
+    <antcall target="untarEclipse" />
+    <unzip dest="${drools.home}/install" overwrite="true" 
+           src="${drools.home}/install/lib/GEF-runtime-3.5.1.zip" />				         
+  </target>    
+  
+  <target name="unzipEclipse" if="expandTypeZip">
+    <unzip dest="${drools.home}/install" overwrite="true" 
+           src="${drools.home}/install/lib/eclipse-SDK-3.5.1-${download.type}.zip" />  
+  </target>
+
+  <target name="untarEclipse" if="expandTypeTarGz">
+    <gunzip src="${drools.home}/install/lib/eclipse-SDK-3.5.1-${download.type}.tar.gz"/>
+    <untar dest="${drools.home}/install" src="${drools.home}/install/lib/eclipse-SDK-3.5.1-${download.type}.tar" />
+  </target>
+
+  <!-- Install Eclipse plugins -->
+  <target name="install.drools-eclipse.into.eclipse">
     <!-- install plugins -->
     <unzip src="${drools.home}/drools-eclipse/drools-eclipse-build/target/org.drools.eclipse-${drools.version}.zip" dest="${eclipse.home}"/>
     <unzip src="${drools.home}/drools-eclipse/drools-eclipse-build/target/org.drools.eclipse.task-${drools.version}.zip" dest="${eclipse.home}"/>
@@ -135,14 +246,19 @@
     </copy>
   </target>
 
+  <!-- Install Demo -->
+  <target name="install.demo" depends="install.jboss,install.guvnor.into.jboss,install.drools-gwt-console.into.jboss,install.eclipse,install.drools-eclipse.into.eclipse" />
+
+  <!-- ############ START/STOP ############ -->
+
+  <!-- Start H2 server -->
   <target name="start.h2" depends="download.h2">
     <java classname="org.h2.tools.Server" fork="true" spawn="true">
       <arg value="-tcp" />
       <classpath location="${drools.home}/install/db/driver/h2.jar" />
     </java>
-    
   </target>
-
+  <!-- Stop H2 server -->
   <target name="stop.h2" depends="download.h2">
     <java classname="org.h2.tools.Server" fork="true">
       <classpath location="${drools.home}/install/db/driver/h2.jar" />
@@ -151,26 +267,27 @@
     </java>
   </target>
 
+  <!-- Start JBoss AS -->
   <target name="start.jboss">
-    <exec executable="${jboss.home}/bin/run.bat"
-          spawn="yes"
+    <property name="jboss.full.path" location="${jboss.home}/bin/run.bat" />
+    <exec executable="${jboss.full.path}" spawn="yes"
           os="Windows 7,Windows Vista,Windows XP,Windows 2000">
       <arg value="-b" />
       <arg value="${jboss.bind.address}" />
     </exec>
-    <exec executable="${jboss.home}/bin/run.sh" spawn="yes" os="Linux,Mac OS X">
+    <property name="jboss.full.path" location="${jboss.home}/bin/run.bat" />
+    <exec executable="${jboss.full.path}" spawn="yes" os="Linux,Mac OS X">
       <arg value="-b" />
       <arg value="${jboss.bind.address}" />
     </exec>
-    <waitfor maxwait="5" maxwaitunit="minute" checkevery="30" checkeveryunit="second"
-      timeoutproperty="jboss.timeout">
+    <waitfor maxwait="5" maxwaitunit="minute" checkevery="30"
+             checkeveryunit="second" timeoutproperty="jboss.timeout">
       <socket server="${jboss.bind.address}" port="8080" />
     </waitfor>
     <fail if="jboss.timeout" message="jboss did not start within 5 minutes"/>
   </target>
-
-  <target name="stop.jboss"
-          description="signals jboss to stop, but doesn't wait till its finished">
+  <!-- Stop JBoss AS -->
+  <target name="stop.jboss">
     <exec executable="${jboss.home}/bin/shutdown.bat"
           os="Windows 7,Windows Vista,Windows XP,Windows 2000">
       <arg value="-s" />
@@ -184,32 +301,27 @@
     </exec>
   </target>
 
-  <target name="start.eclipse" description="starts eclipse">
-    <!-- Windows -->
+  <!-- Start Eclipse -->
+  <target name="start.eclipse">
     <exec executable="${eclipse.home}/eclipse.exe"
           spawn="yes"
           os="Windows 7,Windows Vista,Windows XP,Windows 2000">
       <arg value="-data" />
       <arg value="${eclipse.workspace.dir}" />
     </exec>
-    <!-- Unix -->
-    <chmod perm="+x">
-      <fileset dir="${eclipse.home}">
-        <filename name="eclipse" />
-      </fileset>
-      <!-- Path is different for OS X -->
-      <fileset dir="${eclipse.home}/Eclipse.app/Contents/MacOS/">
-        <filename name="eclipse" />
-      </fileset>
-    </chmod>
-    <exec executable="${eclipse.home}/eclipse" os="Linux">
+    <exec executable="${eclipse.home}/eclipse" spawn="yes" os="Linux">
       <arg value="-data" />
       <arg value="${eclipse.workspace.dir}" />
     </exec>
-    <exec executable="${eclipse.home}/Eclipse.app/Contents/MacOS/eclipse" os="Mac OS X">
+    <exec executable="${eclipse.home}/Eclipse.app/Contents/MacOS/eclipse" spawn="yes" os="Mac OS X">
       <arg value="-data" />
       <arg value="${eclipse.workspace.dir}" />
     </exec>
   </target>
+
+  <!-- Start Demo -->
+  <target name="start.demo" depends="start.h2,start.jboss,start.eclipse" />
+  <!-- Stop Demo -->
+  <target name="stop.demo" depends="stop.h2,stop.jboss" />
 
 </project>
