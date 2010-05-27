@@ -44,8 +44,10 @@
             <directory>drools-planner/drools-planner-examples</directory>
             <outputDirectory/>
             <includes>
+              <include>data/**/input/*.*</include>
               <include>data/**/unsolved/*.xml</include>
               <include>data/**/solved/*.xml</include>
+              <include>data/**/output/*.*</include>
             </includes>
         </fileSet>
     </fileSets>
