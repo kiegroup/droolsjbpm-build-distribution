@@ -20,7 +20,7 @@
         <include>drools-clips/**</include>
         <include>drools-templates/**</include>
         <include>drools-jsr94/**</include>
-        <include>drools-container/drools-mc/**</include>
+        <include>drools-container/**</include>
         <include>drools-persistence-jpa/**</include>
         <include>drools-pipeline/**</include>
         <include>drools-examples/**</include>
@@ -33,6 +33,14 @@
         <include>drools-planner/**</include>
         <include>drools-process/**</include>
         <include>drools-server/**</include>
+  	<include>drools-assistant/**</include>
+ 	<include>drools-doc/**</include>
+ 	<include>drools-factconstraint/**</include>
+ 	<include>drools-grid/**</include>
+ 	<include>drools-ide-common/**</include>
+ 	<include>drools-rhq-plugin/**</include>
+ 	<include>drools-simulator/**</include>
+ 	<include>drools-vsm/**</include>
         <include>*.xml</include>
         <include>*.txt</include>
       </includes>
