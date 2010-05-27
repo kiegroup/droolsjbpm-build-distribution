@@ -33,14 +33,14 @@
         <include>drools-planner/**</include>
         <include>drools-process/**</include>
         <include>drools-server/**</include>
-  	<include>drools-assistant/**</include>
- 	<include>drools-doc/**</include>
- 	<include>drools-factconstraint/**</include>
- 	<include>drools-grid/**</include>
- 	<include>drools-ide-common/**</include>
- 	<include>drools-rhq-plugin/**</include>
- 	<include>drools-simulator/**</include>
- 	<include>drools-vsm/**</include>
+        <include>drools-assistant/**</include>
+        <include>drools-doc/**</include>
+        <include>drools-factconstraint/**</include>
+        <include>drools-grid/**</include>
+        <include>drools-ide-common/**</include>
+        <include>drools-rhq-plugin/**</include>
+        <include>drools-simulator/**</include>
+        <include>drools-vsm/**</include>
         <include>*.xml</include>
         <include>*.txt</include>
       </includes>
