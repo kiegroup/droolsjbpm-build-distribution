@@ -224,6 +224,7 @@
   <target name="untarEclipse" if="expandTypeTarGz">
     <gunzip src="${drools.home}/install/lib/eclipse-SDK-3.5.1-${download.type}.tar.gz"/>
     <untar dest="${drools.home}/install" src="${drools.home}/install/lib/eclipse-SDK-3.5.1-${download.type}.tar" />
+    <chmod perm="a+x" file="${drools.home}/install/eclipse/eclipse" />
   </target>
 
   <!-- Install Eclipse plugins -->
@@ -269,14 +270,14 @@
 
   <!-- Start JBoss AS -->
   <target name="start.jboss">
-    <property name="jboss.full.path" location="${jboss.home}/bin/run.bat" />
-    <exec executable="${jboss.full.path}" spawn="yes"
+    <property name="jboss.full.path.win" location="${jboss.home}/bin/run.bat" />
+    <exec executable="${jboss.full.path.win}" spawn="yes"
           os="Windows 7,Windows Vista,Windows XP,Windows 2000">
       <arg value="-b" />
       <arg value="${jboss.bind.address}" />
     </exec>
-    <property name="jboss.full.path" location="${jboss.home}/bin/run.bat" />
-    <exec executable="${jboss.full.path}" spawn="yes" os="Linux,Mac OS X">
+    <property name="jboss.full.path.linux" location="${jboss.home}/bin/run.sh" />
+    <exec executable="${jboss.full.path.linux}" spawn="yes" os="Linux,Mac OS X">
       <arg value="-b" />
       <arg value="${jboss.bind.address}" />
     </exec>
