@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly>
+  <id>gwt-console</id>
+  <formats>
+    <format>zip</format>
+  </formats>
+  
+  <includeBaseDirectory>false</includeBaseDirectory>
+  
+  <!-- We include the gwt-console wars specifically -->
+  <files>
+    <file>
+      <source>drools-process/drools-gwt-server-war/target/gwt-console-server-drools-${project.version}.war</source>
+    </file>
+    <file>
+      <source>drools-process/drools-gwt-war/target/gwt-console-drools-${project.version}.war</source>
+    </file>
+  </files>
+   
+</assembly>
