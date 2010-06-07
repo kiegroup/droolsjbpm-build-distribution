@@ -327,13 +327,17 @@
   <!-- Start JBoss AS -->
   <target name="start.jboss">
     <property name="jboss.full.path.win" location="${jboss.home}/bin/run.bat" />
+    <property environment="env" />
+    <echo message="${env.JAVA_HOME}" />
     <exec executable="${jboss.full.path.win}" spawn="yes"
           os="Windows 7,Windows Vista,Windows XP,Windows 2000">
+      <env key="JAVA_OPTS" value="-XX:MaxPermSize=256m" />
       <arg value="-b" />
       <arg value="${jboss.bind.address}" />
     </exec>
     <property name="jboss.full.path.linux" location="${jboss.home}/bin/run.sh" />
     <exec executable="${jboss.full.path.linux}" spawn="yes" os="Linux,Mac OS X">
+      <env key="JAVA_OPTS" value="-XX:MaxPermSize=256m" />
       <arg value="-b" />
       <arg value="${jboss.bind.address}" />
     </exec>
@@ -365,14 +369,20 @@
           os="Windows 7,Windows Vista,Windows XP,Windows 2000">
       <arg value="-data" />
       <arg value="${eclipse.workspace.dir}" />
+      <arg value="-plugincustomization" />
+      <arg value="./eclipse.preferences.ini" />
     </exec>
     <exec executable="${eclipse.home}/eclipse" spawn="yes" os="Linux">
       <arg value="-data" />
       <arg value="${eclipse.workspace.dir}" />
+      <arg value="-plugincustomization" />
+      <arg value="./eclipse.preferences.ini" />
     </exec>
     <exec executable="${eclipse.home}/Eclipse.app/Contents/MacOS/eclipse" spawn="yes" os="Mac OS X">
       <arg value="-data" />
       <arg value="${eclipse.workspace.dir}" />
+      <arg value="-plugincustomization" />
+      <arg value="./eclipse.preferences.ini" />
     </exec>
   </target>
 

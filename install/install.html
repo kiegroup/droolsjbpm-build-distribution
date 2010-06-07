@@ -4,22 +4,10 @@
 <H1>Installation</H1>
 
 <H2>Prerequisites</H2>
-This script assumes you have Java 1.5+, Maven 2.0.8+ and Ant 1.7+ installed.<BR/>
+This script assumes you have Java 1.5+, and Ant 1.7+ installed.<BR/>
 If you don't, use the following links to download and install them:<BR/>
 Java: <A href="http://java.sun.com/javase/downloads/index.jsp">http://java.sun.com/javase/downloads/index.jsp</A><BR/>
-Maven: <A href="http://maven.apache.org/download.html">http://maven.apache.org/download.html</A><BR/>
 Ant: <A href="http://ant.apache.org/bindownload.cgi">http://ant.apache.org/bindownload.cgi</A><BR/>
-
-<H2>Getting Drools</H2>
-Download the latest Drools source code from SVN using the following URL:<BR/>
-<A href="http://anonsvn.jboss.org/repos/labs/labs/jbossrules/trunk/">http://anonsvn.jboss.org/repos/labs/labs/jbossrules/trunk/</A>
-<P/>
-Now run the Drools build. In the Drools root folder, run the following command:<BR/>
-<EM>mvn -Dmaven.test.skip -Declipse install</EM><BR/>
-<BR/>
-Note: If it is the first time you do this, this could take a while as it will be downloading
-eclipse as part of the installation, you can remove the -Declipse part if you're not
-interested in the Eclipse plugin.
 
 <H2>Demo setup</H2>
 The easiest way to get started is to simply run the installation script to install the demo setup.
@@ -101,7 +89,8 @@ Startup database:<BR/>
 Startup JBoss AS:<BR/>
 <EM>ant start.jboss</EM>
 <P>
-startup task service (run org.drools.task.service.DemoTaskService as part of the drools-process\drools-process-task project)
+Startup task service:<BR/>
+<EM>ant start.human.task</EM>
 <P>
 Startup eclipse:<BR/>
 <EM>ant start.eclipse</EM>
