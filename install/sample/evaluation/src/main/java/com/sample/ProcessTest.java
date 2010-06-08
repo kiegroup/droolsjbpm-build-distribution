@@ -13,10 +13,8 @@ import org.drools.builder.ResourceType;
 import org.drools.io.ResourceFactory;
 import org.drools.logger.KnowledgeRuntimeLogger;
 import org.drools.logger.KnowledgeRuntimeLoggerFactory;
+import org.drools.process.workitem.wsht.WSHumanTaskHandler;
 import org.drools.runtime.StatefulKnowledgeSession;
-import org.drools.runtime.process.WorkItem;
-import org.drools.runtime.process.WorkItemHandler;
-import org.drools.runtime.process.WorkItemManager;
 
 /**
  * This is a sample file to launch a process.
@@ -28,17 +26,8 @@ public class ProcessTest {
 			// load up the knowledge base
 			KnowledgeBase kbase = readKnowledgeBase();
 			StatefulKnowledgeSession ksession = kbase.newStatefulKnowledgeSession();
-			KnowledgeRuntimeLogger logger = KnowledgeRuntimeLoggerFactory.newFileLogger(ksession, "test");
-			ksession.getWorkItemManager().registerWorkItemHandler("Human Task", new WorkItemHandler() {
-				public void executeWorkItem(WorkItem workItem, WorkItemManager manager) {
-					System.out.println("Executing Human Task \"" + workItem.getParameter("TaskName") + "\"");
-					System.out.println("ActorId: " + workItem.getParameter("ActorId"));
-					System.out.println("Comment: " + workItem.getParameter("Comment"));
-					manager.completeWorkItem(workItem.getId(), null);
-				}
-				public void abortWorkItem(WorkItem workItem, WorkItemManager manager) {
-				}
-			});
+			KnowledgeRuntimeLogger logger = KnowledgeRuntimeLoggerFactory.newThreadedFileLogger(ksession, "test", 1000);
+			ksession.getWorkItemManager().registerWorkItemHandler("Human Task", new WSHumanTaskHandler());
 			// start a new process instance
 			Map<String, Object> params = new HashMap<String, Object>();
 			params.put("employee", "krisv");
@@ -51,7 +40,7 @@ public class ProcessTest {
 
 	private static KnowledgeBase readKnowledgeBase() throws Exception {
 		KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
-		kbuilder.add(ResourceFactory.newClassPathResource("Evaluation.rf"), ResourceType.DRF);
+		kbuilder.add(ResourceFactory.newClassPathResource("Evaluation.bpmn"), ResourceType.BPMN2);
 		KnowledgeBuilderErrors errors = kbuilder.getErrors();
 		if (errors.size() > 0) {
 			for (KnowledgeBuilderError error: errors) {

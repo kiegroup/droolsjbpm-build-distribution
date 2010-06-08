@@ -4,7 +4,7 @@
 <H1>Installation</H1>
 
 <H2>Prerequisites</H2>
-This script assumes you have Java 1.5+, and Ant 1.7+ installed.<BR/>
+This script assumes you have Java JDK 1.5+ (set as JAVA_HOME), and Ant 1.7+ installed.<BR/>
 If you don't, use the following links to download and install them:<BR/>
 Java: <A href="http://java.sun.com/javase/downloads/index.jsp">http://java.sun.com/javase/downloads/index.jsp</A><BR/>
 Ant: <A href="http://ant.apache.org/bindownload.cgi">http://ant.apache.org/bindownload.cgi</A><BR/>
@@ -35,8 +35,24 @@ This will:<UL>
 <BR/>
 
 <H3>Using Eclipse Tooling</H3>
+
+Start by importing the sample project into your workspace.
+
 <H3>Using Guvnor repository</H3>
+
+Open up Drools Guvnor:<BR/>
+<A href="http://localhost:8080/drools-guvnor">http://localhost:8080/drools-guvnor</A>
+<P>
+Start by importing the sample repository.
+
 <H3>Using web management consoles</H3>
+
+First make sure you have imported the sample repository and built the defaultPackage in Guvnor first (see previous section).
+<P>
+Open up the process management console:<BR/>
+<A href="http://localhost:8080/gwt-console">http://localhost:8080/gwt-console</A>
+<P>
+Make sure you have imported the sample repository and build the defaultPackage in Guvnor first.
 
 <H2>Manually installing the different components</H2>
 <H3>Getting JBoss AS</H3>
@@ -96,7 +112,6 @@ Startup eclipse:<BR/>
 <EM>ant start.eclipse</EM>
 
 
-add existing drools runtime in ${drools.home}\install\runtime (Window - Preferences, Drools - Installed Drools Runtimes, click Add..., name "Drools runtime", Browse to install/runtime directory in drools root and click OK, click OK again, check the created runtime, click OK)
 import existing project ${drools.home}\install\sample (File - Import..., General - Existing Projects into Workspace, select install/sample/evaluation and click OK, click Finish)
 run example
 

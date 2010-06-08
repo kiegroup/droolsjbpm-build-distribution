@@ -13,7 +13,7 @@
   <property name="jboss.server.birt.dir" value="${jboss.server.data.dir}/birt"/>
   <property name="jboss.bind.address" value="localhost" />
 
-  <property name="eclipse.workspace.dir" value="${install.home}/sample/workspace"/>
+  <property name="eclipse.workspace.dir" value="${install.home}/workspace"/>
 
   <property name="jboss.download.url" value="http://downloads.sourceforge.net/jboss/jboss-4.2.3.GA.zip"/>
   <property name="h2.download.url" value="http://repository.jboss.org/maven2/com/h2database/h2/1.2.124/h2-1.2.124.jar"/>
@@ -327,8 +327,6 @@
   <!-- Start JBoss AS -->
   <target name="start.jboss">
     <property name="jboss.full.path.win" location="${jboss.home}/bin/run.bat" />
-    <property environment="env" />
-    <echo message="${env.JAVA_HOME}" />
     <exec executable="${jboss.full.path.win}" spawn="yes"
           os="Windows 7,Windows Vista,Windows XP,Windows 2000">
       <env key="JAVA_OPTS" value="-XX:MaxPermSize=256m" />
@@ -411,4 +409,23 @@
   <!-- Stop Demo -->
   <target name="stop.demo" depends="stop.h2,stop.jboss" />
 
+  <!-- ############ CLEAN ############ -->
+	
+  <!-- Clean jboss -->
+  <target name="clean.jboss">
+    <delete dir="${install.home}/jboss-4.2.3.GA"/>
+    <delete dir="${install.home}/repository"/>
+    <delete file="${install.home}/repository.xml"/>
+  </target>
+
+  <!-- Clean eclipse -->
+  <target name="clean.eclipse">
+    <delete dir="${install.home}/eclipse"/>
+    <delete dir="${install.home}/runtime"/>
+    <delete dir="${eclipse.workspace.dir}"/>
+  </target>
+
+  <!-- Stop Demo -->
+  <target name="clean.demo" depends="clean.jboss,clean.eclipse" />
+	
 </project>
