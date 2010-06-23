@@ -1,37 +1,5 @@
 package org.drools.osgi.integrationtests;
 
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.naming.InitialContext;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.spi.PersistenceProvider;
-import javax.transaction.UserTransaction;
-
-import org.drools.KnowledgeBase;
-import org.drools.KnowledgeBaseConfiguration;
-import org.drools.KnowledgeBaseFactoryService;
-import org.drools.base.MapGlobalResolver;
-import org.drools.builder.KnowledgeBuilder;
-import org.drools.builder.KnowledgeBuilderConfiguration;
-import org.drools.builder.KnowledgeBuilderFactoryService;
-import org.drools.builder.ResourceType;
-import org.drools.io.ResourceFactoryService;
-import org.drools.osgi.test.AbstractDroolsSpringDMTest;
-import org.drools.runtime.Environment;
-import org.drools.runtime.EnvironmentName;
-import org.drools.runtime.StatefulKnowledgeSession;
-import org.drools.util.ServiceRegistry;
-//import org.hibernate.ejb.HibernatePersistence;
-import org.osgi.framework.Bundle;
-import org.osgi.framework.Constants;
-import org.osgi.framework.ServiceReference;
-import org.springframework.osgi.util.OsgiStringUtils;
-import org.test.Cheese;
-import org.test.Person;
-import org.test.decisiontable.Dummy;
 
 //import bitronix.tm.TransactionManagerServices;
 //import bitronix.tm.resource.jdbc.PoolingDataSource;

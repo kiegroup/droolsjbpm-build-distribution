@@ -1,7 +1,6 @@
 package org.drools.osgi.test;
 
 import org.drools.osgi.test.utils.EclipseWorkspaceArtifactLocator;
-import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.Resource;

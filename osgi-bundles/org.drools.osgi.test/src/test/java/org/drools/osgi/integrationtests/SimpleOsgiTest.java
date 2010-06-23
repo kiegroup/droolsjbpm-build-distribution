@@ -17,7 +17,6 @@ import org.drools.util.ServiceRegistry;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.Constants;
 import org.osgi.framework.ServiceReference;
-import org.springframework.osgi.util.OsgiStringUtils;
 import org.test.Cheese;
 import org.test.Person;
 import org.test.decisiontable.Dummy;
@@ -87,7 +86,7 @@ public class SimpleOsgiTest extends AbstractDroolsSpringDMTest {
         KnowledgeBase kbase = knowledgeBaseFactoryService.newKnowledgeBase( kbaseConf );
         kbase.addKnowledgePackages( kbuilder.getKnowledgePackages() );
         StatefulKnowledgeSession ksession = kbase.newStatefulKnowledgeSession();
-        List list = new ArrayList();
+        List<?> list = new ArrayList<Object>();
         ksession.setGlobal( "list",
                             list );
 
@@ -130,7 +129,7 @@ public class SimpleOsgiTest extends AbstractDroolsSpringDMTest {
         kbase.addKnowledgePackages( kbuilder.getKnowledgePackages() );
 
         StatefulKnowledgeSession ksession = kbase.newStatefulKnowledgeSession();
-        List list = new ArrayList();
+        List<?> list = new ArrayList<Object>();
         ksession.setGlobal( "list",
                             list );
 

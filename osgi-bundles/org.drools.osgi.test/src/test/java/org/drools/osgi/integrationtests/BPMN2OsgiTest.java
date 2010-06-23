@@ -63,7 +63,7 @@ public class BPMN2OsgiTest extends AbstractDroolsSpringDMTest {
             for (KnowledgeBuilderError error: kbuilder.getErrors()) {
                 System.err.println(error);
             }
-            throw new IllegalArgumentException("Errors while parsing knowledge base");
+            throw new IllegalArgumentException("Errors while parsing knowledge base:\n" + kbuilder.getErrors());
         }
         KnowledgeBase kbase = knowledgeBaseFactoryService.newKnowledgeBase();
         kbase.addKnowledgePackages(kbuilder.getKnowledgePackages());
