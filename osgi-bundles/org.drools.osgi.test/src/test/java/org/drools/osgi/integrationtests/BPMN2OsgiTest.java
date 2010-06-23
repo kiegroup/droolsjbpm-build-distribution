@@ -1,24 +1,13 @@
 package org.drools.osgi.integrationtests;
 
-import java.io.StringReader;
-
 import org.drools.KnowledgeBase;
 import org.drools.KnowledgeBaseFactoryService;
-import org.drools.bpmn2.xml.BPMN2SemanticModule;
-import org.drools.bpmn2.xml.BPMNDISemanticModule;
-import org.drools.bpmn2.xml.BPMNSemanticModule;
-import org.drools.bpmn2.xml.XmlBPMNProcessDumper;
-import org.drools.bpmn2.xpath.XPathDialectConfiguration;
 import org.drools.builder.KnowledgeBuilder;
-import org.drools.builder.KnowledgeBuilderConfiguration;
 import org.drools.builder.KnowledgeBuilderError;
 import org.drools.builder.KnowledgeBuilderFactoryService;
 import org.drools.builder.ResourceType;
-import org.drools.compiler.PackageBuilderConfiguration;
-import org.drools.compiler.xml.XmlProcessReader;
 import org.drools.io.ResourceFactoryService;
 import org.drools.osgi.test.AbstractDroolsSpringDMTest;
-import org.drools.ruleflow.core.RuleFlowProcess;
 import org.drools.runtime.StatefulKnowledgeSession;
 import org.drools.runtime.process.ProcessInstance;
 import org.drools.util.ServiceRegistry;
