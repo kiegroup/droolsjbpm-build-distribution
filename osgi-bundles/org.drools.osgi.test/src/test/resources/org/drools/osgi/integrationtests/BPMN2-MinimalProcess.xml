@@ -3,10 +3,10 @@
              targetNamespace="http://www.example.org/MinimalExample"
              typeLanguage="http://www.java.com/javaTypes"
              expressionLanguage="http://www.mvel.org/2.0"
-             xmlns="http://schema.omg.org/spec/BPMN/2.0"
+             xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
              xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
-             xs:schemaLocation="http://schema.omg.org/spec/BPMN/2.0 BPMN20.xsd"
-             xmlns:tns="http://www.jboss.org/drools">
+             xs:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd"
+             xmlns:tns="http://www.example.org/MinimalExample">
 
   <process id="Minimal" name="Minimal Process" processType="executable" tns:packageName="com.sample">
     <startEvent id="_1" name="StartProcess"/>

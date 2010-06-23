@@ -23,7 +23,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
     </repository>   
   </repositories-->
   	<properties>
-		<slf4j.version>1.5.10</slf4j.version>
+		<slf4j.version>1.6.0</slf4j.version>
 		<spring.maven.artifact.version>3.0.0.RELEASE</spring.maven.artifact.version>
 		<spring.osgi.version>1.2.1</spring.osgi.version>
 		<equinox.ver>3.5</equinox.ver>		
@@ -34,7 +34,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
       <module>jxls/org.drools.osgi.wrapper.jxls-reader</module>
       <module>org.milyn/org.drools.osgi.wrapper.milyn-smooks-javabean</module>
       <module>org.mvel/org.drools.osgi.wrapper.mvel2</module>
-	  <module>org.drools.osgi.test</module>
+      <module>org.drools.osgi.test</module>
    </modules>
    <build>
       <plugins>
@@ -344,28 +344,11 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
 		 <artifactId>com.springsource.org.jvnet.staxex</artifactId>  
 		 <version>1.0.0</version> 
       </dependency>	  
-	  
-	  <!-- Logging -->
-	 <dependency>
-		  <groupId>org.slf4j</groupId>
-		  <artifactId>com.springsource.slf4j.org.apache.commons.logging</artifactId>
-		  <version>${slf4j.version}</version>
-	 </dependency>	  
-      <dependency>
-         <groupId>org.slf4j</groupId>
-         <artifactId>com.springsource.slf4j.api</artifactId>
-         <version>1.5.10</version>
-      </dependency>
-      <dependency>
-         <groupId>org.slf4j</groupId>
-         <artifactId>com.springsource.slf4j.log4j</artifactId>
-         <version>1.5.3</version>
-      </dependency>
-      <dependency>
+      <!--dependency>
          <groupId>org.apache.commons</groupId>
          <artifactId>com.springsource.org.apache.commons.logging</artifactId>
-         <version>1.1.1</version>
-      </dependency>	  
+		 <version>${slf4j.version}</version>
+      </dependency-->	  
       <!--dependency>
          <groupId>org.slf4j</groupId>
          <artifactId>com.springsource.slf4j.juli</artifactId>
@@ -374,7 +357,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
       <dependency>
          <groupId>org.apache.log4j</groupId>
          <artifactId>com.springsource.org.apache.log4j</artifactId>
-         <version>1.2.15</version>
+		 <version>1.2.15</version>
       </dependency>
 	  
 	  <!-- Apache Commons -->
