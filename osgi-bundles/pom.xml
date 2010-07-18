@@ -258,9 +258,8 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
       </dependency>	  
 	  
       <dependency>
-         <groupId>org.apache.jasper.springsource</groupId>
-         <artifactId>com.springsource.org.apache.jasper.org.eclipse.jdt.springsource</artifactId>
-         <version>6.0.20.S2-r5956</version>
+            <groupId>org.eclipse.jdt.core.compiler</groupId>
+            <artifactId>ecj</artifactId>
       </dependency>
       <dependency>
          <groupId>org.codehaus.janino</groupId>
