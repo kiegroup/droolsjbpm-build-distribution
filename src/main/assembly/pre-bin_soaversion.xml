@@ -25,32 +25,26 @@ org.drools:drools-workitems, org.drools:drools-process-task-->
   <moduleSets>
     <moduleSet>
     	<includes>
-    		<!-- note: we do not include BRMS here, as it is distributed as a single war, and a war includes all already -->
-            <include>org.drools:drools-api</include>
-    		<include>org.drools:drools-core</include>
-    		<include>org.drools:drools-compiler</include>
-    		<include>org.drools:drools-jsr94</include>
-    		<include>org.drools:drools-decisiontables</include>
-    		<include>org.drools:drools-templates</include>
-    		<!--include>org.drools:drools-clips</include-->
-            
-            
-    		<include>org.drools:drools-verifier</include>
-     		<include>org.drools:drools-ant</include>
-            <!--include>org.drools:drools-server</include-->            
-            
-            
-            <include>org.drools:drools-messenger-jms</include>
-    		<!--include>org.drools:drools-transformer-jaxb</include>
-    		<include>org.drools:drools-transformer-smooks</include>
-    		<include>org.drools:drools-transformer-jxls</include>
-    		<include>org.drools:drools-transformer-xstream</include>            
-                                           
-            
-            <include>org.drools:drools-workitems</include>
-            <include>org.drools:drools-process-task</include-->            
-            
-            <include>org.drools:drools-persistence-jpa</include>
+	        <include>org.drools:drools-api</include>
+	        <include>org.drools:drools-core</include>
+	        <include>org.drools:drools-compiler</include>
+	        <include>org.drools:drools-jsr94</include>
+	        <include>org.drools:drools-decisiontables</include>
+	        <include>org.drools:drools-templates</include>
+	        <include>org.drools:drools-bam</include>
+	        <include>org.drools:drools-verifier</include>
+	        <include>org.drools:drools-ant</include>
+	        <include>org.drools:drools-assistant</include>
+	        <include>org.drools:drools-atom</include>
+	        <include>org.drools:drools-spring</include>
+	        <include>org.drools:drools-doc</include>
+	        <include>org.drools:drools-camel</include>
+	        <include>org.drools:drools-bpmn2</include>
+	        <include>org.drools:drools-simulator</include>
+	        <include>org.drools:drools-grid-core</include>            
+	        <include>org.drools:drools-workitems</include>
+	        <include>org.drools:drools-process-task</include>
+	        <include>org.drools:drools-persistence-jpa</include>			
     	</includes>
     	
       <binaries>
@@ -70,30 +64,7 @@ org.drools:drools-workitems, org.drools:drools-process-task-->
       </binaries>   
 	    
     </moduleSet>
-    
-    <!--moduleSet>
-    	<includes>
-    		<include>org.drools:drools-documentation</include>
-    	</includes>
-    	
-      <binaries>
-        <outputDirectory>documentation</outputDirectory>
-        <outputFileNameMapping>manual</outputFileNameMapping>
-	      <unpack>true</unpack> 
-	      <unpackOptions>
-	          <includes>
-	            <include>shared/**</include>
-	            <include>html/**</include>
-	            <include>manual/html_single/**</include>
-	          </includes>    	              	      
-	          <excludes>
-	            <exclude>eclipse/**</exclude>
-	            <exclude>META-INF/**</exclude>
-	          </excludes>
-	      </unpackOptions>  	          
-      </binaries>   
-	    
-    </moduleSet-->    
+  
   </moduleSets>  
 
 
