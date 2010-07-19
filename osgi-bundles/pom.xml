@@ -26,7 +26,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
 		<slf4j.version>1.6.0</slf4j.version>
 		<spring.maven.artifact.version>3.0.0.RELEASE</spring.maven.artifact.version>
 		<spring.osgi.version>1.2.1</spring.osgi.version>
-		<equinox.ver>3.5</equinox.ver>		
+		<equinox.ver>3.5.1</equinox.ver>		
 	</properties>
 	
    <modules>
