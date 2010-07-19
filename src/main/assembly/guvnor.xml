@@ -2,16 +2,20 @@
 <assembly>
   <id>guvnor</id>
   <formats>
-    <format>zip</format>
+    <format>war</format>
   </formats>
   
   <includeBaseDirectory>false</includeBaseDirectory>
+ 
+  <fileSets>
+     <fileSet>
+        <directory>drools-guvnor/target/drools-guvnor</directory>
+        <outputDirectory></outputDirectory>
+        <includes>
+           <include>**</include>
+        </includes>    
+     </fileSet>  
+  </fileSets>
+
   
-  <!-- We include the BRMS specifically, as its a single atomic war -->
-  <files>
-	<file>
-		<source>drools-guvnor/target/drools-guvnor.war</source>
-	</file>
-  </files>
-   
 </assembly>

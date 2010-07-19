@@ -10,7 +10,7 @@
   <fileSets>
 
     <fileSet>
-       <directory>target/drools-${project.version}-pre-bin.dir</directory>      
+       <directory>target/drools-${project.version}-pre-bin</directory>      
         <outputDirectory></outputDirectory>
     </fileSet>      
   </fileSets>  

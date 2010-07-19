@@ -33,8 +33,7 @@
         <include>org.drools:drools-bam</include>
         <include>org.drools:drools-verifier</include>
         <include>org.drools:drools-ant</include>
-        <include>org.drools:drools-assistant</include>
-        <include>org.drools:drools-atom</include>
+        <!--include>org.drools:drools-assistant</include-->
         <include>org.drools:drools-spring</include>
         <include>org.drools:drools-doc</include>
         <include>org.drools:drools-camel</include>

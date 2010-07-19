@@ -10,9 +10,13 @@
   <!-- We include the BRMS specifically, as its a single atomic war -->
   <files>
 	<file>
-		<source>./target/drools-${project.version}-guvnor.zip</source>
-                <destName>jboss-brms-manager.zip</destName>
+		<source>./target/drools-${project.version}-guvnor.war</source>
+                <destName>jboss-brms-manager.war</destName>
 	</file>
+	<file>
+		<source>./target/drools-${project.version}-server.war</source>
+                <destName>jboss-brms-server.war</destName>
+	</file>	
 	<file>
 		<source>./target/drools-${project.version}-bin.zip</source>
                 <destName>jboss-brms-engine.zip</destName>
