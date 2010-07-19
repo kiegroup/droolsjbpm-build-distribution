@@ -48,7 +48,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
                   <configuration>
                      <tasks>
                         <delete>
-                           <fileset dir="plugins" includes="**/*.jar" excludes="**/.svn" />
+                           <fileset dir="plugins" includes="**/*.jar" excludes="com.springsource.org.jgroups-2.2.8.jar, com.springsource.org.objectweb.asm-1.5.3.jar, **/.svn" />
                         </delete>
                      </tasks>
                   </configuration>
