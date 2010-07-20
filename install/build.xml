@@ -148,14 +148,14 @@
     <echo message="Checking Drools Guvnor download ..." />
     <condition property="drools.guvnor.not.available">
       <not>
-        <available file="${install.home}/lib/drools-${drools.version}-guvnor.zip" />
+        <available file="${install.home}/lib/drools-${drools.version}-guvnor.war" />
       </not>
     </condition>
   </target>  
   <target name="download.drools.guvnor" depends="download.drools.guvnor.check" if="drools.guvnor.not.available">
     <echo message="Getting Drools Guvnor ..." />
     <mkdir dir="${install.home}/lib"/>
-    <get src="${drools.url}/drools-${drools.version}-guvnor.zip" dest="${install.home}/lib/drools-${drools.version}-guvnor.zip" />
+    <get src="${drools.url}/drools-${drools.version}-guvnor.war" dest="${install.home}/lib/drools-${drools.version}-guvnor.war" />
   </target>
 
   <!-- Download Drools Eclipse plugins -->
@@ -199,12 +199,9 @@
 
   <!-- Install guvnor -->
   <target name="install.guvnor.into.jboss" depends="download.drools.guvnor">
-    <mkdir dir="${install.home}/target"/>
-    <unzip src="${install.home}/lib/drools-${drools.version}-guvnor.zip" dest="${install.home}/target" />
-    <copy file="${install.home}/target/drools-guvnor.war"
+    <copy file="${install.home}/lib/drools-${drools.version}-guvnor.war"
           tofile="${jboss.server.deploy.dir}/drools-guvnor.war"
           overwrite="true" />
-    <delete dir="${install.home}/target"/>
   </target>
 
   <!-- Install gwt-console -->
