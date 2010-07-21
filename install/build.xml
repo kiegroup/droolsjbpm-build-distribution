@@ -384,6 +384,7 @@
   <!-- Start Human Task Service -->
   <path id="classpath.human.task">
     <fileset dir="${install.home}/runtime" includes="**/*.jar"/>
+    <fileset dir="${install.home}/db/driver" includes="**/*.jar"/>
   </path>
   <target name="start.human.task">
     <mkdir dir="${install.home}/task-service/target"/>
