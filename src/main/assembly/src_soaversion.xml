@@ -40,7 +40,7 @@
         <include>drools-verifier/**</include>
         <include>*.xml</include>
         <include>*.txt</include>
-      </includes
+      </includes>
       <excludes>
         <exclude>drools-guvnor/repository/**</exclude>
         <exclude>drools-repository/repository/**</exclude>
