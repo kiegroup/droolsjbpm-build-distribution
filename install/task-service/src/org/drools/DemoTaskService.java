@@ -60,6 +60,8 @@ public class DemoTaskService {
         Thread thread = new Thread(server);
         thread.start();
         taskSession.dispose();
+        System.out.println("Task service started correctly !");
+        System.out.println("Task service running ...");
     }
 
     public static Object eval(Reader reader, Map vars) {
