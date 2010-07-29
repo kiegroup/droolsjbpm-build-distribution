@@ -32,7 +32,6 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
    <modules>
       <!--module>btm/org.drools.osgi.wrapper.btm</module-->
       <module>jxls/org.drools.osgi.wrapper.jxls-reader</module>
-      <module>org.milyn/org.drools.osgi.wrapper.milyn-smooks-javabean</module>
       <module>org.mvel/org.drools.osgi.wrapper.mvel2</module>
       <module>org.drools.osgi.test</module>
    </modules>
@@ -48,7 +47,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
                   <configuration>
                      <tasks>
                         <delete>
-                           <fileset dir="plugins" includes="**/*.jar" excludes="com.springsource.org.jgroups-2.2.8.jar, com.springsource.org.objectweb.asm-1.5.3.jar, **/.svn" />
+                           <fileset dir="plugins" includes="**/*.jar" excludes="com.springsource.org.jgroups-2.2.8.jar, com.springsource.org.objectweb.asm-1.5.3.jar, org.milyn_1.2.5.201002272335.jar, **/.svn" />
                         </delete>
                      </tasks>
                   </configuration>
@@ -134,18 +133,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
             </exclusion>
          </exclusions>
       </dependency>
-      <dependency>
-         <groupId>org.drools</groupId>
-         <artifactId>org.drools.osgi.wrapper.milyn-smooks-javabean</artifactId>
-         <version>1.2</version>
-         <exclusions>
-            <exclusion>
-               <groupId>org.milyn</groupId>
-               <artifactId>milyn-smooks-javabean</artifactId>
-            </exclusion>
-         </exclusions>
-      </dependency>
-	  
+
       <dependency>
          <groupId>org.drools</groupId>
          <artifactId>org.drools.osgi.wrapper.mvel2</artifactId>
