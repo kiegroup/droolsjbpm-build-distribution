@@ -10,10 +10,10 @@ Bundle-ClassPath: lib/commons-jexl.jar,
 Export-Package: 
  net.sf.jxls.reader
 Require-Bundle: com.springsource.org.apache.commons.collections;bundle-version="3.2.0",
- com.springsource.org.apache.commons.logging;bundle-version="1.1.1",
- com.springsource.org.apache.log4j;bundle-version="1.2.15",
  com.springsource.org.apache.poi;bundle-version="3.0.2",
  com.springsource.org.apache.commons.beanutils;bundle-version="1.8.0",
  com.springsource.org.apache.commons.digester;bundle-version="1.8.1"
+Import-Package: org.apache.commons.logging,
+ org.apache.log4j 
 DynamicImport-Package: *
 
