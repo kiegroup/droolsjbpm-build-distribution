@@ -18,5 +18,5 @@ Eclipse GEF:
 Drools:
   drools-#{drools.version}-bin.zip
   drools-#{drools.version}-eclipse-all.zip
-  drools-#{drools.version}-guvnor.zip
+  drools-#{drools.version}-guvnor.war
   drools-#{drools.version}-gwt-console.zip
