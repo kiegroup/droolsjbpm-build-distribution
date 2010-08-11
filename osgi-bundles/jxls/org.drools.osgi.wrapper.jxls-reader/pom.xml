@@ -66,13 +66,7 @@
               <excludeGroupIds>net.sf.jxls</excludeGroupIds>
             </configuration>
           </execution>
-        </executions>
-      </plugin> 
 
-     <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <executions>
           <execution>
             <id>unpack-dependency</id>
             <phase>generate-resources</phase>
