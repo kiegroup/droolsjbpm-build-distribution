@@ -38,7 +38,6 @@ org.drools:drools-workitems, org.drools:drools-process-task-->
 	        <include>org.drools:drools-doc</include>
 	        <include>org.drools:drools-camel</include>
 	        <include>org.drools:drools-bpmn2</include>
-	        <include>org.drools:drools-grid-core</include>            
 	        <include>org.drools:drools-workitems</include>
 	        <include>org.drools:drools-process-task</include>
 	        <include>org.drools:drools-persistence-jpa</include>			

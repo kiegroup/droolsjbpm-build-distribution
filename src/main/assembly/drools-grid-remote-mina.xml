@@ -1,33 +1,17 @@
+
 <assembly>
-  <id>drools-grid-remote-mina-distro</id>
-  <formats>
-    <format>zip</format>
-  </formats>
+    <id>drools-grid-remote-mina-distro</id>
+    <formats>
+        <format>zip</format>
+    </formats>
 
-  <includeBaseDirectory>false</includeBaseDirectory>
-  <!--baseDirectory>drools-grid/drools-grid-remote-mina/drools-grid-remote-mina-distro</baseDirectory-->
-  <files>
-    <file>
-      <source>drools-grid/drools-grid-remote-mina/target/drools-grid-remote-mina-${project.version}.jar</source>
-      <destName>libs/drools-grid-remote-mina-${project.version}.jar</destName>
-      <fileMode>0644</fileMode>
-    </file>
-    <file>
-      <source>drools-grid/drools-grid-remote-mina/src/main/start.sh</source>
-      <destName>start.sh</destName>
-      <fileMode>0555</fileMode>
-    </file>
-  </files>
+    <includeBaseDirectory>false</includeBaseDirectory>
+  
+    <fileSets>
 
-
-
-  <dependencySets>
-    <dependencySet>
-      <outputDirectory>libs/</outputDirectory>
-      <scope>runtime</scope>
-       <includes>
-        <include>org.drools:drools-grid-remote-mina:${project.version}:jar</include>
-      </includes>
-    </dependencySet>
-  </dependencySets>
+        <fileSet>
+            <directory>target/drools-${project.version}-drools-grid-remote-mina-pre-bin</directory>
+            <outputDirectory></outputDirectory>
+        </fileSet>
+    </fileSets>
 </assembly>
