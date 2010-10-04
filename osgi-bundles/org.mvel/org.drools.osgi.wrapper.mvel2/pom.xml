@@ -44,19 +44,19 @@
               <stripVersion>true</stripVersion>
               <includeScope>runtime</includeScope>    
               <includeGroupIds>org.mvel</includeGroupIds>    
-              <excludes>META-INF/MANIFEST.MF</excludes> 			  
+              <excludes>META-INF/MANIFEST.MF</excludes>
             </configuration>
           </execution>
         </executions>
       </plugin>   
-	  
-	  <plugin>
+
+    <plugin>
          <groupId>org.apache.maven.plugins</groupId>
          <artifactId>maven-deploy-plugin</artifactId>
          <configuration>
             <skip>true</skip>
-         </configuration>		 
-      </plugin>	  
+         </configuration>
+      </plugin>
     </plugins>
      
               <resources>          

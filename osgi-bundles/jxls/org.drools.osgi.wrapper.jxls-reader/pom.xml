@@ -14,39 +14,39 @@
 
   <name>Drools :: OSGi :: Wrapper :: jxls-reader</name>
   <build>
-    <plugins>    
-    
-            <plugin>
-              <artifactId>maven-jar-plugin</artifactId>
-              <configuration>
-                <archive>  
-                  <manifestFile>META-INF/MANIFEST.MF</manifestFile>
-                </archive> 
-              </configuration>
-            </plugin>      
-  
-     <plugin>
-       <artifactId>maven-antrun-plugin</artifactId>
-       <inherited>false</inherited>
-       <executions>
-         <execution>
-           <id>clean lib</id>
-           <phase>clean</phase>
-           <configuration>
-             <tasks>                              
+    <plugins>
+
+      <plugin>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifestFile>META-INF/MANIFEST.MF</manifestFile>
+          </archive>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <inherited>false</inherited>
+        <executions>
+          <execution>
+            <id>clean lib</id>
+            <phase>clean</phase>
+            <configuration>
+              <tasks>
                 <delete>
-                  <fileset dir="lib" includes="**/*.jar" excludes="**/.svn" />                 
-                </delete>  
-             </tasks>
-           </configuration>
-           <goals>
-             <goal>run</goal>
-           </goals>
-         </execution>        
-       </executions>
-     </plugin>    
-    
-     <plugin>
+                  <fileset dir="lib" includes="**/*.jar" excludes="**/.svn"/>
+                </delete>
+              </tasks>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
         <executions>
@@ -62,7 +62,7 @@
               <overWriteSnapshots>true</overWriteSnapshots>
               <overWriteIfNewer>true</overWriteIfNewer>
               <stripVersion>true</stripVersion>
-              <includeScope>runtime</includeScope> 
+              <includeScope>runtime</includeScope>
               <excludeGroupIds>net.sf.jxls</excludeGroupIds>
             </configuration>
           </execution>
@@ -79,69 +79,69 @@
               <overWriteSnapshots>true</overWriteSnapshots>
               <overWriteIfNewer>true</overWriteIfNewer>
               <stripVersion>true</stripVersion>
-              <includeScope>runtime</includeScope> 
+              <includeScope>runtime</includeScope>
               <includeGroupIds>net.sf.jxls</includeGroupIds>
             </configuration>
           </execution>
         </executions>
-      </plugin>   
+      </plugin>
 
-	  <plugin>
-         <groupId>org.apache.maven.plugins</groupId>
-         <artifactId>maven-deploy-plugin</artifactId>
-         <configuration>
-            <skip>true</skip>
-         </configuration>		 
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
       </plugin>
     </plugins>
-     
-              <resources>          
-                <resource>
-                  <targetPath>META-INF</targetPath>                
-                  <directory>META-INF</directory>
-                </resource>  
-                <resource>
-                  <targetPath>lib</targetPath>                
-                  <directory>lib</directory>
-                    <includes>
-                      <include>*.jar</include>
-                    </includes>                
-                </resource>                      
-              </resources>       
+
+    <resources>
+      <resource>
+        <targetPath>META-INF</targetPath>
+        <directory>META-INF</directory>
+      </resource>
+      <resource>
+        <targetPath>lib</targetPath>
+        <directory>lib</directory>
+        <includes>
+          <include>*.jar</include>
+        </includes>
+      </resource>
+    </resources>
   </build>
 
   <dependencies>
-        <dependency>
-          <groupId>net.sf.jxls</groupId>
-          <artifactId>jxls-reader</artifactId>  
-               <exclusions>
-                    <exclusion>
-                        <groupId>commons-logging</groupId>
-                        <artifactId>commons-logging</artifactId>
-                    </exclusion>  
-                    <exclusion>
-                        <groupId>commons-collections</groupId>
-                        <artifactId>commons-collections</artifactId>
-                    </exclusion> 
-                    <exclusion>
-                        <groupId>commons-beanutils</groupId>
-                        <artifactId>commons-beanutils</artifactId>
-                    </exclusion>     
-                    <exclusion>
-                        <groupId>commons-digester</groupId>
-                        <artifactId>commons-digester</artifactId>
-                    </exclusion>                    
-                    <exclusion>
-                        <groupId>log4j</groupId>
-                        <artifactId>log4j</artifactId>
-                    </exclusion> 
-                    <exclusion>  
-                        <groupId>org.apache.poi</groupId>  
-                        <artifactId>poi</artifactId>  
-                    </exclusion>                     
-               </exclusions>               
-          
-        </dependency>   
+    <dependency>
+      <groupId>net.sf.jxls</groupId>
+      <artifactId>jxls-reader</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>commons-logging</groupId>
+          <artifactId>commons-logging</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>commons-collections</groupId>
+          <artifactId>commons-collections</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>commons-beanutils</groupId>
+          <artifactId>commons-beanutils</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>commons-digester</groupId>
+          <artifactId>commons-digester</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>log4j</groupId>
+          <artifactId>log4j</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.apache.poi</groupId>
+          <artifactId>poi</artifactId>
+        </exclusion>
+      </exclusions>
+
+    </dependency>
   </dependencies>
 
 </project>
