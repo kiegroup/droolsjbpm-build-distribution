@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <assembly>
   <id>drools-grid-remote-dir-mina-pre-bin</id>
   <formats>
@@ -38,6 +39,5 @@
     </moduleSet>
 
   </moduleSets>
-
 
 </assembly>
