@@ -4,17 +4,16 @@
   <formats>
     <format>zip</format>
   </formats>
-  
+
   <includeBaseDirectory>false</includeBaseDirectory>
-  
+
   <fileSets>
 
     <fileSet>
-       <directory>osgi-bundles/plugins</directory>      
-        <outputDirectory></outputDirectory>
-    </fileSet>      
-  </fileSets>  
-
+      <directory>osgi-bundles/plugins</directory>
+      <outputDirectory></outputDirectory>
+    </fileSet>
+  </fileSets>
 
 
 </assembly>

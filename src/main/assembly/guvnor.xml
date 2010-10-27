@@ -4,18 +4,18 @@
   <formats>
     <format>war</format>
   </formats>
-  
+
   <includeBaseDirectory>false</includeBaseDirectory>
- 
+
   <fileSets>
-     <fileSet>
-        <directory>drools-guvnor/target/drools-guvnor</directory>
-        <outputDirectory></outputDirectory>
-        <includes>
-           <include>**</include>
-        </includes>    
-     </fileSet>  
+    <fileSet>
+      <directory>drools-guvnor/target/drools-guvnor</directory>
+      <outputDirectory></outputDirectory>
+      <includes>
+        <include>**</include>
+      </includes>
+    </fileSet>
   </fileSets>
 
-  
+
 </assembly>

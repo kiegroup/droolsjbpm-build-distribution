@@ -1,17 +1,16 @@
-
 <assembly>
-    <id>drools-grid-remote-dir-mina-distro</id>
-    <formats>
-        <format>zip</format>
-    </formats>
+  <id>drools-grid-remote-dir-mina-distro</id>
+  <formats>
+    <format>zip</format>
+  </formats>
 
-    <includeBaseDirectory>false</includeBaseDirectory>
+  <includeBaseDirectory>false</includeBaseDirectory>
 
-    <fileSets>
+  <fileSets>
 
-        <fileSet>
-            <directory>target/drools-${project.version}-drools-grid-remote-dir-mina-pre-bin</directory>
-            <outputDirectory></outputDirectory>
-        </fileSet>
-    </fileSets>
+    <fileSet>
+      <directory>target/drools-${project.version}-drools-grid-remote-dir-mina-pre-bin</directory>
+      <outputDirectory></outputDirectory>
+    </fileSet>
+  </fileSets>
 </assembly>

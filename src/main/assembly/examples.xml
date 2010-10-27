@@ -4,9 +4,9 @@
   <formats>
     <format>zip</format>
   </formats>
-  
+
   <includeBaseDirectory>false</includeBaseDirectory>
-  
+
   <fileSets>
 
     <fileSet>
@@ -16,12 +16,12 @@
         <include>README_DEPENDENCIES.txt</include>
       </includes>
     </fileSet>
-  
+
     <fileSet>
       <directory>drools-examples</directory>
       <outputDirectory>drools-examples</outputDirectory>
       <includes>
-         <include>**/**</include>
+        <include>**/**</include>
       </includes>
       <excludes>
         <exclude>**/target/**</exclude>

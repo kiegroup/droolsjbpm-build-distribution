@@ -4,11 +4,11 @@
   <formats>
     <format>dir</format>
   </formats>
-  
+
   <includeBaseDirectory>false</includeBaseDirectory>
-  
+
   <fileSets>
-  
+
     <fileSet>
       <includes>
         <include>LICENSE-ASL-2.0.txt</include>
@@ -16,8 +16,8 @@
         <include>README_DEPENDENCIES.txt</include>
       </includes>
     </fileSet>
-    
-  </fileSets>  
+
+  </fileSets>
 
   <moduleSets>
     <moduleSet>
@@ -40,33 +40,32 @@
         <include>org.drools:drools-doc</include>
         <include>org.drools:drools-camel</include>
         <include>org.drools:drools-bpmn2</include>
-        <include>org.drools:drools-simulator</include>           
+        <include>org.drools:drools-simulator</include>
         <include>org.drools:drools-workitems</include>
         <include>org.drools:drools-process-task</include>
         <include>org.drools:drools-persistence-jpa</include>
         <include>org.drools:drools-flow-persistence-jpa</include>
       </includes>
-      
+
       <binaries>
         <outputDirectory></outputDirectory>
-        <unpack>false</unpack> 
-        
-        <dependencySets>  
+        <unpack>false</unpack>
+
+        <dependencySets>
           <dependencySet>
             <outputDirectory>lib</outputDirectory>
             <unpack>false</unpack>
-            <excludes> 
-               <exclude>org.drools:drools-*</exclude>
+            <excludes>
+              <exclude>org.drools:drools-*</exclude>
             </excludes>
-              <useTransitiveDependencies>false</useTransitiveDependencies>
-          </dependencySet>             
-        </dependencySets>    
-      </binaries>   
-      
-    </moduleSet>
-      
-  </moduleSets>  
+            <useTransitiveDependencies>false</useTransitiveDependencies>
+          </dependencySet>
+        </dependencySets>
+      </binaries>
 
+    </moduleSet>
+
+  </moduleSets>
 
 
 </assembly>

@@ -4,13 +4,13 @@
   <formats>
     <format>zip</format>
   </formats>
-  
+
   <includeBaseDirectory>false</includeBaseDirectory>
-  
+
   <fileSets>
-	<fileSet>
-	  <directory>install</directory>
-	</fileSet>
+    <fileSet>
+      <directory>install</directory>
+    </fileSet>
   </fileSets>
-   
+
 </assembly>

@@ -4,17 +4,15 @@
   <formats>
     <format>zip</format>
   </formats>
-  
+
   <includeBaseDirectory>false</includeBaseDirectory>
-  
+
   <fileSets>
 
     <fileSet>
-       <directory>target/drools-${project.version}-pre-bin</directory>      
-        <outputDirectory></outputDirectory>
-    </fileSet>      
-  </fileSets>  
-
-
+      <directory>target/drools-${project.version}-pre-bin</directory>
+      <outputDirectory></outputDirectory>
+    </fileSet>
+  </fileSets>
 
 </assembly>

@@ -4,36 +4,36 @@
   <formats>
     <format>zip</format>
   </formats>
-  
+
   <includeBaseDirectory>false</includeBaseDirectory>
-  
+
   <!-- files>
-      <file>
-       <source>src/documentation/index.html</source>
-       <outputDirectory></outputDirectory>
-    </file>  
-  </files -->  
-  
+     <file>
+      <source>src/documentation/index.html</source>
+      <outputDirectory></outputDirectory>
+   </file>
+ </files -->
+
   <fileSets>
     <fileSet>
-    <directory>src/documentation/</directory>
+      <directory>src/documentation/</directory>
       <outputDirectory></outputDirectory>
       <includes>
         <include>**</include>
-      </includes>    
+      </includes>
       <excludes>
         <exclude>index_soaversion.html</exclude>
       </excludes>
     </fileSet>
-  
+
     <fileSet>
       <directory>drools-docs/drools-docs-introduction/target/docbook/publish/en-US/</directory>
       <outputDirectory>drools-introduction</outputDirectory>
       <includes>
-         <!--include>drools-docs/**</include-->
-         <include>html/**</include>
-         <include>html_single/**</include>
-         <include>pdf/**</include>
+        <!--include>drools-docs/**</include-->
+        <include>html/**</include>
+        <include>html_single/**</include>
+        <include>pdf/**</include>
       </includes>
       <excludes>
         <exclude>**/*.log/**</exclude>
@@ -42,15 +42,15 @@
         <exclude>**/.metadata/**</exclude>
       </excludes>
     </fileSet>
-    
+
     <fileSet>
       <directory>drools-docs/drools-docs-expert/target/docbook/publish/en-US/</directory>
       <outputDirectory>drools-expert</outputDirectory>
       <includes>
-         <!--include>drools-docs/**</include-->
-         <include>html/**</include>
-         <include>html_single/**</include>
-          <include>pdf/**</include>
+        <!--include>drools-docs/**</include-->
+        <include>html/**</include>
+        <include>html_single/**</include>
+        <include>pdf/**</include>
       </includes>
       <excludes>
         <exclude>**/*.log/**</exclude>
@@ -58,16 +58,16 @@
         <exclude>**/.svn/**</exclude>
         <exclude>**/.metadata/**</exclude>
       </excludes>
-    </fileSet> 
-    
+    </fileSet>
+
     <fileSet>
       <directory>drools-docs/drools-docs-fusion/target/docbook/publish/en-US/</directory>
       <outputDirectory>drools-fusion</outputDirectory>
       <includes>
-         <!--include>drools-docs/**</include-->
-         <include>html/**</include>
-         <include>html_single/**</include>
-          <include>pdf/**</include>
+        <!--include>drools-docs/**</include-->
+        <include>html/**</include>
+        <include>html_single/**</include>
+        <include>pdf/**</include>
       </includes>
       <excludes>
         <exclude>**/*.log/**</exclude>
@@ -75,16 +75,16 @@
         <exclude>**/.svn/**</exclude>
         <exclude>**/.metadata/**</exclude>
       </excludes>
-    </fileSet>  
-    
+    </fileSet>
+
     <fileSet>
       <directory>drools-docs/drools-docs-flow/target/docbook/publish/en-US/</directory>
       <outputDirectory>drools-flow</outputDirectory>
       <includes>
-         <!--include>drools-docs/**</include-->
-         <include>html/**</include>
-         <include>html_single/**</include>
-          <include>pdf/**</include>
+        <!--include>drools-docs/**</include-->
+        <include>html/**</include>
+        <include>html_single/**</include>
+        <include>pdf/**</include>
       </includes>
       <excludes>
         <exclude>**/*.log/**</exclude>
@@ -92,16 +92,16 @@
         <exclude>**/.svn/**</exclude>
         <exclude>**/.metadata/**</exclude>
       </excludes>
-    </fileSet>   
-    
+    </fileSet>
+
     <fileSet>
       <directory>drools-docs/drools-docs-guvnor/target/docbook/publish/en-US/</directory>
       <outputDirectory>drools-guvnor</outputDirectory>
       <includes>
-         <!--include>drools-docs/**</include-->
-         <include>html/**</include>
-         <include>html_single/**</include>
-          <include>pdf/**</include>
+        <!--include>drools-docs/**</include-->
+        <include>html/**</include>
+        <include>html_single/**</include>
+        <include>pdf/**</include>
       </includes>
       <excludes>
         <exclude>**/*.log/**</exclude>
@@ -109,16 +109,16 @@
         <exclude>**/.svn/**</exclude>
         <exclude>**/.metadata/**</exclude>
       </excludes>
-    </fileSet>      
-    
+    </fileSet>
+
     <fileSet>
       <directory>drools-docs/drools-docs-planner/target/docbook/publish/en-US/</directory>
       <outputDirectory>drools-planner</outputDirectory>
       <includes>
-         <!--include>drools-docs/**</include-->
-         <include>html/**</include>
-         <include>html_single/**</include>
-          <include>pdf/**</include>
+        <!--include>drools-docs/**</include-->
+        <include>html/**</include>
+        <include>html_single/**</include>
+        <include>pdf/**</include>
       </includes>
       <excludes>
         <exclude>**/*.log/**</exclude>
@@ -126,16 +126,16 @@
         <exclude>**/.svn/**</exclude>
         <exclude>**/.metadata/**</exclude>
       </excludes>
-    </fileSet>               
+    </fileSet>
 
     <fileSet>
       <directory>drools-docs/drools-docs-integration/target/docbook/publish/en-US/</directory>
       <outputDirectory>drools-integration</outputDirectory>
       <includes>
-         <!--include>drools-docs/**</include-->
-         <include>html/**</include>
-         <include>html_single/**</include>
-          <include>pdf/**</include>
+        <!--include>drools-docs/**</include-->
+        <include>html/**</include>
+        <include>html_single/**</include>
+        <include>pdf/**</include>
       </includes>
       <excludes>
         <exclude>**/*.log/**</exclude>
@@ -144,8 +144,7 @@
         <exclude>**/.metadata/**</exclude>
       </excludes>
     </fileSet>
-          
-  </fileSets>  
-  
-  
+
+  </fileSets>
+
 </assembly>

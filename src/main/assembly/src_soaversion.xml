@@ -7,37 +7,37 @@
   <formats>
     <format>zip</format>
   </formats>
-  
+
   <includeBaseDirectory>false</includeBaseDirectory>
-  
+
   <fileSets>
     <fileSet>
       <directory>.</directory>
       <outputDirectory></outputDirectory>
       <includes>
-        <include>drools-ant/**</include>	  
+        <include>drools-ant/**</include>
         <include>drools-api/**</include>
-		<include>drools-camel/**</include>
+        <include>drools-camel/**</include>
         <include>drools-compiler/**</include>
-        <include>drools-container/**</include>		
+        <include>drools-container/**</include>
         <include>drools-core/**</include>
         <include>drools-decisiontables/**</include>
         <include>drools-doc/**</include>
         <include>drools-docs/**</include>
         <include>drools-eclipse/**</include>
-	    <include>drools-examples/**</include>	
-        <include>drools-factconstraint/**</include>		
-        <include>drools-flow-core/**</include>		
-        <include>drools-flow-compiler/**</include>		
-        <include>drools-flow-persistence-jpa/**</include>		
+        <include>drools-examples/**</include>
+        <include>drools-factconstraint/**</include>
+        <include>drools-flow-core/**</include>
+        <include>drools-flow-compiler/**</include>
+        <include>drools-flow-persistence-jpa/**</include>
         <include>drools-grid/**</include>
         <include>drools-guvnor/**</include>
-        <include>drools-ide-common/**</include>		
+        <include>drools-ide-common/**</include>
         <include>drools-jsr94/**</include>
-        <include>drools-persistence-jpa/**</include>			
+        <include>drools-persistence-jpa/**</include>
         <include>drools-process/**</include>
         <include>drools-repository/**</include>
-        <include>drools-rhq-plugin/**</include>		
+        <include>drools-rhq-plugin/**</include>
         <include>drools-server/**</include>
         <include>drools-templates/**</include>
         <include>drools-verifier/**</include>

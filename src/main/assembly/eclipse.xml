@@ -4,9 +4,9 @@
   <formats>
     <format>zip</format>
   </formats>
-  
+
   <includeBaseDirectory>false</includeBaseDirectory>
-  
+
   <fileSets>
     <fileSet>
       <includes>
@@ -15,13 +15,13 @@
         <include>README_DEPENDENCIES.txt</include>
       </includes>
     </fileSet>
-      
+
     <fileSet>
       <directory>target/eclipse</directory>
       <outputDirectory></outputDirectory>
       <includes>
-         <include>**/**</include>
-      </includes>      
+        <include>**/**</include>
+      </includes>
     </fileSet>
   </fileSets>
 </assembly>
