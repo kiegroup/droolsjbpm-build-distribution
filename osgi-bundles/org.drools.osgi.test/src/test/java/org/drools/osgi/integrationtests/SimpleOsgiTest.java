@@ -39,8 +39,9 @@ import org.test.decisiontable.Dummy;
 
 public class SimpleOsgiTest extends AbstractDroolsSpringDMTest {
 
-    protected void onSetUp() throws Exception {
-        
+    protected void onSetUp() throws Exception {               
+        ServiceReference kbuilderRef = bundleContext.getServiceReference( KnowledgeBuilderFactoryService.class.getName() );        
+        Thread.currentThread().setContextClassLoader(  bundleContext.getService( kbuilderRef ).getClass().getClassLoader()  );
     }
 
     protected void onTearDown() throws Exception {
@@ -65,7 +66,7 @@ public class SimpleOsgiTest extends AbstractDroolsSpringDMTest {
 
     public void testCompiler() {        
         ServiceReference serviceRef = bundleContext.getServiceReference( ServiceRegistry.class.getName() );
-        ServiceRegistry registry = (ServiceRegistry) bundleContext.getService( serviceRef );
+        ServiceRegistry registry = (ServiceRegistry) bundleContext.getService( serviceRef );              
 
         KnowledgeBuilderFactoryService knowledgeBuilderFactoryService = registry.get( KnowledgeBuilderFactoryService.class );
         
@@ -96,7 +97,7 @@ public class SimpleOsgiTest extends AbstractDroolsSpringDMTest {
             throw new RuntimeException( kbuilder.getErrors().toString() );
         }
 
-        KnowledgeBaseConfiguration kbaseConf = knowledgeBaseFactoryService.newKnowledgeBaseConfiguration( null,
+        KnowledgeBaseConfiguration kbaseConf = knowledgeBaseFactoryService.newKnowledgeBaseConfiguration( null,                                                                                                          
                                                                                                           getClass().getClassLoader() );
 
         KnowledgeBase kbase = knowledgeBaseFactoryService.newKnowledgeBase( kbaseConf );
@@ -107,7 +108,8 @@ public class SimpleOsgiTest extends AbstractDroolsSpringDMTest {
                             list );
 
         ksession.insert( new Person( "name",
-                                     34 ) );
+                                     34 ) );      
+        
         ksession.fireAllRules();
         ksession.dispose();
 
