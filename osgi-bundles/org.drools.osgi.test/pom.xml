@@ -4,14 +4,14 @@
   <parent>
     <artifactId>osgi-bundles</artifactId>
     <groupId>org.drools</groupId>
-    <version>5.2.0.SNAPSHOT</version>
+    <version>5.2.0-SNAPSHOT</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.drools</groupId>
   <artifactId>org.drools.osgi.test</artifactId>
   <packaging>jar</packaging>
   <name>Spring OSGi Test</name>
-  <version>5.2.0.SNAPSHOT</version>
+  <version>5.2.0-SNAPSHOT</version>
   <url>http://drools.org</url>
 
   <dependencies>
