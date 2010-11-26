@@ -80,32 +80,31 @@
           </execution>
 
           <!-- This copy won't work in hudson, so committing jars for now
-      execution>
-             <id>copy earlier version of asm</id>
-             <phase>generate-resources</phase>
+          <execution>
+            <id>copy earlier version of asm</id>
+            <phase>generate-resources</phase>
             <goals>
                <goal>copy</goal>
             </goals>
             <configuration>
               <artifactItems>
                 <artifactItem>  
-                <groupId>org.objectweb.asm</groupId>
-                <artifactId>com.springsource.org.objectweb.asm</artifactId>
-                <version>1.5.3</version>
-                      <type>jar</type>
-                      <overWrite>true</overWrite>
+                  <groupId>org.objectweb.asm</groupId>
+                  <artifactId>com.springsource.org.objectweb.asm</artifactId>
+                  <version>1.5.3</version>
+                  <type>jar</type>
+                  overWrite>true</overWrite>
                 </artifactItem>
-                <artifactItem>  
-                <groupId>org.jgroups</groupId>
-                <artifactId>com.springsource.org.jgroups</artifactId>
-                <version>2.2.8</version>
-                      <type>jar</type>
-                      <overWrite>true</overWrite>
+                <artifactItem>
+                  <groupId>org.jgroups</groupId>
+                  <artifactId>com.springsource.org.jgroups</artifactId>
+                  <version>2.2.8</version>
+                  <type>jar</type>
+                  <overWrite>true</overWrite>
                 </artifactItem>
-
               </artifactItems>
-                     <outputDirectory>plugins</outputDirectory>
-                     <overWriteReleases>true</overWriteReleases>
+              <outputDirectory>plugins</outputDirectory>
+              <overWriteReleases>true</overWriteReleases>
             </configuration>
           </execution-->
         </executions>
@@ -119,8 +118,8 @@
       </plugin>
     </plugins>
   </build>
-  <dependencies>
 
+  <dependencies>
     <!-- wrapped -->
     <dependency>
       <groupId>org.drools</groupId>
@@ -649,6 +648,6 @@
       <version>2.2.3</version>
       <scope>test</scope>
     </dependency>
-
   </dependencies>
+
 </project>

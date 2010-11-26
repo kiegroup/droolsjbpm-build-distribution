@@ -141,7 +141,6 @@
           <artifactId>poi</artifactId>
         </exclusion>
       </exclusions>
-
     </dependency>
   </dependencies>
 
