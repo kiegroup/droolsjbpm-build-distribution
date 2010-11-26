@@ -10,7 +10,7 @@
   <groupId>org.drools</groupId>
   <artifactId>org.drools.osgi.test</artifactId>
   <packaging>jar</packaging>
-  <name>Spring OSGi Test</name>
+  <name>Drools :: OSGi bundles :: Spring OSGi Test</name>
 
   <dependencies>
     <dependency>
