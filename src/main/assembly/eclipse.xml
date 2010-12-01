@@ -17,11 +17,13 @@
     </fileSet>
 
     <fileSet>
-      <directory>target/eclipse</directory>
-      <outputDirectory></outputDirectory>
-      <includes>
-        <include>**/**</include>
-      </includes>
+      <directory>drools-eclipse/org.drools.updatesite/target/site</directory>
+      <outputDirectory>drools-update-site</outputDirectory>
+    </fileSet>
+    <fileSet>
+      <directory>drools-eclipse/src/main/assembly/docs</directory>
+      <filtered>true</filtered>
+      <outputDirectory/>
     </fileSet>
   </fileSets>
 </assembly>
