@@ -185,7 +185,7 @@ public class EclipseArtifactFinder {
             for (File folder : folders)
                 importPluginFromFolder(folder, m_TargetPlugins);
 
-        }
+        }        
 
         for (Plugin plugin : m_WorkspacePlugins) {
             if (plugin.match(aArtifactId, aVersion))
@@ -317,7 +317,11 @@ public class EclipseArtifactFinder {
         
         String workspaceAreaProp = System.getProperty(s_PROP_WORKSPACE_AREA, "../..");
         
-        System.out.println( "workspace area: " + workspaceAreaProp );
+        try {
+            System.out.println( "workspace area: " + new File(workspaceAreaProp).getCanonicalPath() );
+        } catch ( IOException e ) {
+            throw new RuntimeException("Unable to set path");
+        }
         
         if (workspaceAreaProp != null)
             return new File(workspaceAreaProp);

@@ -42,6 +42,7 @@ public class SimpleOsgiTest extends AbstractDroolsSpringDMTest {
     protected void onSetUp() throws Exception {               
         ServiceReference kbuilderRef = bundleContext.getServiceReference( KnowledgeBuilderFactoryService.class.getName() );        
         Thread.currentThread().setContextClassLoader(  bundleContext.getService( kbuilderRef ).getClass().getClassLoader()  );
+        System.out.println( "setup" + bundleContext.getService( kbuilderRef ).getClass().getClassLoader() );
     }
 
     protected void onTearDown() throws Exception {
