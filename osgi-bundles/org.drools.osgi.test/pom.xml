@@ -38,12 +38,12 @@
          <artifactId>drools-persistence-jpa</artifactId>
       </dependency-->
     <dependency>
-      <groupId>org.drools</groupId>
-      <artifactId>drools-flow-core</artifactId>
+      <groupId>org.jbpm</groupId>
+      <artifactId>jbpm-flow</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.drools</groupId>
-      <artifactId>drools-bpmn2</artifactId>
+      <groupId>org.jbpm</groupId>
+      <artifactId>jbpm-bpmn2</artifactId>
     </dependency>
   </dependencies>
 

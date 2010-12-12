@@ -39,11 +39,8 @@ public class BPMN2OsgiTest extends AbstractDroolsSpringDMTest {
     protected void onTearDown() throws Exception {
         
     }
-    
-    public void testDummy() {
-    }
 
-    public void TODOtestMinimalProcess() throws Exception {     
+    public void testMinimalProcess() throws Exception {     
         KnowledgeBase kbase = createKnowledgeBase("BPMN2-MinimalProcess.xml");
         StatefulKnowledgeSession ksession = kbase.newStatefulKnowledgeSession();
         ProcessInstance processInstance = ksession.startProcess("Minimal");
