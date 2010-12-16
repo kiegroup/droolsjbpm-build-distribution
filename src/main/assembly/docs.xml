@@ -77,11 +77,11 @@
       </excludes>
     </fileSet>
 
-    <fileSet>
+    <!-- fileSet>
       <directory>drools-docs/drools-docs-flow/target/docbook/publish/en-US/</directory>
       <outputDirectory>drools-flow</outputDirectory>
       <includes>
-        <!--include>drools-docs/**</include-->
+        <!--include>drools-docs/**</include>
         <include>html/**</include>
         <include>html_single/**</include>
         <include>pdf/**</include>
@@ -92,7 +92,7 @@
         <exclude>**/.svn/**</exclude>
         <exclude>**/.metadata/**</exclude>
       </excludes>
-    </fileSet>
+    </fileSet-->
 
     <fileSet>
       <directory>drools-docs/drools-docs-guvnor/target/docbook/publish/en-US/</directory>

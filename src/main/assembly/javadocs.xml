@@ -58,7 +58,7 @@
       <outputDirectory>unstable/drools-dataloaders-jaxb</outputDirectory>
     </fileSet>
 
-    <fileSet>
+    <!--fileSet>
       <directory>drools-process/drools-process-task/target/site/apidocs</directory>
       <outputDirectory>unstable/drools-process-task</outputDirectory>
     </fileSet>
@@ -71,7 +71,7 @@
     <fileSet>
       <directory>drools-process/drools-process-enterprise/target/site/apidocs</directory>
       <outputDirectory>unstable/drools-process-enterprise</outputDirectory>
-    </fileSet>
+    </fileSet-->
 
     <fileSet>
       <directory>drools-templates/target/site/apidocs</directory>
