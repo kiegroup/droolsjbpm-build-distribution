@@ -55,13 +55,16 @@
   <moduleSets>
     <moduleSet>
       <includes>
-        <include>org.drools.planner:drools-planner-core</include>
+        <!-- By including drools-planner-core it forgets the dependencies of drools-planner-examples (such as the logger) -->
+        <!--<include>org.drools.planner:drools-planner-core</include>-->
         <include>org.drools.planner:drools-planner-examples</include>
       </includes>
       <binaries>
+        <!-- The modules itself -->
         <outputDirectory>lib</outputDirectory>
         <unpack>false</unpack>
         <dependencySets>
+          <!-- Their dependencies -->
           <dependencySet>
             <outputDirectory>lib</outputDirectory>
             <unpack>false</unpack>
