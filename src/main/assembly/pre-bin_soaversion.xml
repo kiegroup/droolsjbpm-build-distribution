@@ -15,7 +15,6 @@ org.drools:drools-workitems, org.drools:drools-process-task-->
     <fileSet>
       <includes>
         <include>LICENSE-ASL-2.0.txt</include>
-        <include>JBossORG-EULA.txt</include>
       </includes>
     </fileSet>
 
