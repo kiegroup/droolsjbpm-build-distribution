@@ -25,8 +25,8 @@ import org.junit.Test;
 
 public class JpaOsgi {
 
-    @Test
-	public void testDummyMethod() {
+    @Test @Ignore
+	public void testDummy() {
 	}
 
 //    PoolingDataSource            ds1;
