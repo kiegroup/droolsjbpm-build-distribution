@@ -20,15 +20,20 @@ package org.drools.osgi.integrationtests;
 //import bitronix.tm.TransactionManagerServices;
 //import bitronix.tm.resource.jdbc.PoolingDataSource;
 
+import org.junit.Ignore;
+import org.junit.Test;
+
 public class JpaOsgi {
 
+    @Test
 	public void testDummyMethod() {
 	}
+
 //    PoolingDataSource            ds1;
 //    private EntityManagerFactory emf;
 //
-//    protected void onSetUp() throws Exception {
-//        super.onSetUp();
+//    @Before
+//    public void onSetUp() throws Exception {
 //        
 //        ds1 = new PoolingDataSource();
 //        ds1.setUniqueName( "jdbc/testDS1" );
@@ -59,13 +64,14 @@ public class JpaOsgi {
 //
 //    }
 //
-//    protected void onTearDown() throws Exception {
+//    @After
+//    public void onTearDown() throws Exception {
 //        emf.close();
 //        ds1.close();
-//        super.onTearDown();
 //    }
 //
-//        public void FIXME_testPersistenceWithUserTransactions() throws Exception {
+//    @Test @Ignore
+//    public void testPersistenceWithUserTransactions() throws Exception {
 //        ServiceReference serviceRef = bundleContext.getServiceReference( ServiceRegistry.class.getName() );
 //        ServiceRegistry registry = (ServiceRegistry) bundleContext.getService( serviceRef );
 //
