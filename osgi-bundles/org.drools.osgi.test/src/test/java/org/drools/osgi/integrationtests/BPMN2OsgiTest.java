@@ -29,6 +29,12 @@ import org.drools.runtime.process.ProcessInstance;
 import org.drools.util.ServiceRegistry;
 import org.osgi.framework.ServiceReference;
 
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
 public class BPMN2OsgiTest extends AbstractDroolsSpringDMTest {
 
     protected void onSetUp() throws Exception {               
@@ -40,7 +46,8 @@ public class BPMN2OsgiTest extends AbstractDroolsSpringDMTest {
         
     }
 
-    public void testMinimalProcess() throws Exception {     
+    @Test
+    public void testMinimalProcess() throws Exception {
         KnowledgeBase kbase = createKnowledgeBase("BPMN2-MinimalProcess.xml");
         StatefulKnowledgeSession ksession = kbase.newStatefulKnowledgeSession();
         ProcessInstance processInstance = ksession.startProcess("Minimal");

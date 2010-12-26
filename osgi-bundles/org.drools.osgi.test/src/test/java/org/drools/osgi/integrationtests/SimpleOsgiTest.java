@@ -37,6 +37,12 @@ import org.test.Cheese;
 import org.test.Person;
 import org.test.decisiontable.Dummy;
 
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
 public class SimpleOsgiTest extends AbstractDroolsSpringDMTest {
 
     protected void onSetUp() throws Exception {               
@@ -49,12 +55,14 @@ public class SimpleOsgiTest extends AbstractDroolsSpringDMTest {
         
     }
 
-    public void testOsgiPlatformStarts() throws Exception {      
+    @Test
+    public void testOsgiPlatformStarts() throws Exception {
         System.out.println( bundleContext.getProperty( Constants.FRAMEWORK_VENDOR ) );
         System.out.println( bundleContext.getProperty( Constants.FRAMEWORK_VERSION ) );
         System.out.println( bundleContext.getProperty( Constants.FRAMEWORK_EXECUTIONENVIRONMENT ) );
     }
 
+    @Test
     public void testOsgiEnvironment() throws Exception {
         Bundle[] bundles = bundleContext.getBundles();
         System.out.println( "bundles: " );
@@ -65,7 +73,8 @@ public class SimpleOsgiTest extends AbstractDroolsSpringDMTest {
         System.out.println();
     }
 
-    public void testCompiler() {        
+    @Test
+    public void testCompiler() {
         ServiceReference serviceRef = bundleContext.getServiceReference( ServiceRegistry.class.getName() );
         ServiceRegistry registry = (ServiceRegistry) bundleContext.getService( serviceRef );              
 
@@ -122,6 +131,7 @@ public class SimpleOsgiTest extends AbstractDroolsSpringDMTest {
 
     }
 
+    @Test
     public void testDecisionTable() {
         ServiceReference serviceRef = bundleContext.getServiceReference( ServiceRegistry.class.getName() );
         ServiceRegistry registry = (ServiceRegistry) bundleContext.getService( serviceRef );
