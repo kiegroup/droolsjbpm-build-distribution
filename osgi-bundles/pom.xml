@@ -10,18 +10,34 @@
   <artifactId>osgi-bundles</artifactId>
   <packaging>pom</packaging>
   <name>Drools :: OSGi bundles</name>
-  <!--repositories>
+  
+  <repositories>
     <repository>  
       <id>com.springsource.repository.bundles.release</id>  
       <name>SpringSource Enterprise Bundle Repository - SpringSource Bundle Releases</name> 
-      <url>http://repository.springsource.com/maven/bundles/release</url> 
+      <url>http://repository.springsource.com/maven/bundles/release</url>
+      <releases>
+        <enabled>true</enabled>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
     </repository>
     <repository>
       <id>com.springsource.repository.bundles.external</id>
       <name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>  
-      <url>http://repository.springsource.com/maven/bundles/external</url> 
+      <url>http://repository.springsource.com/maven/bundles/external</url>
+      <releases>
+        <enabled>true</enabled>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
     </repository>   
-  </repositories-->
+  </repositories>
+  
   <properties>
     <slf4j.version>1.5.10</slf4j.version>
     <spring.maven.artifact.version>3.0.0.RELEASE</spring.maven.artifact.version>
@@ -440,16 +456,6 @@
       <groupId>org.aspectj</groupId>
       <artifactId>com.springsource.org.aspectj.weaver</artifactId>
       <version>1.6.8.RELEASE</version>
-    </dependency>
-    <dependency>
-      <groupId>org.eclipse.equinox.weaving</groupId>
-      <artifactId>aspectj</artifactId>
-      <version>1.0.0-200905031323</version>
-    </dependency>
-    <dependency>
-      <groupId>org.eclipse.equinox.weaving</groupId>
-      <artifactId>hook</artifactId>
-      <version>1.0.0-200905031323</version>
     </dependency>
 
     <dependency>
