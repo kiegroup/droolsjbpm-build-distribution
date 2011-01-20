@@ -78,7 +78,6 @@
         <configuration>
           <excludes>
             <exclude>org.drools:org.drools.osgi.wrapper.jxls-reader</exclude>
-            <exclude>org.drools:org.drools.osgi.wrapper.btm</exclude>
           </excludes>
         </configuration>
       </plugin>
