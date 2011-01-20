@@ -46,7 +46,7 @@
   </properties>
 
   <modules>
-    <module>jxls/org.drools.osgi.wrapper.jxls-reader</module>
+    <module>org.drools.osgi.wrapper.jxls-reader</module>
     <module>org.drools.osgi.test</module>
   </modules>
   <build>
