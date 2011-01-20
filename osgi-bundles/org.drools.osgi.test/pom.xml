@@ -77,7 +77,6 @@
         <artifactId>maven-eclipse-plugin</artifactId>
         <configuration>
           <excludes>
-            <exclude>org.drools:org.drools.osgi.wrapper.milyn-smooks-javabean</exclude>
             <exclude>org.drools:org.drools.osgi.wrapper.jxls-reader</exclude>
             <exclude>org.drools:org.drools.osgi.wrapper.btm</exclude>
           </excludes>
