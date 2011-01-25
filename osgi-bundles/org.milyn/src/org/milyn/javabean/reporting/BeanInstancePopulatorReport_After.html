@@ -1,8 +1,0 @@
-<#if resource.parameters.bindBeanId??>
-<#else>
-    <#if resource.parameters.valueAttributeName??>
-        Extracting value from attribute <b>${resource.parameters.valueAttributeName}</b> and binding it on property <b>${resource.parameters.property}</b> <#if resource.parameters.type??>(type <b>${resource.parameters.type}</b>)</#if> of bean <b>${resource.parameters.beanId}</b>.
-    <#else>
-        Extracting element data and binding it on property <b>${resource.parameters.property!'undefined'}</b> <#if resource.parameters.type??>(type <b>${resource.parameters.type}</b>)</#if> of bean <b>${resource.parameters.beanId}</b>.
-    </#if>
-</#if>
