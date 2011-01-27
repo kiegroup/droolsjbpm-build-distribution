@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- NOTE: SOA-P version excludes org.drools:drools-clips, org.drools:drools-transformer-*, org.drools:drools-server, 
-org.drools:drools-workitems, org.drools:drools-process-task-->
-
 <assembly>
   <id>pre-bin</id>
   <formats>
@@ -26,22 +23,15 @@ org.drools:drools-workitems, org.drools:drools-process-task-->
         <include>org.drools:drools-api</include>
         <include>org.drools:drools-core</include>
         <include>org.drools:drools-compiler</include>
-        <!--include>org.drools:drools-flow-core</include>
-        <include>org.drools:drools-flow-compiler</include-->
         <include>org.drools:drools-jsr94</include>
         <include>org.drools:drools-decisiontables</include>
         <include>org.drools:drools-templates</include>
-        <!--include>org.drools:drools-bam</include-->
         <include>org.drools:drools-verifier</include>
         <include>org.drools:drools-ant</include>
         <include>org.drools:drools-spring</include>
         <include>org.drools:drools-doc</include>
         <include>org.drools:drools-camel</include>
-        <!--include>org.drools:drools-bpmn2</include>
-        <include>org.drools:drools-workitems</include>
-        <include>org.drools:drools-process-task</include-->
         <include>org.drools:drools-persistence-jpa</include>
-        <!--include>org.drools:drools-flow-persistence-jpa</include-->
       </includes>
 
       <binaries>
@@ -63,6 +53,5 @@ org.drools:drools-workitems, org.drools:drools-process-task-->
     </moduleSet>
 
   </moduleSets>
-
 
 </assembly>
