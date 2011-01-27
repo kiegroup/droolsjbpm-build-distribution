@@ -204,7 +204,7 @@
           overwrite="true" />
   </target>
 
-  <!-- Install gwt-console -->
+  <!-- Install gwt-console --> <!-- TODO drools-gwt-console has been moved to jbpm -->
   <target name="install.drools-gwt-console.into.jboss" depends="download.h2,download.birt,download.drools.gwt-console">
     <!-- gwt-console -->
     <mkdir dir="${install.home}/target"/>
