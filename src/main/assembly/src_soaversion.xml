@@ -27,15 +27,11 @@
         <include>drools-eclipse/**</include>
         <include>drools-examples/**</include>
         <include>drools-factconstraint/**</include>
-        <!--include>drools-flow-core/**</include>
-        <include>drools-flow-compiler/**</include>
-        <include>drools-flow-persistence-jpa/**</include-->
         <include>drools-grid/**</include>
         <include>drools-guvnor/**</include>
         <include>drools-ide-common/**</include>
         <include>drools-jsr94/**</include>
         <include>drools-persistence-jpa/**</include>
-        <!--include>drools-process/**</include-->
         <include>drools-repository/**</include>
         <include>drools-rhq-plugin/**</include>
         <include>drools-server/**</include>
