@@ -9,7 +9,7 @@
 
   <fileSets>
     <fileSet>
-      <directory>drools-guvnor/target/drools-guvnor</directory>
+      <directory>guvnor-webapp/target/guvnor-webapp</directory>
       <outputDirectory></outputDirectory>
       <includes>
         <include>**</include>

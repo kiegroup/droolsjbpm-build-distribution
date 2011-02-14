@@ -26,7 +26,7 @@
         <include>drools-examples/**</include>
         <include>drools-factconstraint/**</include>
         <include>drools-grid/**</include>
-        <include>drools-guvnor/**</include>
+        <include>guvnor-webapp/**</include>
         <include>droolsjbpm-ide-common/**</include>
         <include>drools-jsr94/**</include>
         <include>drools-persistence-jpa/**</include>
@@ -42,7 +42,7 @@
         <include>*.txt</include>
       </includes>
       <excludes>
-        <exclude>drools-guvnor/repository/**</exclude>
+        <exclude>guvnor-webapp/repository/**</exclude>
         <exclude>guvnor-repository/repository/**</exclude>
         <exclude>drools-eclipse/org.drools.eclipse/lib/**</exclude>
         <exclude>drools-eclipse/org.drools.eclipse/help/**</exclude>

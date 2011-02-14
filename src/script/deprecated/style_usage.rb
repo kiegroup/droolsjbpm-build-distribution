@@ -44,4 +44,4 @@ def process(css, sources_root)
   puts style_names
 end
 
-process "/Users/michaelneale/project/jboss-rules/drools-guvnor/src/main/java/org/drools/brms/public/JBRMS.css", "/Users/michaelneale/project/jboss-rules/drools-guvnor/src/main/java/org/drools/brms"
+process "/Users/michaelneale/project/jboss-rules/guvnor-webapp/src/main/java/org/drools/brms/public/JBRMS.css", "/Users/michaelneale/project/jboss-rules/guvnor-webapp/src/main/java/org/drools/brms"

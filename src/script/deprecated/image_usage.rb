@@ -41,4 +41,4 @@ def process(image_root, sources_root)
 
 end
 
-process "/Users/michaelneale/project/jboss-rules/drools-guvnor/src/main/java/org/drools/brms/public/images", "/Users/michaelneale/project/jboss-rules/drools-guvnor/src/main/java/org/drools/brms"
+process "/Users/michaelneale/project/jboss-rules/guvnor-webapp/src/main/java/org/drools/brms/public/images", "/Users/michaelneale/project/jboss-rules/guvnor-webapp/src/main/java/org/drools/brms"
