@@ -29,7 +29,7 @@
         <include>drools-factconstraint/**</include>
         <include>drools-grid/**</include>
         <include>drools-guvnor/**</include>
-        <include>drools-ide-common/**</include>
+        <include>droolsjbpm-ide-common/**</include>
         <include>drools-jsr94/**</include>
         <include>drools-persistence-jpa/**</include>
         <include>guvnor-repository/**</include>
