@@ -27,9 +27,6 @@ import org.springframework.osgi.test.provisioning.ArtifactLocator;
  * uses the Eclipse patterns and conventions to identify the artifacts.
  * 
  * It gives priority to workspace bundle over target bundles.
- * 
- * @author Frederic Conrotte
- * 
  */
 public class EclipseWorkspaceArtifactLocator implements ArtifactLocator {
 

@@ -28,11 +28,7 @@ import org.springframework.util.StringUtils;
 
 /**
  * Abstract Base Class for JUnit Tests in a OSGI Environment
- * 
- * @author Frederic Conrotte
- * @author Jan Blanckenhorn
  */
-
 public abstract class AbstractDroolsSpringDMTest extends AbstractConfigurableBundleCreatorTests {
     private static final String TEST_FRAMEWORK_BUNDLES_CONF_FILE = "/boot-bundles.properties";
     private ArtifactLocator     m_MavenArtifactLocator, m_EclipseArtifactLocator;

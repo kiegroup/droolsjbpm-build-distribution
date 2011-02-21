@@ -40,8 +40,6 @@ import org.springframework.core.io.Resource;
 /**
  * Find a packaged and unpackaged artifact from Eclipse Workspace and Eclipse Target areas.
  * Does not use groupId to resolve bundles.
- * 
- * @author Frederic Conrotte
  */
 public class EclipseArtifactFinder {
 
