@@ -69,7 +69,7 @@
   <!-- Download Eclipse -->
   <condition property="download.type" value="win32">
     <os family="windows" />
-  </condition>	
+  </condition>
   <condition property="download.type" value="macosx-carbon">
     <and>
       <os family="mac" />
@@ -83,16 +83,16 @@
       </not>
       <os family="unix" />
     </and>
-  </condition>		
+  </condition>
   <condition property="download.extension" value="zip">
     <os family="windows" />
-  </condition>		
+  </condition>
   <condition property="download.extension" value="tar.gz">
     <or>
       <os family="mac" />
       <os family="unix" />
     </or>
-  </condition>	
+  </condition>
   <condition property="expandTypeZip" value="true">
     <equals arg1="${download.extension}" arg2="zip" />
   </condition>   
@@ -270,10 +270,10 @@
 
   <!-- Install Eclipse -->
   <target name="install.eclipse" depends="download.eclipse,download.eclipse.gef">   
-    <antcall target="unzipEclipse" />	
+    <antcall target="unzipEclipse" />
     <antcall target="untarEclipse" />
     <unzip dest="${install.home}" overwrite="true" 
-           src="${install.home}/lib/GEF-runtime-3.5.1.zip" />				         
+           src="${install.home}/lib/GEF-runtime-3.5.1.zip" />
   </target>    
   
   <target name="unzipEclipse" if="expandTypeZip">
@@ -408,7 +408,7 @@
   <target name="stop.demo" depends="stop.h2,stop.jboss" />
 
   <!-- ############ CLEAN ############ -->
-	
+
   <!-- Clean jboss -->
   <target name="clean.jboss">
     <delete dir="${install.home}/jboss-4.2.3.GA"/>
@@ -425,5 +425,5 @@
 
   <!-- Stop Demo -->
   <target name="clean.demo" depends="clean.jboss,clean.eclipse" />
-	
+
 </project>
