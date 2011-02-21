@@ -45,8 +45,8 @@ import static org.junit.Assert.*;
 
 public class SimpleOsgiTest extends AbstractDroolsSpringDMTest {
 
-    protected void onSetUp() throws Exception {               
-        ServiceReference kbuilderRef = bundleContext.getServiceReference( KnowledgeBuilderFactoryService.class.getName() );        
+    protected void onSetUp() throws Exception {
+        ServiceReference kbuilderRef = bundleContext.getServiceReference( KnowledgeBuilderFactoryService.class.getName() );
         Thread.currentThread().setContextClassLoader(  bundleContext.getService( kbuilderRef ).getClass().getClassLoader()  );
         System.out.println( "setup" + bundleContext.getService( kbuilderRef ).getClass().getClassLoader() );
     }
@@ -76,7 +76,7 @@ public class SimpleOsgiTest extends AbstractDroolsSpringDMTest {
     @Test
     public void testCompiler() {
         ServiceReference serviceRef = bundleContext.getServiceReference( ServiceRegistry.class.getName() );
-        ServiceRegistry registry = (ServiceRegistry) bundleContext.getService( serviceRef );              
+        ServiceRegistry registry = (ServiceRegistry) bundleContext.getService( serviceRef );
 
         KnowledgeBuilderFactoryService knowledgeBuilderFactoryService = registry.get( KnowledgeBuilderFactoryService.class );
         
@@ -118,7 +118,7 @@ public class SimpleOsgiTest extends AbstractDroolsSpringDMTest {
                             list );
 
         ksession.insert( new Person( "name",
-                                     34 ) );      
+                                     34 ) );
         
         ksession.fireAllRules();
         ksession.dispose();

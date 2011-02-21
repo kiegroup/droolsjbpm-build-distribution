@@ -30,7 +30,7 @@ import org.springframework.core.io.UrlResource;
 public class UnpackedOSGiBundleResource extends UrlResource {
 
     public UnpackedOSGiBundleResource(URL aUrl) {
-        super( aUrl );             
+        super( aUrl );
         // copy META-INF and build.properties
         File file = new File( aUrl.getPath().substring( "file:///".length() ));
 
@@ -52,7 +52,7 @@ public class UnpackedOSGiBundleResource extends UrlResource {
         File targetBuildProperties = new File (file, "build.properties" );
         
         copyfile( sourceBuildProperties,
-                  targetBuildProperties );        
+                  targetBuildProperties );
     }
 
     @Override
@@ -64,7 +64,7 @@ public class UnpackedOSGiBundleResource extends UrlResource {
                           File f2) {
         InputStream in = null;
         OutputStream out = null;
-        try {            
+        try {
              in = new FileInputStream( f1 );
 
             //For Overwrite the file.
@@ -95,7 +95,7 @@ public class UnpackedOSGiBundleResource extends UrlResource {
                         } catch ( IOException e ) {
                             throw new RuntimeException("Unable to close Input stream", e );
                         }
-                    }                    
+                    }
                 }
             }
         }

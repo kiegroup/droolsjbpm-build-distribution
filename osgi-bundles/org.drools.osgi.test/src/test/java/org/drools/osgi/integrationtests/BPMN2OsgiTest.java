@@ -37,8 +37,8 @@ import static org.junit.Assert.*;
 
 public class BPMN2OsgiTest extends AbstractDroolsSpringDMTest {
 
-    protected void onSetUp() throws Exception {               
-        ServiceReference kbuilderRef = bundleContext.getServiceReference( KnowledgeBuilderFactoryService.class.getName() );        
+    protected void onSetUp() throws Exception {
+        ServiceReference kbuilderRef = bundleContext.getServiceReference( KnowledgeBuilderFactoryService.class.getName() );
         Thread.currentThread().setContextClassLoader(  bundleContext.getService( kbuilderRef ).getClass().getClassLoader()  );
     }
 
@@ -71,12 +71,12 @@ public class BPMN2OsgiTest extends AbstractDroolsSpringDMTest {
 //        ((PackageBuilderConfiguration) conf).addSemanticModule(new BPMNSemanticModule());
 //        ((PackageBuilderConfiguration) conf).addSemanticModule(new BPMN2SemanticModule());
 //        ((PackageBuilderConfiguration) conf).addSemanticModule(new BPMNDISemanticModule());
-//        ((PackageBuilderConfiguration) conf).addDialect("XPath", new XPathDialectConfiguration());        
+//        ((PackageBuilderConfiguration) conf).addDialect("XPath", new XPathDialectConfiguration());
 //        
 //        XmlProcessReader processReader = new XmlProcessReader(
 //            ((PackageBuilderConfiguration) conf).getSemanticModules());
 //        RuleFlowProcess p = (RuleFlowProcess)
-//            processReader.read(BPMN2OsgiTest.class.getResourceAsStream(process));               
+//            processReader.read(BPMN2OsgiTest.class.getResourceAsStream(process));
 //        
 //        KnowledgeBuilder kbuilder = knowledgeBuilderFactoryService.newKnowledgeBuilder(conf);
 //        
@@ -92,6 +92,6 @@ public class BPMN2OsgiTest extends AbstractDroolsSpringDMTest {
         KnowledgeBase kbase = knowledgeBaseFactoryService.newKnowledgeBase();
         kbase.addKnowledgePackages(kbuilder.getKnowledgePackages());
         return kbase;
-    }   
+    }
 
 }

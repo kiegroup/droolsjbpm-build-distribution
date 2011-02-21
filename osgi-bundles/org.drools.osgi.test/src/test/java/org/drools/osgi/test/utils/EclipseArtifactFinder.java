@@ -185,7 +185,7 @@ public class EclipseArtifactFinder {
             for (File folder : folders)
                 importPluginFromFolder(folder, m_TargetPlugins);
 
-        }        
+        }
 
         for (Plugin plugin : m_WorkspacePlugins) {
             if (plugin.match(aArtifactId, aVersion))
@@ -233,7 +233,7 @@ public class EclipseArtifactFinder {
         			if ( str.contains( "drools-eclipse" ) ||  str.contains( "osgi-bundles" ) ) {
         				list = null;
         			}
-        		}            	
+        		}
             	if ( list != null && list.contains("pom.xml")) {
             		importPluginFromFolder(((FileSystemResource)resource).getFile(), plugins);
             	}
@@ -344,7 +344,7 @@ public class EclipseArtifactFinder {
                 File f = new File(System.getProperty(prop));
                 if ( !f.isDirectory() ) {
                     throw new IllegalStateException(s_PROP_TARGET_AREA + " not set.");
-                }                
+                }
                 result.add(f);
             }
         }

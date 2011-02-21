@@ -49,7 +49,7 @@ public abstract class AbstractDroolsSpringDMTest extends AbstractConfigurableBun
     
     @Override
     protected void preProcessBundleContext(BundleContext platformBundleContext) throws Exception {
-        try { 
+        try {
             super.preProcessBundleContext( platformBundleContext );
         } catch( Exception e ) {
             throw e;
@@ -58,7 +58,7 @@ public abstract class AbstractDroolsSpringDMTest extends AbstractConfigurableBun
     
     @Override
     protected void postProcessBundleContext(BundleContext context) throws Exception {
-        try { 
+        try {
             super.postProcessBundleContext( context );
         } catch( Exception e ) {
             throw e;
@@ -88,7 +88,7 @@ public abstract class AbstractDroolsSpringDMTest extends AbstractConfigurableBun
      */
     protected Resource locateBundle(String bundleId) {
         Assert.hasText( bundleId,
-                        "bundleId should not be empty" );        
+                        "bundleId should not be empty" );
         
         Resource result = null;
 

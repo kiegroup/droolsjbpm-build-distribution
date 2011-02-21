@@ -45,13 +45,13 @@ public class DemoTaskService {
         TaskServiceSession taskSession = taskService.createSession();
         // Add users
         Map vars = new HashMap();
-        Reader reader = new InputStreamReader( DemoTaskService.class.getResourceAsStream( "LoadUsers.mvel" ) );     
-        Map<String, User> users = ( Map<String, User> ) eval( reader, vars );   
+        Reader reader = new InputStreamReader( DemoTaskService.class.getResourceAsStream( "LoadUsers.mvel" ) );
+        Map<String, User> users = ( Map<String, User> ) eval( reader, vars );
         for ( User user : users.values() ) {
             taskSession.addUser( user );
-        }           
-        reader = new InputStreamReader( DemoTaskService.class.getResourceAsStream( "LoadGroups.mvel" ) );      
-        Map<String, Group> groups = ( Map<String, Group> ) eval( reader, vars );     
+        }
+        reader = new InputStreamReader( DemoTaskService.class.getResourceAsStream( "LoadGroups.mvel" ) );
+        Map<String, Group> groups = ( Map<String, Group> ) eval( reader, vars );
         for ( Group group : groups.values() ) {
             taskSession.addGroup( group );
         }
