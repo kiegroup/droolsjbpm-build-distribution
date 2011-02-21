@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
+  <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.drools</groupId>
-    <artifactId>drools</artifactId>
+    <groupId>org.droolsjbpm</groupId>
+    <!-- TODO parent should be osgi-bundles but that creates cyclic dependency -->
+    <artifactId>droolsjbpm-build-distribution</artifactId>
     <version>5.2.0-SNAPSHOT</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
-  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.drools</groupId><!-- TODO rename groupId, artifactId, name and description -->
   <artifactId>org.drools.osgi.wrapper.jxls-reader</artifactId>
   <version>0.9.8</version>
-  <packaging>jar</packaging>
 
   <name>Drools :: OSGi :: Wrapper :: jxls-reader</name>
+
   <build>
     <plugins>
 

@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.drools</groupId>
-    <artifactId>drools</artifactId>
+    <groupId>org.droolsjbpm</groupId>
+    <artifactId>droolsjbpm-build-distribution</artifactId>
     <version>5.2.0-SNAPSHOT</version>
   </parent>
-  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.drools</groupId><!-- TODO rename groupId, artifactId, name and description -->
   <artifactId>osgi-bundles</artifactId>
   <packaging>pom</packaging>
+
   <name>Drools :: OSGi bundles</name>
   
   <repositories>
@@ -232,7 +236,6 @@
       </exclusions>
     </dependency>
 
-
     <dependency>
       <groupId>org.antlr</groupId>
       <artifactId>com.springsource.antlr</artifactId>
@@ -361,7 +364,6 @@
        <artifactId>com.springsource.slf4j.juli</artifactId>
        <version>1.5.10</version>
     </dependency-->
-
 
     <!-- Apache Commons -->
     <dependency>
@@ -513,7 +515,6 @@
       <artifactId>com.springsource.net.sf.ehcache</artifactId>
       <version>1.6.2</version>
     </dependency>
-
 
     <!-- Persistence -->
     <dependency>
