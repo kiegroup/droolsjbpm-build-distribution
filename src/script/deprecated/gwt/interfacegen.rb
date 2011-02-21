@@ -16,13 +16,13 @@ output = ""
 interface.each_line { |line|
  groups = line.scan /\s+public\s+(.*?)\s+(.*?)\)\;\s*/
  if groups.size > 0 then 
-	 if groups[0][0] == 'interface' then
-		output = output + "\n" + line
- 	else 
-        	output = output + "\n" + "        public void " + groups[0][1] + ', AsyncCallback callback);'
- 	end
+     if groups[0][0] == 'interface' then
+        output = output + "\n" + line
+     else
+        output = output + "\n" + "        public void " + groups[0][1] + ', AsyncCallback callback);'
+     end
  else 
-	output = output + "\n" + line
+    output = output + "\n" + line
 
  end
 

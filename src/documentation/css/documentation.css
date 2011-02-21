@@ -256,13 +256,13 @@ div.warning h2 {color:white;}
 div.note .guilabel, div.tip .guilabel, div.important .guilabel, div.caution .guilabel, div.warning .guilabel {color:white !important;}
 
 div.note li, div.tip li, div.caution li, div.warning li, div.important li {
-	padding-left:10px;
-	margin:0em;
+    padding-left:10px;
+    margin:0em;
 }
-	
+    
 div.note ul, div.tip ul, div.caution ul, div.warning ul, div.important ul {
-	padding-left:40px;
-	margin:0em;
+    padding-left:40px;
+    margin:0em;
 }
 
 div.note pre pre a:visited, div.tip pre pre a:visited, div.important pre pre a:visited, div.caution pre pre a:visited, div.warning pre pre a:visited,
@@ -270,7 +270,7 @@ div.note pre a:link, div.tip pre a:link, div.important pre a:link, div.caution p
 
 div.note a:visited, div.tip a:visited, div.important a:visited, div.warning a:visited,
 div.note a:link, div.tip a:link, div.important a:link,  div.warning a:link {color:#f7f2d0;}
-	
+    
 div.note a:visited, div.note a:link, div.caution a:link, div.caution a:visited {color:#0066cc;}
 
 /* Admonition icons spacing */
@@ -542,9 +542,9 @@ div.abstract {font-size:larger;}
 /* Simpler author style on contents page */
 
 .authorgroup div {
-	margin-left:10px;
-	margin-right:10px;
-	margin-bottom:15px;
+    margin-left:10px;
+    margin-right:10px;
+    margin-bottom:15px;
 }
 
 ul li p:last-child {

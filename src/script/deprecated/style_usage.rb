@@ -13,7 +13,7 @@ def mapdir(dir, predicate, action)
           action.call(sub)
         else 
           if File.directory? sub and not sub.include? ".svn" 
-	  then mapdir(sub, predicate, action) end
+      then mapdir(sub, predicate, action) end
         end        
       end
     end
