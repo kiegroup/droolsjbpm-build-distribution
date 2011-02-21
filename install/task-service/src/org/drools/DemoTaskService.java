@@ -38,7 +38,7 @@ import org.mvel2.ParserContext;
 import org.mvel2.compiler.ExpressionCompiler;
 
 public class DemoTaskService {
-	
+
     public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("org.drools.task");
         TaskService taskService = new TaskService(emf, SystemEventListenerFactory.getSystemEventListener());

@@ -26,8 +26,8 @@ import org.junit.Test;
 public class JpaOsgi {
 
     @Test @Ignore
-	public void testDummy() {
-	}
+    public void testDummy() {
+    }
 
 //    PoolingDataSource            ds1;
 //    private EntityManagerFactory emf;

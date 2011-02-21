@@ -21,36 +21,36 @@ import org.drools.runtime.StatefulKnowledgeSession;
  */
 public class ProcessTest {
 
-	public static final void main(String[] args) {
-		try {
-			// load up the knowledge base
-			KnowledgeBase kbase = readKnowledgeBase();
-			StatefulKnowledgeSession ksession = kbase.newStatefulKnowledgeSession();
-			KnowledgeRuntimeLogger logger = KnowledgeRuntimeLoggerFactory.newThreadedFileLogger(ksession, "test", 1000);
-			ksession.getWorkItemManager().registerWorkItemHandler("Human Task", new WSHumanTaskHandler());
-			// start a new process instance
-			Map<String, Object> params = new HashMap<String, Object>();
-			params.put("employee", "krisv");
-			ksession.startProcess("com.sample.evaluation", params);
-			logger.close();
-		} catch (Throwable t) {
-			t.printStackTrace();
-		}
-	}
+    public static final void main(String[] args) {
+        try {
+            // load up the knowledge base
+            KnowledgeBase kbase = readKnowledgeBase();
+            StatefulKnowledgeSession ksession = kbase.newStatefulKnowledgeSession();
+            KnowledgeRuntimeLogger logger = KnowledgeRuntimeLoggerFactory.newThreadedFileLogger(ksession, "test", 1000);
+            ksession.getWorkItemManager().registerWorkItemHandler("Human Task", new WSHumanTaskHandler());
+            // start a new process instance
+            Map<String, Object> params = new HashMap<String, Object>();
+            params.put("employee", "krisv");
+            ksession.startProcess("com.sample.evaluation", params);
+            logger.close();
+        } catch (Throwable t) {
+            t.printStackTrace();
+        }
+    }
 
-	private static KnowledgeBase readKnowledgeBase() throws Exception {
-		KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
-		kbuilder.add(ResourceFactory.newClassPathResource("Evaluation.bpmn"), ResourceType.BPMN2);
-		KnowledgeBuilderErrors errors = kbuilder.getErrors();
-		if (errors.size() > 0) {
-			for (KnowledgeBuilderError error: errors) {
-				System.err.println(error);
-			}
-			throw new IllegalArgumentException("Could not parse knowledge.");
-		}
-		KnowledgeBase kbase = KnowledgeBaseFactory.newKnowledgeBase();
-		kbase.addKnowledgePackages(kbuilder.getKnowledgePackages());
-		return kbase;
-	}
+    private static KnowledgeBase readKnowledgeBase() throws Exception {
+        KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
+        kbuilder.add(ResourceFactory.newClassPathResource("Evaluation.bpmn"), ResourceType.BPMN2);
+        KnowledgeBuilderErrors errors = kbuilder.getErrors();
+        if (errors.size() > 0) {
+            for (KnowledgeBuilderError error: errors) {
+                System.err.println(error);
+            }
+            throw new IllegalArgumentException("Could not parse knowledge.");
+        }
+        KnowledgeBase kbase = KnowledgeBaseFactory.newKnowledgeBase();
+        kbase.addKnowledgePackages(kbuilder.getKnowledgePackages());
+        return kbase;
+    }
 
 }

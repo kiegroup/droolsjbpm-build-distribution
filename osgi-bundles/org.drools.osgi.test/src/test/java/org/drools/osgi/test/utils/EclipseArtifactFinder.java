@@ -226,17 +226,17 @@ public class EclipseArtifactFinder {
             if (man != null) {
                 addPlugin(plugins, resource, man, true);
             } else {
-            	// this is not a project folder, so descend to find potential nested modules
-            	List<String> list = Arrays.asList( ((FileSystemResource)resource).getFile().list() );
-        		for ( String str : list ) {
-        			// do not process eclipse proejcts at the moment
-        			if ( str.contains( "drools-eclipse" ) ||  str.contains( "osgi-bundles" ) ) {
-        				list = null;
-        			}
-        		}
-            	if ( list != null && list.contains("pom.xml")) {
-            		importPluginFromFolder(((FileSystemResource)resource).getFile(), plugins);
-            	}
+                // this is not a project folder, so descend to find potential nested modules
+                List<String> list = Arrays.asList( ((FileSystemResource)resource).getFile().list() );
+                for ( String str : list ) {
+                    // do not process eclipse proejcts at the moment
+                    if ( str.contains( "drools-eclipse" ) ||  str.contains( "osgi-bundles" ) ) {
+                        list = null;
+                    }
+                }
+                if ( list != null && list.contains("pom.xml")) {
+                    importPluginFromFolder(((FileSystemResource)resource).getFile(), plugins);
+                }
             }
         }
 
