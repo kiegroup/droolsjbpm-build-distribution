@@ -15,7 +15,7 @@
 
   <name>Drools and jBPM build distribution</name>
   <description>
-    The build distribution includes OSGi bundles, top level assemblies, ... for Drools, jBPM, Guvnor, ...
+    The build distribution contains OSGi bundles, top level assemblies, ... for Drools, jBPM and Guvnor.
   </description>
 
   <repositories>
