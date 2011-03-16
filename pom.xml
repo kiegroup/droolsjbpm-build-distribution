@@ -36,6 +36,12 @@
     </repository>
   </repositories>
 
+  <scm>
+    <connection>scm:git:git@github.com:droolsjbpm/droolsjbpm-build-distribution.git</connection>
+    <developerConnection>scm:git:git@github.com:droolsjbpm/droolsjbpm-build-distribution.git</developerConnection>
+    <url>https://github.com/droolsjbpm/droolsjbpm-build-distribution</url>
+  </scm>
+
   <modules>
     <module>osgi-bundles</module>
   </modules>
