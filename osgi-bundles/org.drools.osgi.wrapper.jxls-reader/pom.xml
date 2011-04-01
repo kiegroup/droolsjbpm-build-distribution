@@ -11,11 +11,11 @@
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
-  <groupId>org.drools</groupId><!-- TODO rename groupId, artifactId, name and description -->
   <artifactId>org.drools.osgi.wrapper.jxls-reader</artifactId>
   <version>0.9.8</version>
 
-  <name>Drools :: OSGi :: Wrapper :: jxls-reader</name>
+  <name>Drools OSGi wrapper for JXLS reader</name>
+  <description>JXLS reader isn't OSGi enabled by default, so this module makes it OSGi enabled instead.</description>
 
   <build>
     <plugins>

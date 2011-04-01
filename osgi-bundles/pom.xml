@@ -9,11 +9,11 @@
     <version>5.2.0-SNAPSHOT</version>
   </parent>
 
-  <groupId>org.drools</groupId><!-- TODO rename groupId, artifactId, name and description -->
   <artifactId>osgi-bundles</artifactId>
   <packaging>pom</packaging>
 
-  <name>Drools :: OSGi bundles</name>
+  <name>Drools OSGi bundles</name>
+  <description>Produces OSGi enabled Drools Expert and Fusions jars.</description>
   
   <repositories>
     <repository>  
