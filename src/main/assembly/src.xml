@@ -15,7 +15,7 @@
       <outputDirectory></outputDirectory>
       <includes>
         <include>drools-ant/**</include>
-        <include>drools-api/**</include>
+        <include>knowledge-api/**</include>
         <include>drools-camel/**</include>
         <include>drools-clips/**</include>
         <include>drools-compiler/**</include>
