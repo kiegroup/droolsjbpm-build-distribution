@@ -7,7 +7,7 @@
 
 
 scriptDir=$(dirname $0)
-projectDir=${scriptDir}/../..
+projectDir=${scriptDir}/../../..
 
 echo "Split packages in src/main/java:"
 echo "================================"
