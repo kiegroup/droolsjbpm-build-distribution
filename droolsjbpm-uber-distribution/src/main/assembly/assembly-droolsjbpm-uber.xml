@@ -16,6 +16,7 @@
         <include>org.drools.planner:drools-planner-distribution:zip</include>
         <include>org.drools:droolsjbpm-integration-distribution:zip</include>
         <include>org.drools:guvnor-distribution:zip</include>
+        <include>org.drools:droolsjbpm-tools-distribution:zip</include>
       </includes>
       <unpack>false</unpack>
       <outputDirectory/>
