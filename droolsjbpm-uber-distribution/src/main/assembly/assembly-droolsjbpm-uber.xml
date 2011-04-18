@@ -17,6 +17,7 @@
         <include>org.drools:droolsjbpm-integration-distribution:zip</include>
         <include>org.drools:guvnor-distribution:zip</include>
         <include>org.drools:droolsjbpm-tools-distribution:zip</include>
+        <include>org.drools:drools-osgi-bundles-distribution:zip</include>
       </includes>
       <unpack>false</unpack>
       <outputDirectory/>

@@ -72,6 +72,12 @@
       <version>${project.version}</version>
       <type>zip</type>
     </dependency>
+    <dependency>
+      <groupId>org.drools</groupId>
+      <artifactId>drools-osgi-bundles-distribution</artifactId>
+      <version>${project.version}</version>
+      <type>zip</type>
+    </dependency>
 
     <!-- Javadocs and documentation -->
     <dependency>
