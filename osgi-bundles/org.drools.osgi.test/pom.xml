@@ -5,18 +5,21 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.drools</groupId>
-    <artifactId>osgi-bundles</artifactId>
+    <artifactId>drools-osgi-bundles</artifactId>
     <version>5.2.0-SNAPSHOT</version>
   </parent>
 
   <artifactId>org.drools.osgi.test</artifactId>
 
-  <name>Drools :: OSGi bundles :: Spring OSGi Test</name>
+  <name>Drools OSGi bundles test</name>
 
   <dependencies>
     <dependency>
       <groupId>org.drools</groupId>
-      <artifactId>knowledge-api</artifactId>
+      <artifactId>drools-osgi-bundles-distribution</artifactId>
+      <type>pom</type>
+      <version>${project.version}</version>
+      <scope>import</scope>
     </dependency>
     <dependency>
       <groupId>org.drools</groupId>
@@ -46,6 +49,72 @@
       <groupId>org.jbpm</groupId>
       <artifactId>jbpm-bpmn2</artifactId>
     </dependency>
+
+    <!-- Test Scoped -->
+    <!-- Equinox OSGi platform -->
+    <dependency>
+      <groupId>org.eclipse.equinox</groupId>
+      <artifactId>org.eclipse.osgi</artifactId>
+      <version>${equinox.ver}</version>
+      <type>jar</type>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.equinox</groupId>
+      <artifactId>org.eclipse.osgi.services</artifactId>
+      <version>${equinox.ver}</version>
+      <type>jar</type>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.junit</groupId>
+      <artifactId>com.springsource.org.junit</artifactId>
+      <version>4.8.1</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>org.springframework.test</artifactId>
+      <version>${spring.maven.artifact.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.osgi</groupId>
+      <artifactId>org.springframework.osgi.test</artifactId>
+      <version>${spring.osgi.version}</version>
+      <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>org.junit</groupId>
+          <artifactId>com.springsource.junit</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.osgi</groupId>
+      <artifactId>org.springframework.osgi.extensions.annotation</artifactId>
+      <version>${spring.osgi.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.osgi</groupId>
+      <artifactId>org.springframework.osgi.extender</artifactId>
+      <version>${spring.osgi.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.objectweb.asm</groupId>
+      <artifactId>com.springsource.org.objectweb.asm</artifactId>
+      <version>2.2.3</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <build>
@@ -60,7 +129,7 @@
           <systemPropertyVariables>
             <propertyName>propertyValue</propertyName>
             <buildDirectory>${project.build.directory}</buildDirectory>
-            <eclipse.target.area>../plugins</eclipse.target.area>
+            <eclipse.target.area>../drools-osgi-bundles-distribution/plugins</eclipse.target.area>
             <eclipse.workspace.area>../..</eclipse.workspace.area>
           </systemPropertyVariables>
         </configuration>
