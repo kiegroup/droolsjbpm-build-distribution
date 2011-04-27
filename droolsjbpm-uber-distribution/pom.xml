@@ -82,7 +82,7 @@
     <!-- Javadocs and documentation -->
     <dependency>
       <groupId>org.drools</groupId>
-      <artifactId>drools-introduction-docs</artifactId>
+      <artifactId>droolsjbpm-introduction-docs</artifactId>
       <type>jdocbook</type>
     </dependency>
     <dependency>
