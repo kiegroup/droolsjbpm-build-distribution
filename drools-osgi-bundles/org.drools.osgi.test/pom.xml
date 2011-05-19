@@ -47,7 +47,7 @@
       <groupId>org.drools</groupId>
       <artifactId>drools-osgi-bundles-distribution</artifactId>
       <type>pom</type>
-      <version>${project.version}</version>
+      <version>${droolsjbpm-build-distribution.version}</version>
       <scope>import</scope>
     </dependency>
     <dependency>
