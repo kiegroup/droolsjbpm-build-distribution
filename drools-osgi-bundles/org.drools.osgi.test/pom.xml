@@ -12,6 +12,7 @@
   <artifactId>org.drools.osgi.test</artifactId>
 
   <name>Drools OSGi bundles test</name>
+  <description>Drools OSGi bundles test</description>
 
   <build>
     <plugins>
