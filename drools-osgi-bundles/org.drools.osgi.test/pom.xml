@@ -41,6 +41,15 @@
         </configuration>
       </plugin>
     </plugins>
+    <testResources>
+      <testResource>
+        <directory>${basedir}/src/test/resources</directory>
+      </testResource>
+      <testResource>
+        <directory>${basedir}/src/test/filtered-resources</directory>
+        <filtering>true</filtering>
+      </testResource>
+    </testResources>
   </build>
 
   <dependencies>
