@@ -65,10 +65,10 @@
                 <!--NOT droolsjbpm-tools/pom.xml because that's special because of tycho-->
                 <include name="droolsjbpm-build-distribution/pom.xml"/>
               </fileset>
-            </replaceregexp>
+            </replaceregexp>">
             <!-- Next change the parent pom -->
-            <replaceregexp match="&lt;version&gt;${oldVersion}&lt;/version&gt;\n    &lt;relativePath&gt;"
-                           replace="&lt;version&gt;${newVersion}&lt;/version&gt;${line.separator}    &lt;relativePath&gt;">
+            <replaceregexp match="(&lt;version&gt;)${oldVersion}(&lt;/version&gt;\s+&lt;relativePath&gt;)"
+                           replace="\1${newVersion}\2">
               <fileset dir="${basedir}/..">
                 <!-- NOT droolsjbpm-build-bootstrap as that is done correctly -->
                 <include name="droolsjbpm-knowledge/pom.xml"/>
