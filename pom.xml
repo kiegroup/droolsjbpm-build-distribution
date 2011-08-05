@@ -68,7 +68,7 @@
             </replaceregexp>
             <!-- Next change the parent pom -->
             <replaceregexp match="&lt;version&gt;${oldVersion}&lt;/version&gt;\n    &lt;relativePath&gt;"
-                           replace="&lt;version&gt;${newVersion}&lt;/version&gt;\n    &lt;relativePath&gt;">
+                           replace="&lt;version&gt;${newVersion}&lt;/version&gt;${line.separator}    &lt;relativePath&gt;">
               <fileset dir="${basedir}/..">
                 <!-- NOT droolsjbpm-build-bootstrap as that is done correctly -->
                 <include name="droolsjbpm-knowledge/pom.xml"/>
