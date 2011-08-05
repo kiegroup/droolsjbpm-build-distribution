@@ -50,18 +50,33 @@
         <configuration>
           <tasks>
             <echo message="Changing version from ${oldVersion} to ${newVersion}"/>
-            <replaceregexp match="&lt;version&gt;${oldVersion}&lt;/version&gt;"
-                           replace="&lt;version&gt;${newVersion}&lt;/version&gt;"
-                           byline="true">
+            <!-- First remove the versions added by maven-release-plugin -->
+            <replaceregexp match=".*&lt;version&gt;${newVersion}&lt;/version&gt;\n\n"
+                           replace="\n">
               <fileset dir="${basedir}/..">
                 <include name="droolsjbpm-build-bootstrap/pom.xml"/>
                 <include name="droolsjbpm-knowledge/pom.xml"/>
                 <include name="drools/pom.xml"/>
                 <include name="drools-planner/pom.xml"/>
-                <!--<include name="jbpm/pom.xml"/>-->
+                <!--<include name="jbpm/pom.xml"/>--><!-- -->
                 <include name="droolsjbpm-integration/pom.xml"/>
                 <include name="guvnor/pom.xml"/>
-                <include name="droolsjbpm-tools/pom.xml"/>
+                <!--NOT droolsjbpm-tools/pom.xml because that's special because of tycho-->
+                <include name="droolsjbpm-build-distribution/pom.xml"/>
+              </fileset>
+            </replaceregexp>
+            <!-- Next change the parent pom -->
+            <replaceregexp match="&lt;version&gt;${oldVersion}&lt;/version&gt;\n  &lt;/parent&gt;"
+                           replace="&lt;version&gt;${newVersion}&lt;/version&gt;\n  &lt;/parent&gt;">
+              <fileset dir="${basedir}/..">
+                <include name="droolsjbpm-build-bootstrap/pom.xml"/>
+                <include name="droolsjbpm-knowledge/pom.xml"/>
+                <include name="drools/pom.xml"/>
+                <include name="drools-planner/pom.xml"/>
+                <!--<include name="jbpm/pom.xml"/>--><!-- -->
+                <include name="droolsjbpm-integration/pom.xml"/>
+                <include name="guvnor/pom.xml"/>
+                <!--NOT droolsjbpm-tools/pom.xml because that's special because of tycho-->
                 <include name="droolsjbpm-build-distribution/pom.xml"/>
               </fileset>
             </replaceregexp>
