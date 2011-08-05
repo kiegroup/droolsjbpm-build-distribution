@@ -52,10 +52,10 @@
           <tasks>
             <echo message="Changing version from ${oldVersion} to ${newVersion}"/>
             <!-- First remove the versions added by maven-release-plugin -->
-            <replaceregexp match=".*&lt;version&gt;${newVersion}&lt;/version&gt;\n\n"
-                           replace="\n">
+            <replaceregexp match=" *&lt;version&gt;${newVersion}&lt;/version&gt;\n"
+                           replace="">
               <fileset dir="${basedir}/..">
-                <include name="droolsjbpm-build-bootstrap/pom.xml"/>
+                <!-- NOT droolsjbpm-build-bootstrap as that is done correctly -->
                 <include name="droolsjbpm-knowledge/pom.xml"/>
                 <include name="drools/pom.xml"/>
                 <include name="drools-planner/pom.xml"/>
@@ -70,7 +70,7 @@
             <replaceregexp match="&lt;version&gt;${oldVersion}&lt;/version&gt;\n  &lt;/parent&gt;"
                            replace="&lt;version&gt;${newVersion}&lt;/version&gt;\n  &lt;/parent&gt;">
               <fileset dir="${basedir}/..">
-                <include name="droolsjbpm-build-bootstrap/pom.xml"/>
+                <!-- NOT droolsjbpm-build-bootstrap as that is done correctly -->
                 <include name="droolsjbpm-knowledge/pom.xml"/>
                 <include name="drools/pom.xml"/>
                 <include name="drools-planner/pom.xml"/>
