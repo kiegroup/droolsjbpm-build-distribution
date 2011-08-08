@@ -45,37 +45,31 @@
     <dependency>
       <groupId>org.drools</groupId>
       <artifactId>drools-distribution</artifactId>
-      <version>${drools.version}</version>
       <type>zip</type>
     </dependency>
     <dependency>
       <groupId>org.drools.planner</groupId>
       <artifactId>drools-planner-distribution</artifactId>
-      <version>${drools-planner.version}</version>
       <type>zip</type>
     </dependency>
     <dependency>
       <groupId>org.drools</groupId>
       <artifactId>droolsjbpm-integration-distribution</artifactId>
-      <version>${droolsjbpm-integration.version}</version>
       <type>zip</type>
     </dependency>
     <dependency>
       <groupId>org.drools</groupId>
       <artifactId>guvnor-distribution</artifactId>
-      <version>${guvnor.version}</version>
       <type>zip</type>
     </dependency>
     <dependency>
       <groupId>org.drools</groupId>
       <artifactId>droolsjbpm-tools-distribution</artifactId>
-      <version>${droolsjbpm-tools.version}</version>
       <type>zip</type>
     </dependency>
     <dependency>
       <groupId>org.drools</groupId>
       <artifactId>drools-osgi-bundles-distribution</artifactId>
-      <version>${droolsjbpm-build-distribution.version}</version>
       <type>zip</type>
     </dependency>
 
