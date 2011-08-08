@@ -66,7 +66,7 @@
                 <include name="droolsjbpm-build-distribution/pom.xml"/>
               </fileset>
             </replaceregexp>">
-            <!-- Next change the parent pom -->
+            <!-- Next change the parent poms -->
             <replaceregexp match="(&lt;version&gt;)${oldVersion}(&lt;/version&gt;\s+&lt;relativePath&gt;)"
                            replace="\1${newVersion}\2">
               <fileset dir="${basedir}/..">
@@ -79,6 +79,20 @@
                 <include name="guvnor/pom.xml"/>
                 <!--NOT droolsjbpm-tools/pom.xml because that's special because of tycho-->
                 <include name="droolsjbpm-build-distribution/pom.xml"/>
+              </fileset>
+            </replaceregexp>
+            
+            <!-- In droolsjbpm-parent, update the properties -->
+            <replaceregexp match="(&lt;drools.version&gt;)${oldVersion}(&lt;/drools.version&gt;)"
+                           replace="\1${newVersion}\2">
+              <fileset dir="${basedir}/..">
+                <include name="droolsjbpm-build-bootstrap/pom.xml"/>
+              </fileset>
+            </replaceregexp>
+            <replaceregexp match="(&lt;drools.osgi.version&gt;)${oldOsgiVersion}(&lt;/drools.osgi.version&gt;)"
+                           replace="\1${newOsgiVersion}\2">
+              <fileset dir="${basedir}/..">
+                <include name="droolsjbpm-build-bootstrap/pom.xml"/>
               </fileset>
             </replaceregexp>
           </tasks>
