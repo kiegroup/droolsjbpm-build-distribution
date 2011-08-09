@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.drools</groupId>
     <artifactId>droolsjbpm-parent</artifactId>
-    <version>5.3.0.Beta1</version>
+    <version>5.3.0-SNAPSHOT</version>
     <relativePath>../droolsjbpm-build-bootstrap/pom.xml</relativePath>
   </parent>
 
@@ -49,45 +50,49 @@
         <inherited>false</inherited>
         <configuration>
           <tasks>
-            <echo message="Changing version from ${oldVersion} to ${newVersion}" />
+            <echo message="Changing version from ${oldVersion} to ${newVersion}"/>
             <!-- First remove the versions added by maven-release-plugin -->
-            <replaceregexp match=" *&lt;version&gt;${newVersion}&lt;/version&gt;\n" replace="">
+            <replaceregexp match=" *&lt;version&gt;${newVersion}&lt;/version&gt;\n"
+                           replace="">
               <fileset dir="${basedir}/..">
                 <!-- NOT droolsjbpm-build-bootstrap as that is done correctly -->
-                <include name="droolsjbpm-knowledge/pom.xml" />
-                <include name="drools/pom.xml" />
-                <include name="drools-planner/pom.xml" />
-                <!--<include name="jbpm/pom.xml" />--><!-- -->
-                <include name="droolsjbpm-integration/pom.xml" />
-                <include name="guvnor/pom.xml" />
+                <include name="droolsjbpm-knowledge/pom.xml"/>
+                <include name="drools/pom.xml"/>
+                <include name="drools-planner/pom.xml"/>
+                <!--<include name="jbpm/pom.xml"/>--><!-- -->
+                <include name="droolsjbpm-integration/pom.xml"/>
+                <include name="guvnor/pom.xml"/>
                 <!--NOT droolsjbpm-tools/pom.xml because that's special because of tycho-->
-                <include name="droolsjbpm-build-distribution/pom.xml" />
+                <include name="droolsjbpm-build-distribution/pom.xml"/>
               </fileset>
-            </replaceregexp>"&gt;
+            </replaceregexp>">
             <!-- Next change the parent poms -->
-            <replaceregexp match="(&lt;version&gt;)${oldVersion}(&lt;/version&gt;\s+&lt;relativePath&gt;)" replace="\1${newVersion}\2">
+            <replaceregexp match="(&lt;version&gt;)${oldVersion}(&lt;/version&gt;\s+&lt;relativePath&gt;)"
+                           replace="\1${newVersion}\2">
               <fileset dir="${basedir}/..">
                 <!-- NOT droolsjbpm-build-bootstrap as that is done correctly -->
-                <include name="droolsjbpm-knowledge/pom.xml" />
-                <include name="drools/pom.xml" />
-                <include name="drools-planner/pom.xml" />
-                <!--<include name="jbpm/pom.xml" />--><!-- -->
-                <include name="droolsjbpm-integration/pom.xml" />
-                <include name="guvnor/pom.xml" />
+                <include name="droolsjbpm-knowledge/pom.xml"/>
+                <include name="drools/pom.xml"/>
+                <include name="drools-planner/pom.xml"/>
+                <!--<include name="jbpm/pom.xml"/>--><!-- -->
+                <include name="droolsjbpm-integration/pom.xml"/>
+                <include name="guvnor/pom.xml"/>
                 <!--NOT droolsjbpm-tools/pom.xml because that's special because of tycho-->
-                <include name="droolsjbpm-build-distribution/pom.xml" />
+                <include name="droolsjbpm-build-distribution/pom.xml"/>
               </fileset>
             </replaceregexp>
             
             <!-- In droolsjbpm-parent, update the properties -->
-            <replaceregexp match="(&lt;drools.version&gt;)${oldVersion}(&lt;/drools.version&gt;)" replace="\1${newVersion}\2">
+            <replaceregexp match="(&lt;drools.version&gt;)${oldVersion}(&lt;/drools.version&gt;)"
+                           replace="\1${newVersion}\2">
               <fileset dir="${basedir}/..">
-                <include name="droolsjbpm-build-bootstrap/pom.xml" />
+                <include name="droolsjbpm-build-bootstrap/pom.xml"/>
               </fileset>
             </replaceregexp>
-            <replaceregexp match="(&lt;drools.osgi.version&gt;)${oldOsgiVersion}(&lt;/drools.osgi.version&gt;)" replace="\1${newOsgiVersion}\2">
+            <replaceregexp match="(&lt;drools.osgi.version&gt;)${oldOsgiVersion}(&lt;/drools.osgi.version&gt;)"
+                           replace="\1${newOsgiVersion}\2">
               <fileset dir="${basedir}/..">
-                <include name="droolsjbpm-build-bootstrap/pom.xml" />
+                <include name="droolsjbpm-build-bootstrap/pom.xml"/>
               </fileset>
             </replaceregexp>
           </tasks>
