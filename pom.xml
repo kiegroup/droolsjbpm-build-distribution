@@ -51,37 +51,6 @@
         <configuration>
           <tasks>
             <echo message="Changing version from ${oldVersion} to ${newVersion}"/>
-            <!-- First remove the versions added by maven-release-plugin -->
-            <replaceregexp match=" *&lt;version&gt;${newVersion}&lt;/version&gt;\n"
-                           replace="">
-              <fileset dir="${basedir}/..">
-                <!-- NOT droolsjbpm-build-bootstrap as that is done correctly -->
-                <include name="droolsjbpm-knowledge/pom.xml"/>
-                <include name="drools/pom.xml"/>
-                <include name="drools-planner/pom.xml"/>
-                <!--<include name="jbpm/pom.xml"/>--><!-- -->
-                <include name="droolsjbpm-integration/pom.xml"/>
-                <include name="guvnor/pom.xml"/>
-                <!--NOT droolsjbpm-tools/pom.xml because that's special because of tycho-->
-                <include name="droolsjbpm-build-distribution/pom.xml"/>
-              </fileset>
-            </replaceregexp>">
-            <!-- Next change the parent poms -->
-            <replaceregexp match="(&lt;version&gt;)${oldVersion}(&lt;/version&gt;\s+&lt;relativePath&gt;)"
-                           replace="\1${newVersion}\2">
-              <fileset dir="${basedir}/..">
-                <!-- NOT droolsjbpm-build-bootstrap as that is done correctly -->
-                <include name="droolsjbpm-knowledge/pom.xml"/>
-                <include name="drools/pom.xml"/>
-                <include name="drools-planner/pom.xml"/>
-                <!--<include name="jbpm/pom.xml"/>--><!-- -->
-                <include name="droolsjbpm-integration/pom.xml"/>
-                <include name="guvnor/pom.xml"/>
-                <!--NOT droolsjbpm-tools/pom.xml because that's special because of tycho-->
-                <include name="droolsjbpm-build-distribution/pom.xml"/>
-              </fileset>
-            </replaceregexp>
-            
             <!-- In droolsjbpm-parent, update the properties -->
             <replaceregexp match="(&lt;drools.version&gt;)${oldVersion}(&lt;/drools.version&gt;)"
                            replace="\1${newVersion}\2">
