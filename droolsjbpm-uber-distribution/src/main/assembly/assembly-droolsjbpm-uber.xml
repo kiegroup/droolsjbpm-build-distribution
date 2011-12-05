@@ -20,7 +20,7 @@
         <include>org.drools:drools-osgi-bundles-distribution:zip</include>
       </includes>
       <unpack>false</unpack>
-      <outputDirectory/>
+      <outputDirectory>download_jboss_org/${project.version}</outputDirectory>
       <useStrictFiltering>true</useStrictFiltering>
     </dependencySet>
 
@@ -29,7 +29,7 @@
       <includes>
         <include>org.drools:droolsjbpm-introduction-docs:jdocbook</include>
       </includes>
-      <outputDirectory>reference_manual/droolsjbpm-introduction-docs</outputDirectory>
+      <outputDirectory>docs_jboss_org/${project.version}/droolsjbpm-introduction-docs</outputDirectory>
       <unpack>true</unpack>
       <unpackOptions>
         <excludes>
@@ -42,7 +42,7 @@
       <includes>
         <include>org.drools:drools-expert-docs:jdocbook</include>
       </includes>
-      <outputDirectory>reference_manual/drools-expert-docs</outputDirectory>
+      <outputDirectory>docs_jboss_org/${project.version}/drools-expert-docs</outputDirectory>
       <unpack>true</unpack>
       <unpackOptions>
         <excludes>
@@ -55,7 +55,7 @@
       <includes>
         <include>org.drools:drools-fusion-docs:jdocbook</include>
       </includes>
-      <outputDirectory>reference_manual/drools-fusion-docs</outputDirectory>
+      <outputDirectory>docs_jboss_org/${project.version}/drools-fusion-docs</outputDirectory>
       <unpack>true</unpack>
       <unpackOptions>
         <excludes>
@@ -68,7 +68,7 @@
       <includes>
         <include>org.drools.planner:drools-planner-docs:jdocbook</include>
       </includes>
-      <outputDirectory>reference_manual/drools-planner-docs</outputDirectory>
+      <outputDirectory>docs_jboss_org/${project.version}/drools-planner-docs</outputDirectory>
       <unpack>true</unpack>
       <unpackOptions>
         <excludes>
@@ -81,7 +81,7 @@
       <includes>
         <include>org.drools:droolsjbpm-integration-docs:jdocbook</include>
       </includes>
-      <outputDirectory>reference_manual/droolsjbpm-integration-docs</outputDirectory>
+      <outputDirectory>docs_jboss_org/${project.version}/droolsjbpm-integration-docs</outputDirectory>
       <unpack>true</unpack>
       <unpackOptions>
         <excludes>
@@ -94,13 +94,31 @@
       <includes>
         <include>org.drools:guvnor-docs:jdocbook</include>
       </includes>
-      <outputDirectory>reference_manual/drools-guvnor-docs</outputDirectory>
+      <outputDirectory>docs_jboss_org/${project.version}/drools-guvnor-docs</outputDirectory>
       <unpack>true</unpack>
       <unpackOptions>
         <excludes>
           <exclude>META-INF/**</exclude>
         </excludes>
       </unpackOptions>
+      <useStrictFiltering>true</useStrictFiltering>
+    </dependencySet>
+
+    <!-- Javadocs -->
+    <dependencySet>
+      <includes>
+        <include>org.drools:knowledge-api:*:javadoc</include>
+      </includes>
+      <outputDirectory>docs_jboss_org/${project.version}/knowledge-api-javadoc</outputDirectory>
+      <unpack>true</unpack>
+      <useStrictFiltering>true</useStrictFiltering>
+    </dependencySet>
+    <dependencySet>
+      <includes>
+        <include>org.drools.planner:drools-planner-core:*:javadoc</include>
+      </includes>
+      <outputDirectory>docs_jboss_org/${project.version}/drools-planner-javadoc</outputDirectory>
+      <unpack>true</unpack>
       <useStrictFiltering>true</useStrictFiltering>
     </dependencySet>
   </dependencySets>

@@ -104,6 +104,17 @@
       <artifactId>guvnor-docs</artifactId>
       <type>jdocbook</type>
     </dependency>
+
+    <dependency>
+      <groupId>org.drools</groupId>
+      <artifactId>knowledge-api</artifactId>
+      <classifier>javadoc</classifier>
+    </dependency>
+    <dependency>
+      <groupId>org.drools.planner</groupId>
+      <artifactId>drools-planner-core</artifactId>
+      <classifier>javadoc</classifier>
+    </dependency>
   </dependencies>
 
 </project>
