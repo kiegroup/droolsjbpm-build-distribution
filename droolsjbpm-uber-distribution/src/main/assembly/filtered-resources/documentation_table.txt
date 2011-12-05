@@ -60,3 +60,26 @@ but first replace the TODO's:
         </tr>
     </tbody>
 </table>
+<table width="100%" cellspacing="0" cellpadding="4" border="0" class="basetablestyle">
+    <tbody>
+        <tr class="header">
+            <th class="tableheaderfirst">Javadoc</th>
+            <th class="tableheader">Version</th>
+            <th class="tableheader">Released</th>
+            <th class="tableheader">&nbsp;</th>
+        </tr>
+        <tr class="evenRow">
+            <td class="rowlinefirst"><b>Knowledge API (Drools, jBPM)</b></td>
+            <td class="rowline"><b>${project.version}</b></td>
+            <td class="rowline">TODO</td>
+            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/knowledge-api-javadoc/index.html">Javadoc</a></td>
+        </tr>
+        <tr class="evenRow">
+            <td class="rowlinefirst"><b>Drools Planner<br />
+            </b></td>
+            <td class="rowline"><b>${project.version}</b></td>
+            <td class="rowline">TODO</td>
+            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/drools-planner-javadoc/index.html">Javadoc</a></td>
+        </tr>
+    </tbody>
+</table>
