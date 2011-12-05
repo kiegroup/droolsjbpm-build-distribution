@@ -1,0 +1,62 @@
+Go to the documentation page (but in Magnolia):
+  http://www.jboss.org/drools/documentation
+Add this HTML source to the top of that page,
+but first replace the TODO's:
+
+
+<h4>Drools ${project.version}</h4>
+<table width="100%" cellspacing="0" cellpadding="4" border="0" class="basetablestyle">
+    <tbody>
+        <tr class="header">
+            <th class="tableheaderfirst">Documentation</th>
+            <th class="tableheader">Version</th>
+            <th class="tableheader">Released</th>
+            <th class="tableheader">&nbsp;</th>
+            <th class="tableheader">&nbsp;</th>
+        </tr>
+        <tr class="oddRow">
+            <td class="rowlinefirst"><b>Drools Introduction</b></td>
+            <td class="rowline"><b>${project.version}</b></td>
+            <td class="rowline">TODO</td>
+            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/droolsjbpm-introduction-docs/html_single/index.html">HTML Single</a></td>
+            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/droolsjbpm-introduction-docs/html/index.html">HTML</a></td>
+        </tr>
+        <tr class="evenRow">
+            <td class="rowlinefirst"><b>Drools Expert</b></td>
+            <td class="rowline"><b>${project.version}</b></td>
+            <td class="rowline">TODO</td>
+            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/drools-expert-docs/html_single/index.html">HTML Single</a></td>
+            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/drools-expert-docs/html/index.html">HTML</a></td>
+        </tr>
+        <tr class="oddRow">
+            <td class="rowlinefirst"><b>Drools Fusion</b></td>
+            <td class="rowline"><b>${project.version}</b></td>
+            <td class="rowline">TODO</td>
+            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/drools-fusion-docs/html_single/index.html">HTML Single</a></td>
+            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/drools-fusion-docs/html/index.html">HTML</a></td>
+        </tr>
+        <tr class="oddRow">
+            <td class="rowlinefirst"><b>Drools and jBPM integration<br />
+            </b></td>
+            <td class="rowline"><b>${project.version}</b></td>
+            <td class="rowline">TODO</td>
+            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/droolsjbpm-integration-docs/html_single/index.html">HTML Single</a></td>
+            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/droolsjbpm-integration-docs/html/index.html">HTML</a></td>
+        </tr>
+        <tr class="oddRow">
+            <td class="rowlinefirst"><b>Drools Guvnor</b></td>
+            <td class="rowline"><b>${project.version}</b></td>
+            <td class="rowline">TODO</td>
+            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/drools-guvnor-docs/html_single/index.html">HTML Single</a></td>
+            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/drools-guvnor-docs/html/index.html">HTML</a></td>
+        </tr>
+        <tr class="evenRow">
+            <td class="rowlinefirst"><b>Drools Planner<br />
+            </b></td>
+            <td class="rowline"><b>${project.version}</b></td>
+            <td class="rowline">TODO</td>
+            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/drools-planner-docs/html_single/index.html">HTML Single</a></td>
+            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/drools-planner-docs/html/index.html">HTML</a></td>
+        </tr>
+    </tbody>
+</table>
