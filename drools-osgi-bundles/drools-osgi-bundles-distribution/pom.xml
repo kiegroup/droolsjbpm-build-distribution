@@ -222,6 +222,7 @@
     <dependency>
       <groupId>org.codehaus.janino</groupId>
       <artifactId>com.springsource.org.codehaus.janino</artifactId>
+      <!-- Drools actually prefers 2.5.16, but that's not available with OSGi metadata -->
       <version>2.5.15</version>
     </dependency>
 
