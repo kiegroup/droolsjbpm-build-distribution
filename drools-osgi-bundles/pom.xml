@@ -14,11 +14,11 @@
 
   <name>Drools OSGi bundles multiproject</name>
   <description>Produces OSGi enabled Drools Expert and Fusions jars.</description>
-  
+
   <repositories>
-    <repository>  
-      <id>com.springsource.repository.bundles.release</id>  
-      <name>SpringSource Enterprise Bundle Repository - SpringSource Bundle Releases</name> 
+    <repository>
+      <id>com.springsource.repository.bundles.release</id>
+      <name>SpringSource Enterprise Bundle Repository - SpringSource Bundle Releases</name>
       <url>http://repository.springsource.com/maven/bundles/release</url>
       <releases>
         <enabled>true</enabled>
@@ -30,7 +30,7 @@
     </repository>
     <repository>
       <id>com.springsource.repository.bundles.external</id>
-      <name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>  
+      <name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
       <url>http://repository.springsource.com/maven/bundles/external</url>
       <releases>
         <enabled>true</enabled>
@@ -39,13 +39,14 @@
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
-    </repository>   
+    </repository>
   </repositories>
-  
+
   <properties>
     <spring.maven.artifact.version>3.0.0.RELEASE</spring.maven.artifact.version>
     <spring.osgi.version>1.2.1</spring.osgi.version>
     <equinox.ver>3.5.1</equinox.ver>
+    <camel.ver>2.4.0</camel.ver>
   </properties>
 
   <modules>

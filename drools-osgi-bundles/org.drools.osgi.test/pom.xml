@@ -20,8 +20,97 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <configuration>
-          <!--childDelegation>false</childDelegation>
-          <forkMode>pertest</forkMode-->
+          <!--childDelegation>false</childDelegation>-->
+          <!--<forkMode>pertest</forkMode>-->
+          <systemProperties>
+            <property>
+              <name>org.osgi.framework.system.packages.extra</name>
+              <value>
+                org.apache.cxf;
+                org.apache.cxf.attachment;
+                org.apache.cxf.binding;
+                org.apache.cxf.binding.soap;
+                org.apache.cxf.binding.soap.interceptor;
+                org.apache.cxf.binding.soap.model;
+                org.apache.cxf.bus.spring;
+                org.apache.cxf.common.classloader;
+                org.apache.cxf.common.i18n;
+                org.apache.cxf.common.injection;
+                org.apache.cxf.common.logging;
+                org.apache.cxf.common.util;
+                org.apache.cxf.configuration;
+                org.apache.cxf.configuration.blueprint;
+                org.apache.cxf.configuration.spring;
+                org.apache.cxf.continuations;
+                org.apache.cxf.databinding;
+                org.apache.cxf.databinding.source;
+                org.apache.cxf.endpoint;
+                org.apache.cxf.feature;
+                org.apache.cxf.frontend;
+                org.apache.cxf.headers;
+                org.apache.cxf.helpers;
+                org.apache.cxf.interceptor;
+                org.apache.cxf.io;
+                org.apache.cxf.jaxb;
+                org.apache.cxf.jaxrs;
+                org.apache.cxf.jaxrs.client;
+                org.apache.cxf.jaxrs.impl;
+                org.apache.cxf.jaxrs.model;
+                org.apache.cxf.jaxrs.utils;
+                org.apache.cxf.jaxws;
+                org.apache.cxf.jaxws.context;
+                org.apache.cxf.jaxws.handler;
+                org.apache.cxf.jaxws.support;
+                org.apache.cxf.message;
+                org.apache.cxf.phase;
+                org.apache.cxf.resource;
+                org.apache.cxf.security;
+                org.apache.cxf.service;
+                org.apache.cxf.service.factory;
+                org.apache.cxf.service.invoker;
+                org.apache.cxf.service.model;
+                org.apache.cxf.staxutils;
+                org.apache.cxf.transport;
+                org.apache.cxf.version;
+                org.apache.cxf.ws.addressing;
+                org.apache.cxf.wsdl;
+                org.apache.cxf.wsdl11;version="2.4.4",
+                javax.wsdl,
+                javax.wsdl.extensions,
+                javax.wsdl.extensions.http,
+                javax.wsdl.extensions.mime,
+                javax.wsdl.extensions.schema,
+                javax.wsdl.extensions.soap,
+                javax.wsdl.extensions.soap12,
+                javax.wsdl.factory,
+                javax.wsdl.xml,
+                javax.xml.ws,
+                javax.xml.ws.handler,
+                javax.xml.ws.handler.soap,
+                javax.xml.ws.http,
+                javax.xml.ws.soap,
+                javax.xml.ws.spi,
+                javax.xml.ws.spi.http,
+                javax.xml.ws.wsaddressing,
+                org.apache.ws.commons.schema;version=2.0,
+                org.apache.ws.commons.schema.constants;version=2.0,
+                org.apache.ws.commons.schema.extensions;version=2.0,
+                org.apache.ws.commons.schema.resolver;version=2.0,
+                org.apache.ws.commons.schema.utils;version=2.0,
+                com.sun.mirror.apt,
+                com.sun.mirror.declaration,
+                com.sun.mirror.type,
+                com.sun.mirror.util,com.sun.tools.xjc,
+                com.sun.tools.xjc.outline,
+                com.sun.tools.xjc.model,
+                com.sun.tools.xjc.Options,
+                com.sun.codemodel,
+                javax.mail,javax.mail.internet,
+                org.jbpm.persistence,
+                org.springframework.orm.jpa;version="2.5.0",
+                org.antlr.runtime;org.antlr.runtime.tree;version="3.4.0"</value>
+            </property>
+          </systemProperties>
           <systemPropertyVariables>
             <propertyName>propertyValue</propertyName>
             <buildDirectory>${project.build.directory}</buildDirectory>
@@ -72,15 +161,27 @@
     </dependency>
     <dependency>
       <groupId>org.drools</groupId>
+      <artifactId>drools-spring</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.drools</groupId>
+      <artifactId>drools-camel</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.drools</groupId>
       <artifactId>drools-decisiontables</artifactId>
     </dependency>
-    <!--dependency>
-         <groupId>org.drools</groupId>
-         <artifactId>drools-persistence-jpa</artifactId>
-      </dependency-->
+    <dependency>
+      <groupId>org.drools</groupId>
+      <artifactId>drools-persistence-jpa</artifactId>
+    </dependency>
     <dependency>
       <groupId>org.jbpm</groupId>
       <artifactId>jbpm-flow</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.jbpm</groupId>
+      <artifactId>jbpm-persistence-jpa</artifactId>
     </dependency>
     <dependency>
       <groupId>org.jbpm</groupId>
@@ -106,6 +207,24 @@
     </dependency>
 
     <dependency>
+      <groupId>javax.xml.bind</groupId>
+      <artifactId>jaxb-api</artifactId>
+      <version>2.2.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.neethi</groupId>
+      <artifactId>neethi</artifactId>
+      <version>3.0.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.ws.commons.schema</groupId>
+      <artifactId>XmlSchema</artifactId>
+      <version>1.4.7</version>
+    </dependency>
+
+    <dependency>
       <groupId>org.junit</groupId>
       <artifactId>com.springsource.org.junit</artifactId>
       <version>4.8.1</version>
@@ -115,6 +234,27 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>org.springframework.test</artifactId>
+      <version>${spring.maven.artifact.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-orm</artifactId>
+      <version>${spring.maven.artifact.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>${spring.maven.artifact.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
       <version>${spring.maven.artifact.version}</version>
       <scope>test</scope>
     </dependency>
@@ -152,6 +292,63 @@
       <version>2.2.3</version>
       <scope>test</scope>
     </dependency>
+
+    <dependency>
+      <groupId>asm</groupId>
+      <artifactId>asm</artifactId>
+      <version>2.2.3</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.ws.rs</groupId>
+      <artifactId>jsr311-api</artifactId>
+      <version>1.1</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.fusesource.commonman</groupId>
+      <artifactId>commons-management</artifactId>
+      <version>1.0</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-core</artifactId>
+      <version>${camel.ver}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-cxf</artifactId>
+      <version>${camel.ver}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-spring</artifactId>
+      <version>${camel.ver}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.cxf</groupId>
+      <artifactId>cxf-bundle</artifactId>
+      <version>2.4.4</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>wsdl4j</groupId>
+      <artifactId>wsdl4j</artifactId>
+      <version>1.6.2</version>
+      <scope>test</scope>
+    </dependency>
+
   </dependencies>
-  
+
 </project>
