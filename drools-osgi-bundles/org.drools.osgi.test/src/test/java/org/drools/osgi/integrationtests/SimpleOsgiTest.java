@@ -17,7 +17,9 @@
 package org.drools.osgi.integrationtests;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.drools.KnowledgeBase;
 import org.drools.KnowledgeBaseConfiguration;
@@ -52,7 +54,7 @@ public class SimpleOsgiTest extends AbstractDroolsSpringDMTest {
     }
 
     protected void onTearDown() throws Exception {
-        
+
     }
 
     @Test
@@ -66,11 +68,15 @@ public class SimpleOsgiTest extends AbstractDroolsSpringDMTest {
     public void testOsgiEnvironment() throws Exception {
         Bundle[] bundles = bundleContext.getBundles();
         System.out.println( "bundles: " );
+        Set<String> bundleNames = new HashSet<String>();
         for ( int i = 0; i < bundles.length; i++ ) {
             System.out.print( bundles[i].getSymbolicName() + ":" + bundles[i].getState() );
             System.out.print( ", " );
+            bundleNames.add(bundles[i].getSymbolicName());
         }
         System.out.println();
+        assertTrue(bundleNames.contains("org.drools.spring"));
+        assertTrue(bundleNames.contains("org.drools.camel"));
     }
 
     @Test
@@ -79,7 +85,7 @@ public class SimpleOsgiTest extends AbstractDroolsSpringDMTest {
         ServiceRegistry registry = (ServiceRegistry) bundleContext.getService( serviceRef );
 
         KnowledgeBuilderFactoryService knowledgeBuilderFactoryService = registry.get( KnowledgeBuilderFactoryService.class );
-        
+
         KnowledgeBaseFactoryService knowledgeBaseFactoryService = registry.get( KnowledgeBaseFactoryService.class );
         ResourceFactoryService resourceFactoryService = registry.get( ResourceFactoryService.class );
 
@@ -107,7 +113,7 @@ public class SimpleOsgiTest extends AbstractDroolsSpringDMTest {
             throw new RuntimeException( kbuilder.getErrors().toString() );
         }
 
-        KnowledgeBaseConfiguration kbaseConf = knowledgeBaseFactoryService.newKnowledgeBaseConfiguration( null,                                                                                                          
+        KnowledgeBaseConfiguration kbaseConf = knowledgeBaseFactoryService.newKnowledgeBaseConfiguration( null,
                                                                                                           getClass().getClassLoader() );
 
         KnowledgeBase kbase = knowledgeBaseFactoryService.newKnowledgeBase( kbaseConf );
@@ -119,7 +125,7 @@ public class SimpleOsgiTest extends AbstractDroolsSpringDMTest {
 
         ksession.insert( new Person( "name",
                                      34 ) );
-        
+
         ksession.fireAllRules();
         ksession.dispose();
 
