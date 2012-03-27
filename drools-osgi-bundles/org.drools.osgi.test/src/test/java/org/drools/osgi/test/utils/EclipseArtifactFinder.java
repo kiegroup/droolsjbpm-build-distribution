@@ -26,6 +26,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 import java.util.jar.Attributes;
@@ -144,16 +145,17 @@ public class EclipseArtifactFinder {
         }
         
         @Override
-        public boolean equals(Object aOther) {
-            if (aOther instanceof Plugin == false)
-                return false;
-
-            if (this == aOther)
+        public boolean equals(Object o) {
+            if (this == o) {
                 return true;
-
-            Plugin rhs = (Plugin) aOther;
-            
-            return m_BundleSymbolicName.equals(rhs.getBundleSymbolicName()) && m_BundleVersion.equals(rhs.getBundleVersion()) && m_Path.equals(rhs.getPath());
+            }
+            if (!(o instanceof Plugin)) {
+                return false;
+            }
+            Plugin other = (Plugin) o;
+            return m_BundleSymbolicName.equals(other.getBundleSymbolicName())
+                    && m_BundleVersion.equals(other.getBundleVersion())
+                    && m_Path.equals(other.getPath());
         }
         
         @Override
@@ -167,53 +169,59 @@ public class EclipseArtifactFinder {
         }
     }
     
-    public Resource findArtifact(String aArtifactId, String aVersion) throws IOException {
+    public Resource findArtifact(String aArtifactId, String aVersion) {
         
         if (m_WorkspacePlugins.isEmpty()) {
 
             File folder = getEclipseWorkspace();
-            if (folder != null)
+            if (folder != null) {
                 importPluginFromFolder(folder, m_WorkspacePlugins);
+            }
         }
 
         if (m_TargetPlugins.isEmpty()) {
 
             File[] folders = getEclipseTarget();
             
-            for (File folder : folders)
+            for (File folder : folders) {
                 importPluginFromFolder(folder, m_TargetPlugins);
-
-        }
-
-        for (Plugin plugin : m_WorkspacePlugins) {
-            if (plugin.match(aArtifactId, aVersion))
-            {
-                if (plugin.isExploded())
-                    return getExplodedPluginResource(plugin);
-                else
-                    return getJARPluginResource(plugin);
             }
         }
 
-        for (Plugin plugin : m_TargetPlugins) {
-            if (plugin.match(aArtifactId, aVersion))
-            {
-                if (plugin.isExploded())
-                    return getExplodedPluginResource(plugin);
-                else
-                    return getJARPluginResource(plugin);
+        try {
+            for (Plugin plugin : m_WorkspacePlugins) {
+                if (plugin.match(aArtifactId, aVersion)) {
+                    if (plugin.isExploded()) {
+                        return getExplodedPluginResource(plugin);
+                    } else {
+                        return getJARPluginResource(plugin);
+                    }
+                }
             }
+
+            for (Plugin plugin : m_TargetPlugins) {
+                if (plugin.match(aArtifactId, aVersion)) {
+                    if (plugin.isExploded()) {
+                        return getExplodedPluginResource(plugin);
+                    } else {
+                        return getJARPluginResource(plugin);
+                    }
+                }
+            }
+        } catch (IOException e) {
+            throw new IllegalStateException("Artifact "
+                    + aArtifactId + "-" + aVersion + " could not be found", e);
         }
 
         return null;
     }
 
-    private void importPluginFromFolder(File folder, Set<Plugin> plugins) throws IOException {
+    private void importPluginFromFolder(File folder, Set<Plugin> plugins) {
         
         log.info("Importing plugins from folder " + folder.getAbsolutePath());
-        
+
         Set<Resource> eclipseProjects = new HashSet<Resource>();
-        
+
         // Scan plugins exploded as unpacked JAR directories
         for (File projectFolder : folder.listFiles(m_DirectoryFilter)) {
             eclipseProjects.add(new FileSystemResource(projectFolder));
@@ -273,93 +281,86 @@ public class EclipseArtifactFinder {
     }
 
     private Resource getExplodedPluginResource(Plugin plugin) throws IOException {
-        
-            URL url = new URL(REFERENCE_PROTOCOL, null, FILE_SCHEME + plugin.getPath().getFile().getCanonicalPath() + File.separator + "target" + File.separator + "classes");
-            
-            return new UnpackedOSGiBundleResource(url);
+        URL url = new URL(REFERENCE_PROTOCOL, null, FILE_SCHEME + plugin.getPath().getFile().getCanonicalPath() + File.separator + "target" + File.separator + "classes");
+        return new UnpackedOSGiBundleResource(url);
     }
 
     /**
      * Return an Eclipse project's Manifest
-     * @param aResource an Eclipse project resource path
+     * @param resource an Eclipse project resource path
      * @return The project Manifest, null if none exist
-     * @throws IOException 
      */
-    private Manifest getManifestFromProject(Resource aResource) throws IOException {
-        
+    private Manifest getManifestFromProject(Resource resource) {
         try {
-            for (File manifestFolder : aResource.getFile().listFiles(m_ManifestDirectoryFilter)) {
-                for (File manifestFile : manifestFolder.listFiles(m_ManifestFilter))
+            for (File manifestFolder : resource.getFile().listFiles(m_ManifestDirectoryFilter)) {
+                for (File manifestFile : manifestFolder.listFiles(m_ManifestFilter)) {
                     return new Manifest(new FileInputStream(manifestFile));
+                }
             }
-        } catch (IOException aEx) {
-            log.error("Problem reading MANIFEST.MF from resource" + aResource.getFilename());
-            throw aEx;
+        } catch (IOException e) {
+            throw new IllegalStateException("Resource (" + resource + ") 's manifest could not be read.", e);
         }
-        
         return null;
     }
 
     /**
      * Return an Eclipse bundle's JAR Manifest
-     * @param aResource an Eclipse JAR path
+     * @param resource an Eclipse JAR path
      * @return The JAR Manifest
-     * @throws IOException 
      */
-    private Manifest getManifestFromJAR(Resource aResource) throws IOException {
-            JarFile jar = new JarFile(aResource.getFile());
+    private Manifest getManifestFromJAR(Resource resource) {
+        try {
+            JarFile jar = new JarFile(resource.getFile());
             return jar.getManifest();
+        } catch (IOException e) {
+            throw new IllegalStateException("Resource (" + resource + ") 's manifest could not be read.", e);
+        }
     }
 
     private File getEclipseWorkspace() {
-        
-        String workspaceAreaProp = System.getProperty(s_PROP_WORKSPACE_AREA, "../..");
+        // By default, presume the working directory is the module directory
+        String workspaceAreaProp = System.getProperty(s_PROP_WORKSPACE_AREA, "../../..");
         
         try {
             System.out.println( "workspace area: " + new File(workspaceAreaProp).getCanonicalPath() );
         } catch ( IOException e ) {
-            throw new RuntimeException("Unable to set path");
+            throw new RuntimeException("Unable to set path", e);
         }
         
-        if (workspaceAreaProp != null)
+        if (workspaceAreaProp != null) {
             return new File(workspaceAreaProp);
-        else
+        } else {
             return null;
-        
+        }
     }
 
     private File[] getEclipseTarget() {
-        
         List<File> result = new ArrayList<File>();
-        
         Properties props = System.getProperties();
-
-        for (Iterator<Object> iterator = props.keySet().iterator(); iterator.hasNext();) {
-            String prop = (String) iterator.next();
-            if (prop.startsWith(s_PROP_TARGET_AREA))
-            {
-                System.out.println( "target area: " + System.getProperty(prop) );
-                File f = new File(System.getProperty(prop));
+        for (Map.Entry<Object, Object> entry : props.entrySet()) {
+            String propertyKey = (String) entry.getKey();
+            String value = (String) entry.getValue();
+            if (propertyKey.startsWith(s_PROP_TARGET_AREA)) {
+                System.out.println("target area: " + value);
+                File f = new File(value);
                 if ( !f.isDirectory() ) {
-                    throw new IllegalStateException(s_PROP_TARGET_AREA + " not set.");
+                    throw new IllegalStateException("Property " + propertyKey + " (" + f.getAbsolutePath()
+                            + ") is not a directory.");
                 }
                 result.add(f);
             }
         }
         
         if (result.isEmpty()) {
-            File f = new File( "../plugins" );
+            // By default, presume the working directory is the module directory
+            File f = new File( "../drools-osgi-bundles-distribution/plugins" );
             if ( !f.isDirectory() ) {
-                throw new IllegalStateException(s_PROP_TARGET_AREA + " not set.");
+                throw new IllegalStateException("Default property " + s_PROP_TARGET_AREA + " (" + f.getAbsolutePath()
+                        + ") is not a directory.");
             }
             result.add( f );
         }
-        
-        if (result.size() == 0)
-            throw new IllegalStateException(s_PROP_TARGET_AREA + " not set.");
-        else
-            return result.toArray(new File[]{});
-        
+        return result.toArray(new File[result.size()]);
     }
     
 }

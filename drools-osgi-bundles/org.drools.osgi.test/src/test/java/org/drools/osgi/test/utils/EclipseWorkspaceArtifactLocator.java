@@ -15,7 +15,6 @@
  */
 
 package org.drools.osgi.test.utils;
-import java.io.IOException;
 
 import org.apache.log4j.Logger;
 import org.springframework.core.io.Resource;
@@ -66,21 +65,13 @@ public class EclipseWorkspaceArtifactLocator implements ArtifactLocator {
      *            - the version of the bundle (can be null)
      * @return Resource corresponding to the located Eclipse bundle
      */
-    private Resource localEclipseWorkspaceArtifact(String aArtifactId,
-            String aVersion) {
-        try {
-            Resource res = m_ArtifactFinder.findArtifact(aArtifactId, aVersion);
-            if (res != null && log.isDebugEnabled()) {
-                log.debug("[" + aArtifactId + "|" + aVersion + "] resolved to "
-                        + res.getDescription() + " as a Eclipse artifact");
-            }
-            return res;
-        } catch (IOException ioEx) {
-            throw (RuntimeException) new IllegalStateException("Artifact "
-                    + aArtifactId + "-" + aVersion + " could not be found")
-                    .initCause(ioEx);
+    private Resource localEclipseWorkspaceArtifact(String artifactId, String version) {
+        Resource res = m_ArtifactFinder.findArtifact(artifactId, version);
+        if (res != null && log.isDebugEnabled()) {
+            log.debug("[" + artifactId + "|" + version + "] resolved to "
+                    + res.getDescription() + " as a Eclipse artifact");
         }
-
+        return res;
     }
 
 }
