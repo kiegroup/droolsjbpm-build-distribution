@@ -6,14 +6,15 @@
   <parent>
     <groupId>org.drools</groupId>
     <artifactId>drools-osgi-bundles</artifactId>
-    <version>5.3.2-SNAPSHOT</version>
+    <version>5.4.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>org.drools.osgi.wrapper.jxls-reader</artifactId>
-  <version>0.9.8</version>
+  <!-- TODO remove me once this is fixed: http://code.google.com/p/protobuf/issues/detail?id=298 -->
+  <artifactId>org.drools.osgi.wrapper.protobuf-java</artifactId>
+  <version>2.4.1</version>
 
-  <name>Drools OSGi wrapper for JXLS reader</name>
-  <description>JXLS reader isn't OSGi enabled by default, so this module makes it OSGi enabled instead.</description>
+  <name>Drools OSGi wrapper for Protobuf Java</name>
+  <description>Protobuf Java isn't OSGi enabled by default, so this module makes it OSGi enabled instead.</description>
 
   <build>
     <plugins>
@@ -64,7 +65,7 @@
               <overWriteIfNewer>true</overWriteIfNewer>
               <stripVersion>true</stripVersion>
               <includeScope>runtime</includeScope>
-              <excludeGroupIds>net.sf.jxls</excludeGroupIds>
+              <excludeGroupIds>com.google.protobuf</excludeGroupIds>
             </configuration>
           </execution>
 
@@ -81,7 +82,7 @@
               <overWriteIfNewer>true</overWriteIfNewer>
               <stripVersion>true</stripVersion>
               <includeScope>runtime</includeScope>
-              <includeGroupIds>net.sf.jxls</includeGroupIds>
+              <includeGroupIds>com.google.protobuf</includeGroupIds>
             </configuration>
           </execution>
         </executions>
@@ -113,34 +114,8 @@
 
   <dependencies>
     <dependency>
-      <groupId>net.sf.jxls</groupId>
-      <artifactId>jxls-reader</artifactId>
-      <exclusions>
-        <exclusion>
-          <groupId>commons-logging</groupId>
-          <artifactId>commons-logging</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>commons-collections</groupId>
-          <artifactId>commons-collections</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>commons-beanutils</groupId>
-          <artifactId>commons-beanutils</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>commons-digester</groupId>
-          <artifactId>commons-digester</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>log4j</groupId>
-          <artifactId>log4j</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>org.apache.poi</groupId>
-          <artifactId>poi</artifactId>
-        </exclusion>
-      </exclusions>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java</artifactId>
     </dependency>
   </dependencies>
 
