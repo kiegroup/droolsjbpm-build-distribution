@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Protobuf Java
+Bundle-SymbolicName: org.drools.osgi.wrapper.protobuf-java
+Bundle-Version: 2.4.1
+Bundle-Vendor: JBoss
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ClassPath: .
+Export-Package: com.google.protobuf
+DynamicImport-Package: *
+
