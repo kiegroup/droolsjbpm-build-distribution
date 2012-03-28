@@ -43,7 +43,7 @@
   </repositories>
   
   <properties>
-    <spring.maven.artifact.version>3.0.0.RELEASE</spring.maven.artifact.version>
+    <spring.maven.artifact.version>3.0.6.RELEASE</spring.maven.artifact.version>
     <spring.osgi.version>1.2.1</spring.osgi.version>
     <equinox.ver>3.5.1</equinox.ver>
   </properties>

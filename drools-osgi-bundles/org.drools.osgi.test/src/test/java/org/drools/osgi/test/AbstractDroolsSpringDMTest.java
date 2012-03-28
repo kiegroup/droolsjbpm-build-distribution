@@ -38,27 +38,14 @@ public abstract class AbstractDroolsSpringDMTest extends AbstractConfigurableBun
         return false;
     }
     
-    protected void onSetUp() throws Exception
-    {
-
-    }
-    
     @Override
     protected void preProcessBundleContext(BundleContext platformBundleContext) throws Exception {
-        try {
-            super.preProcessBundleContext( platformBundleContext );
-        } catch( Exception e ) {
-            throw e;
-        }
+        super.preProcessBundleContext( platformBundleContext );
     }
     
     @Override
     protected void postProcessBundleContext(BundleContext context) throws Exception {
-        try {
-            super.postProcessBundleContext( context );
-        } catch( Exception e ) {
-            throw e;
-        }
+        super.postProcessBundleContext( context );
     }
 
     @Override
@@ -98,8 +85,9 @@ public abstract class AbstractDroolsSpringDMTest extends AbstractConfigurableBun
             artifactId[i] = StringUtils.trimWhitespace( artifactId[i] );
         }
 
-        if ( m_EclipseArtifactLocator == null ) m_EclipseArtifactLocator = new EclipseWorkspaceArtifactLocator();
-
+        if ( m_EclipseArtifactLocator == null ) {
+            m_EclipseArtifactLocator = new EclipseWorkspaceArtifactLocator();
+        }
         result = (artifactId.length == 3 ? m_EclipseArtifactLocator.locateArtifact( artifactId[0],
                                                                                     artifactId[1],
                                                                                     artifactId[2] ) : m_EclipseArtifactLocator.locateArtifact( artifactId[0],
@@ -108,8 +96,9 @@ public abstract class AbstractDroolsSpringDMTest extends AbstractConfigurableBun
                                                                                                                                                artifactId[3] ));
 
         if ( result == null ) {
-            if ( m_MavenArtifactLocator == null ) m_MavenArtifactLocator = getLocator();
-
+            if ( m_MavenArtifactLocator == null ) {
+                m_MavenArtifactLocator = getLocator();
+            }
             result = (artifactId.length == 3 ? m_MavenArtifactLocator.locateArtifact( artifactId[0],
                                                                                       artifactId[1],
                                                                                       artifactId[2] ) : m_MavenArtifactLocator.locateArtifact( artifactId[0],
@@ -118,7 +107,9 @@ public abstract class AbstractDroolsSpringDMTest extends AbstractConfigurableBun
                                                                                                                                                artifactId[3] ));
         }
 
-        if ( result == null ) throw new IllegalStateException( bundleId + " not found" );
+        if ( result == null ) {
+            throw new IllegalStateException( bundleId + " not found" );
+        }
 
         return result;
     }
