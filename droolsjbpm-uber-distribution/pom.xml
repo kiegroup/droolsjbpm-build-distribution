@@ -37,6 +37,43 @@
           <appendAssemblyId>false</appendAssemblyId> 
         </configuration>
       </plugin>
+
+<plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <inherited>false</inherited>
+        <executions>
+          <execution>
+            <id>install</id>
+            <phase>install</phase>
+            <configuration>
+              <quiet>true</quiet>
+              <tasks>
+                <script language="javascript">
+                  <![CDATA[
+                    property = project.setProperty("p2.timestamp.now",Math.floor((new Date()).getTime()/1000));
+                  ]]>
+                </script>
+                <echo>Changing p2.timestamp in latest/composite*.xml files to ${p2.timestamp.now}</echo>
+                <replaceregexp match="@@p2.timestamp.now@@" replace="${p2.timestamp.now}000">
+                  <fileset dir="${basedir}/target">
+                    <include name="**/droolsjbpm-uber-distribution*/download_jboss_org/latest/composite*.xml"/>
+                  </fileset>
+                </replaceregexp>
+              </tasks>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+        <dependencies>
+          <dependency>
+            <groupId>org.apache.ant</groupId>
+            <artifactId>ant</artifactId>
+            <version>1.8.2</version>
+          </dependency>
+        </dependencies>
+      </plugin>      
     </plugins>
   </build>
 
