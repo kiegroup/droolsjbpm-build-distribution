@@ -14,15 +14,6 @@
       <directory>src/main/assembly/filtered-resources</directory>
       <filtered>true</filtered>
       <outputDirectory/>
-        <excludes>
-          <exclude>latest</exclude>
-          <exclude>latest/**</exclude>
-        </excludes>
-    </fileSet>
-    <fileSet>
-      <directory>src/main/assembly/filtered-resources/latest</directory>
-      <filtered>true</filtered>
-      <outputDirectory>download_jboss_org/latest</outputDirectory>
     </fileSet>
   </fileSets>
 
@@ -35,20 +26,17 @@
         <include>org.drools:guvnor-distribution:zip</include>
         <include>org.drools:droolsjbpm-tools-distribution:zip</include>
         <include>org.drools:drools-osgi-bundles-distribution:zip</include>
-        <include>org.drools:org.drools.updatesite:zip</include>
       </includes>
       <unpack>false</unpack>
       <outputDirectory>download_jboss_org/${project.version}</outputDirectory>
       <useStrictFiltering>true</useStrictFiltering>
     </dependencySet>
-
-    <!-- unpacked update site -->
     <dependencySet>
       <includes>
         <include>org.drools:org.drools.updatesite:zip</include>
       </includes>
-      <outputDirectory>download_jboss_org/${project.version}/org.drools.updatesite</outputDirectory>
       <unpack>true</unpack>
+      <outputDirectory>download_jboss_org/${project.version}/org.drools.updatesite</outputDirectory>
       <useStrictFiltering>true</useStrictFiltering>
     </dependencySet>
 
