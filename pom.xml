@@ -51,16 +51,30 @@
         <inherited>false</inherited>
         <configuration>
           <tasks>
-            <echo message="Changing version from ${oldVersion} to ${newVersion}"/>
+            <echo message="Changing Drools version from ${droolsOldVersion} to ${droolsNewVersion}"/>
             <!-- In droolsjbpm-parent, update the properties -->
-            <replaceregexp match="(&lt;drools.version&gt;)${oldVersion}(&lt;/drools.version&gt;)"
-                           replace="\1${newVersion}\2">
+            <replaceregexp match="(&lt;drools.version&gt;)${droolsOldVersion}(&lt;/drools.version&gt;)"
+                           replace="\1${droolsNewVersion}\2">
               <fileset dir="${basedir}/..">
                 <include name="droolsjbpm-build-bootstrap/pom.xml"/>
               </fileset>
             </replaceregexp>
-            <replaceregexp match="(&lt;drools.osgi.version&gt;)${oldOsgiVersion}(&lt;/drools.osgi.version&gt;)"
-                           replace="\1${newOsgiVersion}\2">
+            <replaceregexp match="(&lt;drools.osgi.version&gt;)${droolsOldOsgiVersion}(&lt;/drools.osgi.version&gt;)"
+                           replace="\1${droolsNewOsgiVersion}\2">
+              <fileset dir="${basedir}/..">
+                <include name="droolsjbpm-build-bootstrap/pom.xml"/>
+              </fileset>
+            </replaceregexp>
+            <echo message="Changing jbpm version from ${jbpmOldVersion} to ${jbpmNewVersion}"/>
+            <!-- In droolsjbpm-parent, update the properties -->
+            <replaceregexp match="(&lt;drools.version&gt;)${jbpmOldVersion}(&lt;/drools.version&gt;)"
+                           replace="\1${jbpmNewVersion}\2">
+              <fileset dir="${basedir}/..">
+                <include name="droolsjbpm-build-bootstrap/pom.xml"/>
+              </fileset>
+            </replaceregexp>
+            <replaceregexp match="(&lt;drools.osgi.version&gt;)${jbpmOldOsgiVersion}(&lt;/drools.osgi.version&gt;)"
+                           replace="\1${jbpmNewOsgiVersion}\2">
               <fileset dir="${basedir}/..">
                 <include name="droolsjbpm-build-bootstrap/pom.xml"/>
               </fileset>
