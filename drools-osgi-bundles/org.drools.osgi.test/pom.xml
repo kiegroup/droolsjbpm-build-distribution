@@ -51,13 +51,18 @@
     </testResources>
   </build>
 
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.drools</groupId>
+        <artifactId>drools-osgi-bundles-distribution</artifactId>
+        <type>pom</type>
+        <version>${droolsjbpm-build-distribution.version}</version>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
   <dependencies>
-    <dependency>
-      <groupId>org.drools</groupId>
-      <artifactId>drools-osgi-bundles-distribution</artifactId>
-      <type>pom</type>
-      <scope>import</scope>
-    </dependency>
     <dependency>
       <groupId>org.drools</groupId>
       <artifactId>drools-core</artifactId>
@@ -81,6 +86,10 @@
     <dependency>
       <groupId>org.jbpm</groupId>
       <artifactId>jbpm-flow</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.jbpm</groupId>
+      <artifactId>jbpm-flow-builder</artifactId>
     </dependency>
     <dependency>
       <groupId>org.jbpm</groupId>
