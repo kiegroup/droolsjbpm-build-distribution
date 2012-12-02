@@ -144,7 +144,7 @@
 
     <dependency>
       <groupId>org.drools</groupId>
-      <artifactId>knowledge-api</artifactId>
+      <artifactId>kie-api</artifactId>
       <classifier>javadoc</classifier>
     </dependency>
     <dependency>
