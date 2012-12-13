@@ -6,7 +6,7 @@
   <parent>
     <groupId>org.drools</groupId>
     <artifactId>drools-osgi-bundles</artifactId>
-    <version>5.3.5.Final</version>
+    <version>5.3.6-SNAPSHOT</version>
   </parent>
 
   <artifactId>org.drools.osgi.wrapper.jxls-reader</artifactId>
