@@ -1,122 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>org.drools</groupId>
-    <artifactId>drools-osgi-bundles</artifactId>
-    <version>6.0.0-SNAPSHOT</version>
-  </parent>
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.drools</groupId>
+		<artifactId>drools-osgi-bundles</artifactId>
+		<version>6.0.0-SNAPSHOT</version>
+	</parent>
 
-  <!-- TODO remove me once this is fixed: http://code.google.com/p/protobuf/issues/detail?id=298 -->
-  <artifactId>org.drools.osgi.wrapper.protobuf-java</artifactId>
-  <version>2.4.1</version>
+	<!-- TODO remove me once this is fixed: http://code.google.com/p/protobuf/issues/detail?id=298 -->
+	<artifactId>org.drools.osgi.wrapper.protobuf-java</artifactId>
+	<version>2.4.1</version>
+	<packaging>bundle</packaging>
+	<name>Drools OSGi wrapper for Protobuf Java</name>
+	<description>Protobuf Java isn't OSGi enabled by default, so this module makes it OSGi enabled instead.</description>
 
-  <name>Drools OSGi wrapper for Protobuf Java</name>
-  <description>Protobuf Java isn't OSGi enabled by default, so this module makes it OSGi enabled instead.</description>
-
-  <build>
-    <plugins>
-      <plugin>
-        <artifactId>maven-jar-plugin</artifactId>
-        <configuration>
-          <archive>
-            <manifestFile>META-INF/MANIFEST.MF</manifestFile>
-          </archive>
-        </configuration>
-      </plugin>
-
-      <plugin>
-        <artifactId>maven-antrun-plugin</artifactId>
-        <inherited>false</inherited>
-        <executions>
-          <execution>
-            <id>clean lib</id>
-            <phase>clean</phase>
-            <configuration>
-              <tasks>
-                <delete>
-                  <fileset dir="lib" includes="**/*.jar" excludes="**/.svn"/>
-                </delete>
-              </tasks>
-            </configuration>
-            <goals>
-              <goal>run</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>copy-tran-dependencies</id>
-            <phase>generate-resources</phase>
-            <goals>
-              <goal>copy-dependencies</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>lib</outputDirectory>
-              <overWriteReleases>true</overWriteReleases>
-              <overWriteSnapshots>true</overWriteSnapshots>
-              <overWriteIfNewer>true</overWriteIfNewer>
-              <stripVersion>true</stripVersion>
-              <includeScope>runtime</includeScope>
-              <excludeGroupIds>com.google.protobuf</excludeGroupIds>
-            </configuration>
-          </execution>
-
-          <execution>
-            <id>unpack-dependency</id>
-            <phase>generate-resources</phase>
-            <goals>
-              <goal>unpack-dependencies</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>target/classes</outputDirectory>
-              <overWriteReleases>true</overWriteReleases>
-              <overWriteSnapshots>true</overWriteSnapshots>
-              <overWriteIfNewer>true</overWriteIfNewer>
-              <stripVersion>true</stripVersion>
-              <includeScope>runtime</includeScope>
-              <includeGroupIds>com.google.protobuf</includeGroupIds>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-deploy-plugin</artifactId>
-        <configuration>
-          <skip>true</skip>
-        </configuration>
-      </plugin>
-    </plugins>
-
-    <resources>
-      <resource>
-        <targetPath>META-INF</targetPath>
-        <directory>META-INF</directory>
-      </resource>
-      <resource>
-        <targetPath>lib</targetPath>
-        <directory>lib</directory>
-        <includes>
-          <include>*.jar</include>
-        </includes>
-      </resource>
-    </resources>
-  </build>
-
-  <dependencies>
-    <dependency>
-      <groupId>com.google.protobuf</groupId>
-      <artifactId>protobuf-java</artifactId>
-    </dependency>
-  </dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<!-- <unpackBundle>true</unpackBundle> -->
+					<instructions>
+						<Embed-Dependency>
+							protobuf-java;inline=true
+						</Embed-Dependency>
+						<_exportcontents>
+							*
+						</_exportcontents>
+						<_nouses>true</_nouses>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>com.google.protobuf</groupId>
+			<artifactId>protobuf-java</artifactId>
+		</dependency>
+	</dependencies>
 
 </project>
