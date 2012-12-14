@@ -26,10 +26,10 @@
 					<!-- <unpackBundle>true</unpackBundle> -->
 					<instructions>
 						<Embed-Dependency>
-							protobuf-java;inline=true
+							protobuf-java;inline=false
 						</Embed-Dependency>
 						<_exportcontents>
-							*
+							com.google.protobuf.*
 						</_exportcontents>
 						<_nouses>true</_nouses>
 					</instructions>
