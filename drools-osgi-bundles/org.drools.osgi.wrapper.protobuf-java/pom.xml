@@ -25,6 +25,7 @@
 				<configuration>
 					<!-- <unpackBundle>true</unpackBundle> -->
 					<instructions>
+						<Bundle-SymbolicName>org.drools.osgi.wrapper.protobuf-java</Bundle-SymbolicName>
 						<Embed-Dependency>
 							protobuf-java;inline=false
 						</Embed-Dependency>
