@@ -68,7 +68,7 @@
             </goals>
             <configuration>
               <artifactItems>
-                <artifactItem>  
+                <artifactItem>
                   <groupId>org.objectweb.asm</groupId>
                   <artifactId>com.springsource.org.objectweb.asm</artifactId>
                   <version>1.5.3</version>
@@ -169,7 +169,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>org.springframework.expression</artifactId>
-      <version>3.0.0.RELEASE</version>
+      <version>${spring.maven.artifact.version}</version>
     </dependency>
 
 
