@@ -12,7 +12,8 @@
 	<!-- TODO remove me once this is fixed: http://code.google.com/p/protobuf/issues/detail?id=298 -->
 	<artifactId>org.drools.osgi.wrapper.protobuf-java</artifactId>
 	<version>2.4.1</version>
-	<packaging>bundle</packaging>
+	<packaging>bundle</packaging><!-- bundle = jar + OSGi metadata -->
+
 	<name>Drools OSGi wrapper for Protobuf Java</name>
 	<description>Protobuf Java isn't OSGi enabled by default, so this module makes it OSGi enabled instead.</description>
 
@@ -26,12 +27,8 @@
 					<!-- <unpackBundle>true</unpackBundle> -->
 					<instructions>
 						<Bundle-SymbolicName>org.drools.osgi.wrapper.protobuf-java</Bundle-SymbolicName>
-						<Embed-Dependency>
-							protobuf-java;inline=false
-						</Embed-Dependency>
-						<_exportcontents>
-							com.google.protobuf.*
-						</_exportcontents>
+						<Embed-Dependency>protobuf-java;inline=false</Embed-Dependency>
+						<_exportcontents>com.google.protobuf.*</_exportcontents>
 						<_nouses>true</_nouses>
 					</instructions>
 				</configuration>
