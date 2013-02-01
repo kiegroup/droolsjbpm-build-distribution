@@ -143,7 +143,7 @@
     </dependency>
 
     <dependency>
-      <groupId>org.drools</groupId>
+      <groupId>org.kie</groupId>
       <artifactId>kie-api</artifactId>
       <classifier>javadoc</classifier>
     </dependency>
