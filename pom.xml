@@ -51,6 +51,20 @@
         <inherited>false</inherited>
         <configuration>
           <tasks>
+            <echo message="Changing kie-commons version from ${droolsOldVersion} to ${droolsNewVersion}"/>
+            <!-- In droolsjbpm-parent, update the properties -->
+            <replaceregexp match="(&lt;kie-commons.version&gt;)${droolsOldVersion}(&lt;/kie-commons.version&gt;)"
+                           replace="\1${droolsNewVersion}\2">
+              <fileset dir="${basedir}/..">
+                <include name="droolsjbpm-build-bootstrap/pom.xml"/>
+              </fileset>
+            </replaceregexp>
+            <replaceregexp match="(&lt;kie-commons.osgi.version&gt;)${droolsOldOsgiVersion}(&lt;/kie-commons.osgi.version&gt;)"
+                           replace="\1${droolsNewOsgiVersion}\2">
+              <fileset dir="${basedir}/..">
+                <include name="droolsjbpm-build-bootstrap/pom.xml"/>
+              </fileset>
+            </replaceregexp>
             <echo message="Changing Drools version from ${droolsOldVersion} to ${droolsNewVersion}"/>
             <!-- In droolsjbpm-parent, update the properties -->
             <replaceregexp match="(&lt;drools.version&gt;)${droolsOldVersion}(&lt;/drools.version&gt;)"
