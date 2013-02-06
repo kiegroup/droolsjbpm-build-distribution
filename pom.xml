@@ -79,6 +79,20 @@
                 <include name="droolsjbpm-build-bootstrap/pom.xml"/>
               </fileset>
             </replaceregexp>
+            <echo message="Changing Uberfire version from ${uberfireOldVersion} to ${uberfireNewVersion}"/>
+            <!-- In droolsjbpm-parent, update the properties -->
+            <replaceregexp match="(&lt;uberfire.version&gt;)${uberfireOldVersion}(&lt;/uberfire.version&gt;)"
+                           replace="\1${uberfireNewVersion}\2">
+              <fileset dir="${basedir}/..">
+                <include name="droolsjbpm-build-bootstrap/pom.xml"/>
+              </fileset>
+            </replaceregexp>
+            <replaceregexp match="(&lt;uberfire.osgi.version&gt;)${uberfireOldOsgiVersion}(&lt;/uberfire.osgi.version&gt;)"
+                           replace="\1${uberfireNewOsgiVersion}\2">
+              <fileset dir="${basedir}/..">
+                <include name="droolsjbpm-build-bootstrap/pom.xml"/>
+              </fileset>
+            </replaceregexp>
           </tasks>
         </configuration>
       </plugin>
