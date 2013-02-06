@@ -95,7 +95,7 @@
       <type>zip</type>
     </dependency>
     <dependency>
-      <groupId>org.drools</groupId>
+      <groupId>org.kie.guvnor</groupId>
       <artifactId>guvnor-distribution</artifactId>
       <type>zip</type>
     </dependency>
@@ -137,7 +137,7 @@
       <type>jdocbook</type>
     </dependency>
     <dependency>
-      <groupId>org.drools</groupId>
+      <groupId>org.kie.guvnor</groupId>
       <artifactId>guvnor-docs</artifactId>
       <type>jdocbook</type>
     </dependency>

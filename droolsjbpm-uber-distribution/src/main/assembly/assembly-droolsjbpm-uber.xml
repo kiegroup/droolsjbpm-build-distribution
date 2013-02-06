@@ -23,7 +23,7 @@
         <include>org.drools:drools-distribution:zip</include>
         <include>org.drools.planner:drools-planner-distribution:zip</include>
         <include>org.drools:droolsjbpm-integration-distribution:zip</include>
-        <include>org.drools:guvnor-distribution:zip</include>
+        <include>org.kie.guvnor:guvnor-distribution:zip</include>
         <include>org.drools:droolsjbpm-tools-distribution:zip</include>
         <include>org.drools:drools-osgi-bundles-distribution:zip</include>
       </includes>
@@ -108,7 +108,7 @@
     </dependencySet>
     <dependencySet>
       <includes>
-        <include>org.drools:guvnor-docs:jdocbook</include>
+        <include>org.kie.guvnor:guvnor-docs:jdocbook</include>
       </includes>
       <outputDirectory>docs_jboss_org/${project.version}/drools-guvnor-docs</outputDirectory>
       <unpack>true</unpack>
@@ -121,14 +121,6 @@
     </dependencySet>
 
     <!-- Javadocs -->
-    <dependencySet>
-      <includes>
-        <include>org.drools:knowledge-api:*:javadoc</include>
-      </includes>
-      <outputDirectory>docs_jboss_org/${project.version}/knowledge-api-javadoc</outputDirectory>
-      <unpack>true</unpack>
-      <useStrictFiltering>true</useStrictFiltering>
-    </dependencySet>
     <dependencySet>
       <includes>
         <include>org.drools.planner:drools-planner-core:*:javadoc</include>
