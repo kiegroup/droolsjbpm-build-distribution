@@ -25,7 +25,7 @@
         <include>org.drools:droolsjbpm-integration-distribution:zip</include>
         <include>org.kie.guvnor:guvnor-distribution:zip</include>
         <include>org.drools:droolsjbpm-tools-distribution:zip</include>
-        <include>org.drools:drools-osgi-bundles-distribution:zip</include>
+        <!-- No OSGi in Alpha7 <include>org.drools:drools-osgi-bundles-distribution:zip</include> -->
       </includes>
       <unpack>false</unpack>
       <outputDirectory>download_jboss_org/${project.version}</outputDirectory>
