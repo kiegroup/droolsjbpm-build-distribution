@@ -43,7 +43,7 @@
     <!-- Reference manual -->
     <dependencySet>
       <includes>
-        <include>org.drools:droolsjbpm-introduction-docs:jdocbook</include>
+        <include>org.kie:droolsjbpm-introduction-docs:jdocbook</include>
       </includes>
       <outputDirectory>docs_jboss_org/${project.version}/droolsjbpm-introduction-docs</outputDirectory>
       <unpack>true</unpack>
