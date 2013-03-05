@@ -21,7 +21,7 @@
     <dependencySet>
       <includes>
         <include>org.drools:drools-distribution:zip</include>
-        <include>org.drools.planner:drools-planner-distribution:zip</include>
+        <include>org.optaplanner:optaplanner-distribution:zip</include>
         <include>org.drools:droolsjbpm-integration-distribution:zip</include>
         <include>org.kie.guvnor:guvnor-distribution:zip</include>
         <include>org.drools:droolsjbpm-tools-distribution:zip</include>
@@ -82,9 +82,9 @@
     </dependencySet>
     <dependencySet>
       <includes>
-        <include>org.drools.planner:drools-planner-docs:jdocbook</include>
+        <include>org.optaplanner:optaplanner-docs:jdocbook</include>
       </includes>
-      <outputDirectory>docs_jboss_org/${project.version}/drools-planner-docs</outputDirectory>
+      <outputDirectory>docs_jboss_org/${project.version}/optaplanner-docs</outputDirectory>
       <unpack>true</unpack>
       <unpackOptions>
         <excludes>
@@ -123,9 +123,9 @@
     <!-- Javadocs -->
     <dependencySet>
       <includes>
-        <include>org.drools.planner:drools-planner-core:*:javadoc</include>
+        <include>org.optaplanner:optaplanner-core:*:javadoc</include>
       </includes>
-      <outputDirectory>docs_jboss_org/${project.version}/drools-planner-javadoc</outputDirectory>
+      <outputDirectory>docs_jboss_org/${project.version}/optaplanner-javadoc</outputDirectory>
       <unpack>true</unpack>
       <useStrictFiltering>true</useStrictFiltering>
     </dependencySet>

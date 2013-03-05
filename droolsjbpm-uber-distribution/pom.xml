@@ -85,8 +85,8 @@
       <type>zip</type>
     </dependency>
     <dependency>
-      <groupId>org.drools.planner</groupId>
-      <artifactId>drools-planner-distribution</artifactId>
+      <groupId>org.optaplanner</groupId>
+      <artifactId>optaplanner-distribution</artifactId>
       <type>zip</type>
     </dependency>
     <dependency>
@@ -129,8 +129,8 @@
       <type>jdocbook</type>
     </dependency>
     <dependency>
-      <groupId>org.drools.planner</groupId>
-      <artifactId>drools-planner-docs</artifactId>
+      <groupId>org.optaplanner</groupId>
+      <artifactId>optaplanner-docs</artifactId>
       <type>jdocbook</type>
     </dependency>
     <dependency>
@@ -150,8 +150,8 @@
       <classifier>javadoc</classifier>
     </dependency>
     <dependency>
-      <groupId>org.drools.planner</groupId>
-      <artifactId>drools-planner-core</artifactId>
+      <groupId>org.optaplanner</groupId>
+      <artifactId>optaplanner-core</artifactId>
       <classifier>javadoc</classifier>
     </dependency>
   </dependencies>

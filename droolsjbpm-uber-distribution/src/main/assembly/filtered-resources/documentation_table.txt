@@ -57,13 +57,13 @@ but first replace the TODO's:
             <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/drools-guvnor-docs/pdf/drools-guvnor-docs.pdf">PDF</a></td>
         </tr>
         <tr class="evenRow">
-            <td class="rowlinefirst"><b>Drools Planner<br />
+            <td class="rowlinefirst"><b>OptaPlanner<br />
             </b></td>
             <td class="rowline"><b>${project.version}</b></td>
             <td class="rowline">TODO</td>
-            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/drools-planner-docs/html_single/index.html">HTML Single</a></td>
-            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/drools-planner-docs/html/index.html">HTML</a></td>
-            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/drools-planner-docs/pdf/drools-planner-docs.pdf">PDF</a></td>
+            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/optaplanner-docs/html_single/index.html">HTML Single</a></td>
+            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/optaplanner-docs/html/index.html">HTML</a></td>
+            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/optaplanner-docs/pdf/optaplanner-docs.pdf">PDF</a></td>
         </tr>
     </tbody>
 </table>
@@ -82,11 +82,11 @@ but first replace the TODO's:
             <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/knowledge-api-javadoc/index.html">Javadoc</a></td>
         </tr>
         <tr class="evenRow">
-            <td class="rowlinefirst"><b>Drools Planner<br />
+            <td class="rowlinefirst"><b>OptaPlanner<br />
             </b></td>
             <td class="rowline"><b>${project.version}</b></td>
             <td class="rowline">TODO</td>
-            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/drools-planner-javadoc/index.html">Javadoc</a></td>
+            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/optaplanner-javadoc/index.html">Javadoc</a></td>
         </tr>
     </tbody>
 </table>
