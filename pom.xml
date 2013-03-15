@@ -125,7 +125,6 @@
         </property>
       </activation>
       <modules>
-        <!--Removed from build until fixed @ conan's request <module>drools-osgi-bundles</module>-->
         <module>droolsjbpm-uber-distribution</module>
       </modules>
     </profile>

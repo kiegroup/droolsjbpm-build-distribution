@@ -104,13 +104,6 @@
       <artifactId>droolsjbpm-tools-distribution</artifactId>
       <type>zip</type>
     </dependency>
-    <!-- No OSGI in Alpha7
-    <dependency>
-      <groupId>org.drools</groupId>
-      <artifactId>drools-osgi-bundles-distribution</artifactId>
-      <type>zip</type>
-    </dependency>
-    -->
 
     <!-- Javadocs and documentation -->
     <dependency>
