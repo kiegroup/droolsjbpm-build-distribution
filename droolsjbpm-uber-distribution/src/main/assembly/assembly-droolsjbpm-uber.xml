@@ -107,7 +107,7 @@
     </dependencySet>
     <dependencySet>
       <includes>
-        <include>org.kie.guvnor:guvnor-docs:jdocbook</include>
+        <include>org.drools:drools-wb-docs</include>
       </includes>
       <outputDirectory>docs_jboss_org/${project.version}/drools-guvnor-docs</outputDirectory>
       <unpack>true</unpack>
