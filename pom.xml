@@ -4,8 +4,8 @@
 
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.drools</groupId>
-    <artifactId>droolsjbpm-parent</artifactId>
+    <groupId>org.kie</groupId>
+    <artifactId>kie-build-parent</artifactId>
     <version>6.1.0-SNAPSHOT</version>
     <!-- relativePath causes out-of-date problems on hudson slaves -->
     <!--<relativePath>../droolsjbpm-build-bootstrap/pom.xml</relativePath>-->
@@ -52,7 +52,7 @@
         <configuration>
           <tasks>
             <echo message="Changing kie-commons version from ${droolsOldVersion} to ${droolsNewVersion}"/>
-            <!-- In droolsjbpm-parent, update the properties -->
+            <!-- In kie-parent-metadata, update the properties -->
             <replaceregexp match="(&lt;kie-commons.version&gt;)${droolsOldVersion}(&lt;/kie-commons.version&gt;)"
                            replace="\1${droolsNewVersion}\2">
               <fileset dir="${basedir}/..">
@@ -60,7 +60,7 @@
               </fileset>
             </replaceregexp>
             <echo message="Changing Drools version from ${droolsOldVersion} to ${droolsNewVersion}"/>
-            <!-- In droolsjbpm-parent, update the properties -->
+            <!-- In kie-parent-metadata, update the properties -->
             <replaceregexp match="(&lt;drools.version&gt;)${droolsOldVersion}(&lt;/drools.version&gt;)"
                            replace="\1${droolsNewVersion}\2">
               <fileset dir="${basedir}/..">
@@ -68,7 +68,7 @@
               </fileset>
             </replaceregexp>
             <echo message="Changing jbpm version from ${jbpmOldVersion} to ${jbpmNewVersion}"/>
-            <!-- In droolsjbpm-parent, update the properties -->
+            <!-- In kie-parent-metadata, update the properties -->
             <replaceregexp match="(&lt;jbpm.version&gt;)${jbpmOldVersion}(&lt;/jbpm.version&gt;)"
                            replace="\1${jbpmNewVersion}\2">
               <fileset dir="${basedir}/..">
@@ -76,7 +76,7 @@
               </fileset>
             </replaceregexp>
             <echo message="Changing Uberfire version from ${uberfireOldVersion} to ${uberfireNewVersion}"/>
-            <!-- In droolsjbpm-parent, update the properties -->
+            <!-- In kie-parent-metadata, update the properties -->
             <replaceregexp match="(&lt;uberfire.version&gt;)${uberfireOldVersion}(&lt;/uberfire.version&gt;)"
                            replace="\1${uberfireNewVersion}\2">
               <fileset dir="${basedir}/..">
