@@ -15,46 +15,13 @@ but first replace the TODO's:
             <th class="tableheader">&nbsp;</th>
             <th class="tableheader">&nbsp;</th>
         </tr>
-        <tr class="oddRow">
-            <td class="rowlinefirst"><b>Drools Introduction</b></td>
-            <td class="rowline"><b>${project.version}</b></td>
-            <td class="rowline">TODO</td>
-            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/droolsjbpm-introduction-docs/html_single/index.html">HTML Single</a></td>
-            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/droolsjbpm-introduction-docs/html/index.html">HTML</a></td>
-            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/droolsjbpm-introduction-docs/pdf/droolsjbpm-introduction-docs.pdf">PDF</a></td>
-        </tr>
         <tr class="evenRow">
-            <td class="rowlinefirst"><b>Drools Expert</b></td>
+            <td class="rowlinefirst"><b>Drools</b></td>
             <td class="rowline"><b>${project.version}</b></td>
             <td class="rowline">TODO</td>
-            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/drools-expert-docs/html_single/index.html">HTML Single</a></td>
-            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/drools-expert-docs/html/index.html">HTML</a></td>
-            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/drools-expert-docs/pdf/drools-expert-docs.pdf">PDF</a></td>
-        </tr>
-        <tr class="oddRow">
-            <td class="rowlinefirst"><b>Drools Fusion</b></td>
-            <td class="rowline"><b>${project.version}</b></td>
-            <td class="rowline">TODO</td>
-            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/drools-fusion-docs/html_single/index.html">HTML Single</a></td>
-            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/drools-fusion-docs/html/index.html">HTML</a></td>
-            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/drools-fusion-docs/pdf/drools-fusion-docs.pdf">PDF</a></td>
-        </tr>
-        <tr class="oddRow">
-            <td class="rowlinefirst"><b>Drools and jBPM integration<br />
-            </b></td>
-            <td class="rowline"><b>${project.version}</b></td>
-            <td class="rowline">TODO</td>
-            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/droolsjbpm-integration-docs/html_single/index.html">HTML Single</a></td>
-            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/droolsjbpm-integration-docs/html/index.html">HTML</a></td>
-            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/droolsjbpm-integration-docs/pdf/droolsjbpm-integration-docs.pdf">PDF</a></td>
-        </tr>
-        <tr class="oddRow">
-            <td class="rowlinefirst"><b>Drools Guvnor</b></td>
-            <td class="rowline"><b>${project.version}</b></td>
-            <td class="rowline">TODO</td>
-            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/drools-guvnor-docs/html_single/index.html">HTML Single</a></td>
-            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/drools-guvnor-docs/html/index.html">HTML</a></td>
-            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/drools-guvnor-docs/pdf/drools-guvnor-docs.pdf">PDF</a></td>
+            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/drools-docs/html_single/index.html">HTML Single</a></td>
+            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/drools-docs/html/index.html">HTML</a></td>
+            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/drools-docs/pdf/drools-docs.pdf">PDF</a></td>
         </tr>
         <tr class="evenRow">
             <td class="rowlinefirst"><b>OptaPlanner<br />
@@ -64,6 +31,14 @@ but first replace the TODO's:
             <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/optaplanner-docs/html_single/index.html">HTML Single</a></td>
             <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/optaplanner-docs/html/index.html">HTML</a></td>
             <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/optaplanner-docs/pdf/optaplanner-docs.pdf">PDF</a></td>
+        </tr>
+        <tr class="evenRow">
+            <td class="rowlinefirst"><b>jBPM</b></td>
+            <td class="rowline"><b>${project.version}</b></td>
+            <td class="rowline">TODO</td>
+            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/jbpm-docs/html_single/index.html">HTML Single</a></td>
+            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/jbpm-docs/html/index.html">HTML</a></td>
+            <td class="rowline"><a target="_blank" href="http://docs.jboss.org/drools/release/${project.version}/jbpm-docs/pdf/drools-docs.pdf">PDF</a></td>
         </tr>
     </tbody>
 </table>
