@@ -94,11 +94,11 @@
       <artifactId>droolsjbpm-integration-distribution</artifactId>
       <type>zip</type>
     </dependency>
-    <!--<dependency>-->
-      <!--<groupId>org.kie.guvnor</groupId>-->
-      <!--<artifactId>guvnor-distribution</artifactId>-->
-      <!--<type>zip</type>-->
-    <!--</dependency>-->
+    <dependency>
+      <groupId>org.drools</groupId>
+      <artifactId>drools-wb-distribution</artifactId>
+      <type>zip</type>
+    </dependency>
     <dependency>
       <groupId>org.drools</groupId>
       <artifactId>droolsjbpm-tools-distribution</artifactId>
