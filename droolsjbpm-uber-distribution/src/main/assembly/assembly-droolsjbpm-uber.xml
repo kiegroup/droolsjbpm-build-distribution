@@ -24,7 +24,7 @@
         <include>org.optaplanner:optaplanner-distribution:zip</include>
         <!--<include>org.jbpm:jbpm-distribution:zip</include>-->
         <include>org.drools:droolsjbpm-integration-distribution:zip</include>
-        <!--<include>org.kie.guvnor:guvnor-distribution:zip</include>-->
+        <include>org.drools:drools-wb-distribution:zip</include>
         <include>org.drools:droolsjbpm-tools-distribution:zip</include>
       </includes>
       <unpack>false</unpack>
