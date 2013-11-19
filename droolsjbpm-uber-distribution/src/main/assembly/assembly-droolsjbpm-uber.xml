@@ -67,7 +67,7 @@
       </unpackOptions>
       <useStrictFiltering>true</useStrictFiltering>
     </dependencySet>
-    <dependencySet>
+<!--    <dependencySet>
       <includes>
         <include>org.jbpm:jbpm-docs:jdocbook</include>
       </includes>
@@ -79,7 +79,7 @@
         </excludes>
       </unpackOptions>
       <useStrictFiltering>true</useStrictFiltering>
-    </dependencySet>
+    </dependencySet>-->
 
     <!-- Javadocs -->
     <dependencySet>

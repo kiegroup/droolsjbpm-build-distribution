@@ -116,11 +116,11 @@
       <artifactId>optaplanner-docs</artifactId>
       <type>jdocbook</type>
     </dependency>
-    <dependency>
+<!--    <dependency>
       <groupId>org.jbpm</groupId>
       <artifactId>jbpm-docs</artifactId>
       <type>jdocbook</type>
-    </dependency>
+    </dependency>-->
 
     <dependency>
       <groupId>org.kie</groupId>
