@@ -90,6 +90,14 @@
       <unpack>true</unpack>
       <useStrictFiltering>true</useStrictFiltering>
     </dependencySet>
+      <dependencySet>
+          <includes>
+              <include>org.kie:kie-api:*:javadoc</include>
+          </includes>
+          <outputDirectory>docs_jboss_org/${project.version}/kie-api-javadoc</outputDirectory>
+          <unpack>true</unpack>
+          <useStrictFiltering>true</useStrictFiltering>
+      </dependencySet>
   </dependencySets>
 
 </assembly>
