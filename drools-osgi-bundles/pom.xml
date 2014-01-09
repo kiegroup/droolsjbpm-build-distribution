@@ -49,7 +49,6 @@
   </properties>
 
   <modules>
-    <module>org.drools.osgi.wrapper.jxls-reader</module>
     <module>drools-osgi-bundles-distribution</module>
     <module>org.drools.osgi.test</module>
   </modules>

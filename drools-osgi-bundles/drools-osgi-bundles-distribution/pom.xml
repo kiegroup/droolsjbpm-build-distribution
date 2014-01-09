@@ -111,18 +111,6 @@
   </build>
 
   <dependencies>
-    <!-- wrapped -->
-    <dependency>
-      <groupId>org.drools</groupId>
-      <artifactId>org.drools.osgi.wrapper.jxls-reader</artifactId>
-      <version>0.9.8</version>
-      <exclusions>
-        <exclusion>
-          <groupId>net.sf.jxls</groupId>
-          <artifactId>jxls-reader</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
 
     <!-- spring -->
     <dependency>
@@ -162,11 +150,6 @@
     </dependency>
 
 
-    <dependency>
-      <groupId>net.sourceforge.jexcelapi</groupId>
-      <artifactId>com.springsource.jxl</artifactId>
-      <version>2.6.6</version>
-    </dependency>
     <dependency>
       <groupId>com.thoughtworks.xstream</groupId>
       <artifactId>com.springsource.com.thoughtworks.xstream</artifactId>
@@ -372,7 +355,12 @@
     <dependency>
       <groupId>org.apache.poi</groupId>
       <artifactId>com.springsource.org.apache.poi</artifactId>
-      <version>3.0.2.FINAL</version>
+      <version>3.9.0.FINAL</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>com.springsource.org.apache.commons.codec</artifactId>
+      <version>1.5.0</version>
     </dependency>
     <dependency>
       <groupId>javax.jms</groupId>
