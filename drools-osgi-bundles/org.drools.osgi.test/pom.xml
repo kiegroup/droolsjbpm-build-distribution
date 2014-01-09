@@ -70,10 +70,12 @@
       <groupId>org.drools</groupId>
       <artifactId>drools-templates</artifactId>
     </dependency>
-    <dependency>
-      <groupId>org.drools</groupId>
-      <artifactId>drools-decisiontables</artifactId>
-    </dependency>
+    <!-- TODO decisiontables disabled because poi-ooxml is not osgi enabled (and wrapping it would require wrapping a list of dependencies including xmlbeans too) -->
+    <!-- This known issue is fixed in 6.0 -->
+    <!--<dependency>-->
+      <!--<groupId>org.drools</groupId>-->
+      <!--<artifactId>drools-decisiontables</artifactId>-->
+    <!--</dependency>-->
     <!--dependency>
          <groupId>org.drools</groupId>
          <artifactId>drools-persistence-jpa</artifactId>
