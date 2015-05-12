@@ -72,11 +72,11 @@
       </unpackOptions>
       <useStrictFiltering>true</useStrictFiltering>
     </dependencySet>
-<!--    <dependencySet>
+    <dependencySet>
       <includes>
         <include>org.jbpm:jbpm-docs:jdocbook</include>
       </includes>
-      <outputDirectory>docs_jboss_org/${project.version}/jbpm-docs</outputDirectory>
+      <outputDirectory>docs_htdocs/jbpm/release/${project.version}/jbpm-docs</outputDirectory>
       <unpack>true</unpack>
       <unpackOptions>
         <excludes>
@@ -84,7 +84,7 @@
         </excludes>
       </unpackOptions>
       <useStrictFiltering>true</useStrictFiltering>
-    </dependencySet>-->
+    </dependencySet>
 
     <!-- Javadocs -->
     <dependencySet>
@@ -95,14 +95,14 @@
       <unpack>true</unpack>
       <useStrictFiltering>true</useStrictFiltering>
     </dependencySet>
-      <dependencySet>
-          <includes>
-              <include>org.kie:kie-api:*:javadoc</include>
-          </includes>
-          <outputDirectory>docs_htdocs/drools/release/${project.version}/kie-api-javadoc</outputDirectory>
-          <unpack>true</unpack>
-          <useStrictFiltering>true</useStrictFiltering>
-      </dependencySet>
+    <dependencySet>
+      <includes>
+        <include>org.kie:kie-api:*:javadoc</include>
+      </includes>
+      <outputDirectory>docs_htdocs/drools/release/${project.version}/kie-api-javadoc</outputDirectory>
+      <unpack>true</unpack>
+      <useStrictFiltering>true</useStrictFiltering>
+    </dependencySet>
   </dependencySets>
 
 </assembly>

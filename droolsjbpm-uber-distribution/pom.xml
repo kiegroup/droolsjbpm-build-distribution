@@ -34,7 +34,7 @@
           <descriptors>
             <descriptor>src/main/assembly/assembly-droolsjbpm-uber.xml</descriptor>
           </descriptors>
-          <appendAssemblyId>false</appendAssemblyId> 
+          <appendAssemblyId>false</appendAssemblyId>
         </configuration>
       </plugin>
 
@@ -73,7 +73,7 @@
             <version>1.8.2</version>
           </dependency>
         </dependencies>
-      </plugin>      
+      </plugin>
     </plugins>
   </build>
 
@@ -111,11 +111,11 @@
       <artifactId>optaplanner-docs</artifactId>
       <type>jdocbook</type>
     </dependency>
-<!--    <dependency>
+    <dependency>
       <groupId>org.jbpm</groupId>
       <artifactId>jbpm-docs</artifactId>
       <type>jdocbook</type>
-    </dependency>-->
+    </dependency>
 
     <dependency>
       <groupId>org.kie</groupId>
