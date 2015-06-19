@@ -44,46 +44,6 @@
     <url>https://github.com/droolsjbpm/droolsjbpm-build-distribution</url>
   </scm>
 
-  <build>
-    <plugins>
-      <plugin>
-        <artifactId>maven-antrun-plugin</artifactId>
-        <inherited>false</inherited>
-        <configuration>
-          <tasks>
-            <echo message="Changing KIE version from ${droolsOldVersion} to ${droolsNewVersion}"/>
-            <!-- In kie-parent-metadata, update the properties -->
-            <replaceregexp match="(&lt;version\.org\.kie&gt;)${droolsOldVersion}(&lt;/version\.org\.kie&gt;)"
-                           replace="\1${droolsNewVersion}\2">
-              <fileset dir="${basedir}/..">
-                <include name="droolsjbpm-build-bootstrap/pom.xml"/>
-              </fileset>
-            </replaceregexp>
-            <echo message="Changing Drools version from ${droolsOldVersion} to ${droolsNewVersion}"/>
-            <!-- In kie-parent-metadata, update the properties -->
-            <replaceregexp match="(&lt;version\.org\.drools&gt;)${droolsOldVersion}(&lt;/version\.org\.drools&gt;)"
-                           replace="\1${droolsNewVersion}\2">
-              <fileset dir="${basedir}/..">
-                <include name="droolsjbpm-build-bootstrap/pom.xml"/>
-              </fileset>
-            </replaceregexp>
-            <echo message="Changing jbpm version from ${jbpmOldVersion} to ${jbpmNewVersion}"/>
-            <!-- In kie-parent-metadata, update the properties -->
-            <replaceregexp match="(&lt;version\.org\.jbpm&gt;)${jbpmOldVersion}(&lt;/version\.org\.jbpm&gt;)"
-                           replace="\1${jbpmNewVersion}\2">
-              <fileset dir="${basedir}/..">
-                <include name="droolsjbpm-build-bootstrap/pom.xml"/>
-              </fileset>
-            </replaceregexp>
-          </tasks>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-
-  <modules>
-  </modules>
-
   <profiles>
     <profile>
       <id>fullProfile</id>
