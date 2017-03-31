@@ -94,11 +94,12 @@
       <artifactId>droolsjbpm-integration-distribution</artifactId>
       <type>zip</type>
     </dependency>
-    <dependency>
+    <!-- disable dependency to droolsjbpm-tools-distribution that was temporary disabled from repository-list -->
+    <!-- <dependency>
       <groupId>org.drools</groupId>
       <artifactId>droolsjbpm-tools-distribution</artifactId>
       <type>zip</type>
-    </dependency>
+    </dependency> -->
 
     <!-- Javadocs and documentation -->
     <dependency>
