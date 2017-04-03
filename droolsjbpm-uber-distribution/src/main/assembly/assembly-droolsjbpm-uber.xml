@@ -22,7 +22,8 @@
       <includes>
         <include>org.drools:drools-distribution:zip</include>
         <include>org.drools:droolsjbpm-integration-distribution:zip</include>
-        <include>org.drools:droolsjbpm-tools-distribution:zip</include>
+        <!-- disable dependency to droolsjbpm-tools-distribution:zip since droolsjbp-tools was temporary disabled from repository-list -->
+        <!-- <include>org.drools:droolsjbpm-tools-distribution:zip</include> -->
       </includes>
       <unpack>false</unpack>
       <outputDirectory>downloads_htdocs/drools/release/${project.version}</outputDirectory>
