@@ -37,14 +37,16 @@
       <outputDirectory>downloads_htdocs/optaplanner/release/${project.version}</outputDirectory>
       <useStrictFiltering>true</useStrictFiltering>
     </dependencySet>
-    <dependencySet>
+
+    <!-- disable dependency to org.drools:org.drools.updatesite:zip since droolsjbpm-tools was temporary disabled from repository-list --> 
+    <!-- <dependencySet>
       <includes>
         <include>org.drools:org.drools.updatesite:zip</include>
       </includes>
       <unpack>true</unpack>
       <outputDirectory>downloads_htdocs/drools/release/${project.version}/org.drools.updatesite</outputDirectory>
       <useStrictFiltering>true</useStrictFiltering>
-    </dependencySet>
+    </dependencySet> -->
 
     <!-- Reference manual -->
     <dependencySet>
